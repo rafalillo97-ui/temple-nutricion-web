@@ -145,13 +145,23 @@ section{position:relative;}
 .tercios-intro{max-width:60ch;margin:0 auto;text-align:center;font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;opacity:.82;line-height:1.75;}
 .tercios-triada{text-align:center;margin:1.2em auto clamp(3rem,8vh,5rem);font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(.92rem,2vw,1.1rem);color:var(--dorado);letter-spacing:.02em;}
 .tercio-tag{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dorado-mate);margin-bottom:.5em;}
-.tercios{max-width:760px;margin:0 auto;}
-.tercio{position:relative;padding:2.6rem 0;border-top:1px solid rgba(230,189,58,.18);}
+.tercios{max-width:1080px;margin:0 auto;}
+.tercio{position:relative;padding:3.2rem 0;border-top:1px solid rgba(230,189,58,.18);display:grid;grid-template-columns:.85fr 1fr;gap:clamp(1.8rem,4vw,3.4rem);align-items:center;}
 .tercio:first-child{border-top:none;}
-.tercio .num-ghost{font-size:clamp(6rem,16vw,10rem);top:-.4em;right:0;}
+.tercio:nth-child(even){grid-template-columns:1fr .85fr;}
+.tercio:nth-child(even) .tercio-media{order:2;}
+.tercio:nth-child(even) .tercio-body{order:1;}
+.tercio .num-ghost{font-size:clamp(5rem,12vw,7.5rem);top:-.5em;right:0;}
+.tercio-media{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 40px rgba(6,14,11,.4);}
+.tercio-media img{width:100%;height:100%;object-fit:cover;}
+.tercio-media .tm-tag{position:absolute;left:0;right:0;bottom:0;padding:1.1em 1.1em .9em;background:linear-gradient(0deg, rgba(6,14,11,.88), transparent);font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--dorado);font-size:1.05rem;}
 .tercio-body{position:relative;z-index:1;max-width:60ch;}
 .tercio h3{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--dorado);}
 .tercio p{margin-top:.6em;font-size:1.02rem;font-weight:300;line-height:1.7;opacity:.85;}
+@media (max-width:760px){
+  .tercio{grid-template-columns:1fr !important;}
+  .tercio-media, .tercio-body{order:initial !important;}
+}
 @media (max-width:640px){.tercio .num-ghost{left:0;right:auto;}}
 
 /* ---------- Misión: lista de claves como notas al margen ---------- */
@@ -465,6 +475,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     <div class="tercios">
       <div class="tercio mk-reveal">
         <span class="num-ghost">01</span>
+        <div class="tercio-media"><img src="assets/torero-4-plaza-madrid.jpg" alt="Torero parando la embestida con el capote, cara a cara con el toro"><span class="tm-tag">La cita</span></div>
         <div class="tercio-body">
           <span class="tercio-tag">El diagnóstico y la base</span>
           <h3>Parar</h3>
@@ -473,6 +484,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
       </div>
       <div class="tercio mk-reveal">
         <span class="num-ghost">02</span>
+        <div class="tercio-media"><img src="assets/hero-torero.jpg" alt="Torero con el compás templado, dominando el ritmo del pase"><span class="tm-tag">El temple del capote</span></div>
         <div class="tercio-body">
           <span class="tercio-tag">La regulación de la energía</span>
           <h3>Templar</h3>
@@ -481,6 +493,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
       </div>
       <div class="tercio mk-reveal">
         <span class="num-ghost">03</span>
+        <div class="tercio-media"><img src="assets/tercio-mandar.jpg" alt="Torero dominando la embestida del toro con la muleta, en plena explosión de fuerza"><span class="tm-tag">El mando</span></div>
         <div class="tercio-body">
           <span class="tercio-tag">El rendimiento absoluto</span>
           <h3>Mandar</h3>
@@ -612,7 +625,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
         <div class="svc-photo" style="background-image:url('assets/svc-jovenes.jpg');"><span class="svc-photo-label">Jóvenes promesas</span></div>
         <div class="svc-info">
           <div class="svc-row"><span class="li-name">Futuros toreros</span><span class="li-dots"></span><span class="li-price">Consulte</span></div>
-          <p class="ledger-desc">Acompañamiento nutricional para los niños y jóvenes que están empezando, dentro de las escuelas.</p>
+          <p class="ledger-desc">Acompañamiento nutricional para los niños y jóvenes que están empezando, dentro de las escuelas — la cantera de las figuras del mañana.</p>
         </div>
       </div>
     </div>
