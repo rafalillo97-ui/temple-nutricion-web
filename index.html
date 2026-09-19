@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TEMPLE — Nutrición con Arte para Atletas de Luces | Mónica Rosa Terra</title>
-<meta name="description" content="TEMPLE: coaching nutricional de alto rendimiento para toreros y escuelas de tauromaquia. Mónica Rosa Terra, 20 años de experiencia en nutrición deportiva de élite. Almuñécar, Granada.">
+<meta name="description" content="TEMPLE: coaching nutricional de alto rendimiento para atletas y escuelas de tauromaquia. Mónica Rosa Terra, 20 años de experiencia en nutrición deportiva de élite. Almuñécar, Granada.">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,10 +100,11 @@ section{position:relative;}
 .on-dark .marginalia .mtitle em{color:var(--dorado);}
 
 /* ---------- Apertura: cita editorial asimétrica ---------- */
-.apertura{background:var(--verde);color:var(--crema);padding:clamp(5rem,15vh,9rem) 0;}
+.apertura{background:var(--verde);color:var(--crema);padding:clamp(2.6rem,7vh,4rem) 0;overflow:hidden;}
 .apertura .wrap{position:relative;}
+.apertura .wrap::after{content:"";position:absolute;right:2%;top:50%;transform:translateY(-50%);width:clamp(110px,13vw,200px);aspect-ratio:1007/1200;background-image:url('assets/logo.png');background-repeat:no-repeat;background-position:center;background-size:contain;opacity:.1;pointer-events:none;}
 .apertura .mark{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(5rem,15vw,10rem);color:var(--dorado);opacity:.28;line-height:.6;position:absolute;top:-.3em;left:0;}
-.apertura blockquote{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1.1rem,2.3vw,1.55rem);line-height:1.45;max-width:38ch;padding-top:1.3em;}
+.apertura blockquote{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1.1rem,2.3vw,1.55rem);line-height:1.45;max-width:none;width:100%;padding-top:1.3em;}
 .apertura .fuerte{display:block;margin-top:.5em;color:var(--dorado);font-weight:800;font-style:normal;font-size:1.15em;}
 
 /* ---------- Sobre Mónica: composición solapada ---------- */
@@ -176,7 +177,7 @@ section{position:relative;}
 .claves-list .cl-text{font-size:clamp(1rem,2vw,1.1rem);line-height:1.6;}
 
 /* ---------- Ruptura: cita con retrato de Belmonte de fondo, como marca de agua ---------- */
-.ruptura{min-height:32vh;padding:3rem 0;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--verde2);}
+.ruptura{min-height:25vh;padding:2.2rem 0;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--verde2);}
 .ruptura-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% 42%;opacity:.28;filter:grayscale(1) contrast(1.08);mask-image:linear-gradient(100deg, transparent 0%, #000 40%, #000 100%);-webkit-mask-image:linear-gradient(100deg, transparent 0%, #000 40%, #000 100%);}
 .ruptura::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg, rgba(6,14,11,.8) 28%, rgba(6,14,11,.25) 78%);}
 .ruptura-inner{position:relative;z-index:2;max-width:640px;padding:1.5rem clamp(1.2rem,5vw,3.4rem);}
@@ -395,7 +396,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   <div class="wrap">
     <p class="mark">&ldquo;</p>
     <blockquote>
-      El torero es un atleta de rendimiento extremo que necesita precisión, fuerza y templanza en cada milésima de segundo, expresando su arte en los pases con el compás y la elegancia que exige la tradición: convirtiendo el peligro en una obra de arte. Cuerpo y alma para templar la embestida.
+      El atleta de luces rinde al extremo: necesita precisión, fuerza y templanza en cada milésima de segundo, expresando su arte en los pases con el compás y la elegancia que exige la tradición: convirtiendo el peligro en una obra de arte. Cuerpo y alma para templar la embestida, temporada tras temporada, sin margen para el error.
       <span class="fuerte">Su valor merece ciencia.</span>
     </blockquote>
   </div>
@@ -419,10 +420,9 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     <div class="retrato-text mk-reveal">
       <p class="label">Del podio al albero</p>
       <div class="marginalia"><h2 class="mtitle">Sobre <em>Mónica</em></h2></div>
-      <p class="lead">Soy Mónica Rosa y durante 20 años mi trabajo y mi pasión han consistido en aplicar la ciencia de la nutrición para maximizar el rendimiento de atletas de élite. He diseñado estrategias nutricionales para atletas que buscaban una medalla, un récord o batir a su rival por milésimas de segundo. Sé exactamente cómo el combustible adecuado transforma y optimiza el rendimiento en preparaciones y competiciones bajo alta presión.</p>
-      <p>El camino recorrido por mi profesión me llevó por varios países y por distintas disciplinas deportivas, hasta que el destino me trajo a España, donde conocí el mundo de los toros y me apasionó. Asistiendo a las plazas vi deportistas de élite cuyo nivel de exigencia iba más allá de cualquier cronómetro: alguien que no compite por una copa, sino que se entrega en una comunión perfecta de valor y estética frente a un animal de media tonelada.</p>
-      <p>Me di cuenta de que el torero es un atleta de rendimiento extremo que necesita precisión milimétrica, porque en el ruedo el mínimo error físico o mental no cuesta una medalla: se paga con la vida.</p>
-      <p>De estas dos pasiones nace Temple. Decidí fusionar toda mi experiencia en la nutrición científica de alto rendimiento con los códigos, el respeto a la tradición y las necesidades reales al servicio del atleta de luces. Abrazo la ciencia de la salud moderna sin perder el compás, con respeto a la tradición. Hoy traslado el rigor científico al deportista más exigente del mundo: el torero. Porque donde un atleta busca una medalla, un torero busca la perfección salvaguardando su vida.</p>
+      <p class="lead">Soy Mónica Rosa. Durante 20 años he aplicado la ciencia de la nutrición para maximizar el rendimiento de atletas de élite, diseñando estrategias para quienes buscaban una medalla, un récord o ganarle milésimas a su rival. Sé cómo el combustible adecuado optimiza el rendimiento en preparación y competición bajo alta presión.</p>
+      <p>Mi profesión me llevó por varios países y disciplinas deportivas, hasta que el destino me trajo a España, donde conocí el mundo de los toros. En las plazas encontré una exigencia distinta a la de cualquier cronómetro: no se compite por una copa, sino que se entrega valor y estética frente a un animal de media tonelada, donde el mínimo error físico o mental no cuesta una medalla, sino la integridad del atleta.</p>
+      <p>De ahí nace Temple: la fusión de mi experiencia en nutrición científica de alto rendimiento con el respeto a la tradición y las necesidades reales del atleta de luces. Hoy aplico ese mismo rigor al deportista más exigente que conozco, para quien el objetivo no es una medalla, sino la perfección que salvaguarda su vida.</p>
       <details class="formacion-toggle">
         <summary>Formación y trayectoria académica</summary>
         <ol>
@@ -453,11 +453,11 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
         <div class="rb-card"><img src="assets/trayectoria-baloncesto.jpg" alt="Mónica Rosa Terra con el cuerpo técnico de San Pablo Burgos Baloncesto"><span>San Pablo Burgos · Baloncesto</span></div>
         <div class="rb-card"><img src="assets/trayectoria-aecc.jpg" alt="Mónica Rosa Terra colaborando con la Asociación Española Contra el Cáncer en Salamanca"><span>Asociación Española Contra el Cáncer</span></div>
         <div class="rb-card"><img src="assets/trayectoria-danza.jpg" alt="Mónica Rosa Terra en la Escuela de Danza Amor de Dios, Madrid"><span>Escuela de Danza Amor de Dios · Madrid</span></div>
-        <div class="rb-card"><img src="assets/trayectoria-sanpablo-cantera.jpg" alt="Mónica Rosa Terra con la cantera del San Pablo Burgos Baloncesto"><span>San Pablo Burgos · Cantera</span></div>
-        <div class="rb-card"><img src="assets/trayectoria-sanpablo-training.jpg" alt="Mónica Rosa Terra en el training camp del San Pablo Burgos, Almuñécar 2023"><span>San Pablo Burgos · Training Camp 2023</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-sanpablo-cantera.jpg" alt="Mónica Rosa Terra con el equipo profesional del San Pablo Burgos Baloncesto"><span>San Pablo Burgos · Equipo profesional</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-sanpablo-training.jpg" alt="Mónica Rosa Terra en el training camp de Curro Segura, Almuñécar 2023"><span>Curro Segura Training Camp 2023</span></div>
         <div class="rb-card"><img src="assets/trayectoria-tenismesa.jpg" alt="Mónica Rosa Terra con jugadores federados del Club Tenis de Mesa Almuñécar"><span>CTM Almuñécar · Tenis de Mesa</span></div>
         <div class="rb-card"><img src="assets/trayectoria-bomberos.jpg" alt="Mónica Rosa Terra dando una charla a los Bomberos de Almuñécar"><span>Charla · Bomberos de Almuñécar</span></div>
-        <div class="rb-card"><img src="assets/trayectoria-sanpablo-training2025.jpg" alt="Mónica Rosa Terra en el training camp del San Pablo Burgos, 2025"><span>San Pablo Burgos · Training Camp 2025</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-sanpablo-training2025.jpg" alt="Mónica Rosa Terra en el training camp de Curro Segura, 2025"><span>Curro Segura Training Camp 2025</span></div>
         <div class="rb-card"><img src="assets/trayectoria-colegio-ninas.jpg" alt="Mónica Rosa Terra dando una charla sobre deporte y alimentación para niñas en Almuñécar"><span>Charla · Deporte y alimentación para niñas</span></div>
       </div>
     </div>
@@ -470,12 +470,12 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     <div class="marginalia" style="justify-content:center;">
       <h2 class="mtitle">Método <em>Temple</em></h2>
     </div>
-    <p class="tercios-intro">Forjamos su mejor versión sin cambiar la esencia. Nuestro método Temple, basado en la ciencia de la salud, respeta profundamente la tradición, los tiempos, rituales y costumbres del campo bravo. En el coaching nutricional, templar es nutrirse con estrategia: darle al cuerpo exactamente lo que necesita para rendir en el ruedo, recuperarse rápidamente de la fatiga o una cornada, aguantar una feria de cuatro tardes seguidas o mantenerse alerta en el callejón tras toda una noche viajando.</p>
+    <p class="tercios-intro">Forjamos su mejor versión sin cambiar la esencia. El concepto de TEMPLE, respecto al coaching nutricional, combina ciencia y tradición: darle al cuerpo exactamente lo que necesita para rendir en el ruedo, recuperarse rápidamente de la fatiga o una cornada, aguantar una feria de cuatro tardes seguidas o mantenerse alerta en el callejón tras toda una noche viajando.</p>
     <p class="tercios-triada">Parar: suavizar · Templar: ralentizar · Mandar: dominar</p>
     <div class="tercios">
       <div class="tercio mk-reveal">
         <span class="num-ghost">01</span>
-        <div class="tercio-media"><img src="assets/torero-4-plaza-madrid.jpg" alt="Torero parando la embestida con el capote, cara a cara con el toro"><span class="tm-tag">La cita</span></div>
+        <div class="tercio-media"><img src="assets/torero-4-plaza-madrid.jpg" alt="Atleta parando la embestida con el capote, cara a cara con el toro"><span class="tm-tag">La cita</span></div>
         <div class="tercio-body">
           <span class="tercio-tag">El diagnóstico y la base</span>
           <h3>Parar</h3>
@@ -484,7 +484,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
       </div>
       <div class="tercio mk-reveal">
         <span class="num-ghost">02</span>
-        <div class="tercio-media"><img src="assets/hero-torero.jpg" alt="Torero con el compás templado, dominando el ritmo del pase"><span class="tm-tag">El temple del capote</span></div>
+        <div class="tercio-media"><img src="assets/hero-torero.jpg" alt="Atleta con el compás templado, dominando el ritmo del pase"><span class="tm-tag">El temple del capote</span></div>
         <div class="tercio-body">
           <span class="tercio-tag">La regulación de la energía</span>
           <h3>Templar</h3>
@@ -493,7 +493,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
       </div>
       <div class="tercio mk-reveal">
         <span class="num-ghost">03</span>
-        <div class="tercio-media"><img src="assets/tercio-mandar.jpg" alt="Torero dominando la embestida del toro con la muleta, en plena explosión de fuerza"><span class="tm-tag">El mando</span></div>
+        <div class="tercio-media"><img src="assets/tercio-mandar.jpg" alt="Atleta dominando la embestida del toro con la muleta, en plena explosión de fuerza"><span class="tm-tag">El mando</span></div>
         <div class="tercio-body">
           <span class="tercio-tag">El rendimiento absoluto</span>
           <h3>Mandar</h3>
@@ -536,7 +536,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 <section class="frases-section">
   <div class="mk-marquee">
     <div class="mk-marquee-track">
-      <span>El torero es un atleta de élite y su valor merece ciencia<span class="sep">·</span></span>
+      <span>El atleta de luces es de élite y su valor merece ciencia<span class="sep">·</span></span>
       <span>El arte se lleva en el alma, la fuerza en el cuerpo<span class="sep">·</span></span>
       <span>El arte del buen comer para el arte del buen torear<span class="sep">·</span></span>
       <span>La ciencia de hoy al servicio del arte de siempre<span class="sep">·</span></span>
@@ -554,9 +554,9 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     </div>
     <div class="mujeres-copy mk-reveal">
       <div class="marginalia"><h2 class="mtitle">Mujeres de <em>luces</em></h2></div>
-      <p>Atleta de luces incluye a hombres y mujeres. Las toreras se abren camino en un mundo históricamente cerrado para ellas, y quiero que sepan que aquí también cuentan conmigo.</p>
+      <p>Atleta de luces incluye a hombres y mujeres. Las atletas se abren camino en un mundo históricamente cerrado para ellas, y quiero que sepan que aquí también cuentan conmigo.</p>
       <p>La mujer lleva toreando desde el siglo XVII, aunque una prohibición del siglo XIX las apartó de los ruedos hasta 1974. Conchita Cintrón, "la Diosa Rubia", toreó más de 1.200 toros en 25 años de carrera como rejoneadora. Cristina Sánchez fue, en 1996, la primera mujer en tomar la alternativa como matadora de toros en España, confirmada en Las Ventas en 1998.</p>
-      <p>Los requerimientos nutricionales de una mujer no son los mismos que los de un hombre: el gasto energético, los ciclos hormonales y la recuperación se trabajan de forma distinta. En Temple, el plan de la torera se diseña también desde ahí.</p>
+      <p>Los requerimientos nutricionales de una mujer no son los mismos que los de un hombre: el gasto energético, los ciclos hormonales y la recuperación se trabajan de forma distinta. En Temple, el plan de la atleta se diseña también desde ahí.</p>
       <div class="mujeres-quote">
         <p>&ldquo;Jamás especulé con mi condición de mujer, soy un torero.&rdquo;</p>
         <span>Cristina Sánchez, matadora de toros</span>
@@ -570,7 +570,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     <div class="marginalia"><h2 class="mtitle">Para escuelas de <em>tauromaquia</em></h2></div>
     <div class="escuelas-intro mk-reveal">
       <p>Una colaboración para integrar la optimización nutricional en la preparación de los alumnos: fuerza explosiva, agilidad, reflejos bajo presión y recuperación, con el mismo rigor que cualquier deporte de élite.</p>
-      <p>Sabemos lo importante que es empezar cuanto antes a cuidar el físico. Trabajo de la mano con los preparadores físicos de cada escuela: no vengo a sustituir su trabajo, sino a sumar desde la nutrición para que el joven torero o novillero llegue en su mejor momento.</p>
+      <p>Sabemos lo importante que es empezar cuanto antes a cuidar el físico. Trabajo de la mano con los preparadores físicos de cada escuela: no vengo a sustituir su trabajo, sino a sumar desde la nutrición para que el joven atleta o novillero llegue en su mejor momento.</p>
     </div>
     <div class="programa-insert mk-reveal">
       <ul class="programa-list">
@@ -590,7 +590,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 <section class="servicios-section">
   <div class="wrap">
     <div class="marginalia"><h2 class="mtitle">Servicios y <em>honorarios</em></h2></div>
-    <p class="servicios-intro">Para toreros, novilleros y picadores: atención individual, por cuadrilla o para escuelas de tauromaquia, en consulta puntual o en un plan personalizado (PAC) mensual, semestral o anual. Cada programa se adapta al calendario de temporada y a las necesidades reales del atleta.</p>
+    <p class="servicios-intro">Para atletas, novilleros y picadores: atención individual, por cuadrilla o para escuelas de tauromaquia, en consulta puntual o en un plan personalizado (PAC) mensual, semestral o anual. Cada programa se adapta al calendario de temporada y a las necesidades reales del atleta.</p>
     <div class="servicios-grid">
       <div class="svc-tile mk-reveal">
         <div class="svc-photo" style="background-image:url('assets/svc-atleta.jpg');"><span class="svc-photo-label">Atleta profesional</span></div>
@@ -624,7 +624,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
       <div class="svc-tile mk-reveal">
         <div class="svc-photo" style="background-image:url('assets/svc-jovenes.jpg');"><span class="svc-photo-label">Jóvenes promesas</span></div>
         <div class="svc-info">
-          <div class="svc-row"><span class="li-name">Futuros toreros</span><span class="li-dots"></span><span class="li-price">Consulte</span></div>
+          <div class="svc-row"><span class="li-name">Futuros atletas</span><span class="li-dots"></span><span class="li-price">Consulte</span></div>
           <p class="ledger-desc">Acompañamiento nutricional para los niños y jóvenes que están empezando, dentro de las escuelas — la cantera de las figuras del mañana.</p>
         </div>
       </div>
