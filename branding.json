@@ -1,0 +1,81 @@
+{
+  "negocio": "TEMPLE · Mónica Rosa Terra",
+  "claim": "Nutrición con arte para atletas de luces",
+  "logo": "assets/logo.png",
+  "colores": {
+    "primario": "#c9a227",
+    "secundario": "#8b1e3f",
+    "fondo": "#0d1f1a",
+    "texto": "#f5efe0"
+  },
+  "tipografias": {
+    "titulos": "Playfair Display",
+    "texto": "Jost"
+  },
+  "contacto": {
+    "tel": "+34 610 06 59 35",
+    "whatsapp": "34610065935",
+    "email": "mrtcoachingnutricional@gmail.com",
+    "direccion": "Almuñécar, Granada, España",
+    "instagram": "https://instagram.com/mrt_nutricional",
+    "linkedin": "https://www.linkedin.com/in/monica-rosa-b84281161/"
+  },
+  "servicios": [
+    "Coaching nutricional individual para toreros y matadores",
+    "Estrategia nutricional para temporada de viajes, hoteles y catering",
+    "Protocolos de gestión del estrés gástrico previo al paseíllo",
+    "Optimización de la recuperación tras la faena y prevención de lesiones",
+    "Talleres y asesoramiento nutricional para escuelas de tauromaquia"
+  ],
+  "pruebas_sociales": [
+    "20 años de experiencia en nutrición y coaching deportivo (2005-2026)",
+    "Mutual Uruguaya de Futbolistas Profesionales, Montevideo",
+    "Clubes de fútbol profesional en Uruguay: Peñarol, Nacional, Racing, City Torque, Liverpool, Wanderers, Selección Uruguaya sub-20",
+    "Fundación CB Granada",
+    "Curro Segura Training Camp, Granada",
+    "Figares Gym, Granada",
+    "Club de Tenis de Mesa Almuñécar",
+    "Máster en Coaching Nutricional, Universidad de Granada",
+    "Título Universitario Coach Nutricional, Universidad Nebrija",
+    "Experto Universitario en Nutrición Deportiva, Universidad de La Rioja",
+    "Diplomada en Nutrigenómica y Nutrigenética"
+  ],
+  "carta": [],
+  "menu_del_dia": {},
+  "historia": "TEMPLE nace como un espacio de coaching nutricional concebido exclusivamente para profesionales taurinos. El toreo es arte, misterio y liturgia, pero debajo de la seda, el oro y el azabache habita un cuerpo que se expone al juicio del albero: el torero de hoy no es solo un artista, es un atleta de rendimiento extremo que necesita precisión, fuerza y templanza en cada milésima de segundo. Mónica Rosa Terra lleva 20 años trabajando la nutrición deportiva de alto rendimiento -desde el fútbol profesional uruguayo hasta las escuelas taurinas de Granada- y ahora pone ese conocimiento al servicio exclusivo del atleta de luces.",
+  "metodo": {
+    "nombre": "Parar, Templar y Mandar",
+    "pasos": [
+      { "titulo": "Parar", "texto": "El coach recibe la situación actual del atleta y frena la inercia negativa escuchándolo activamente." },
+      { "titulo": "Templar", "texto": "Suaviza la transición, reeducando y adecuando la alimentación a sus necesidades, gustos y estilo de vida, sin la ansiedad de los resultados inmediatos." },
+      { "titulo": "Mandar", "texto": "Una vez hay sincronía y el atleta confía en el proceso, el coach guía la estrategia hacia el máximo rendimiento físico." }
+    ]
+  },
+  "mision_claves": [
+    "Mejorar la adherencia y el rendimiento en las largas jornadas de faena y lidia",
+    "Gestión emocional y del estrés ante la presión competitiva",
+    "Autonomía y responsabilidad del torero sobre sus decisiones alimentarias",
+    "Prevención y bienestar a largo plazo: sueño, digestión y longevidad profesional"
+  ],
+  "punto_de_dolor": "Viajes de madrugada, nervios, hoteles y catering irregular minan los reflejos y la resistencia en el ruedo. Muchos profesionales cuidan su preparación física pero descuidan el combustible.",
+  "propuesta_escuelas": {
+    "titulo": "Para escuelas de tauromaquia",
+    "texto": "Una colaboración para integrar la optimización nutricional en la formación de los alumnos: fuerza explosiva, agilidad, reflejos bajo presión y capacidad de recuperación, con el mismo rigor que exige cualquier deporte de élite.",
+    "puntos": [
+      "Alto rendimiento físico y mental en salón, campo y plaza",
+      "Composición corporal ágil: máxima velocidad de reacción",
+      "Estrategias de hidratación y nutrición para la concentración",
+      "Recuperación rápida ante sobrecarga muscular y contusiones",
+      "Diferenciación real frente a otras escuelas"
+    ]
+  },
+  "frases": [
+    "El torero es un atleta de élite y su valor merece ciencia",
+    "El arte se lleva en el alma, la fuerza en el cuerpo",
+    "El arte del buen comer para el arte del buen torear",
+    "La ciencia de hoy al servicio del arte de siempre"
+  ],
+  "eventos": [],
+  "premios": [],
+  "resenas": []
+}

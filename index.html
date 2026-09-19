@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEMPLE — Nutrición con Arte para Atletas de Luces | Mónica Rosa Terra</title>
+<meta name="description" content="TEMPLE: coaching nutricional de alto rendimiento para toreros y escuelas de tauromaquia. Mónica Rosa Terra, 20 años de experiencia en nutrición deportiva de élite. Almuñécar, Granada.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="motion.css">
+<style>
+:root{
+  --dorado:#e6bd3a;
+  --dorado-mate:#a9862a;
+  --naranja:#f5920a;
+  --vino:#6f1631;
+  --fondo:#f6f1e4;
+  --tinta:#1c1710;
+  --verde:#123a2e;
+  --verde2:#0c2921;
+  --crema:#f5efe0;
+  --mk-primario:#e6bd3a;
+  --mk-secundario:#6f1631;
+  --mk-fondo:#f6f1e4;
+  --mk-texto:#1c1710;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{overflow-x:hidden;max-width:100vw;}
+body{background:var(--fondo);color:var(--tinta);font-family:'Jost',sans-serif;overflow-x:hidden;max-width:100vw;}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:800;line-height:1;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+section{position:relative;}
+.wrap{max-width:1220px;margin:0 auto;padding:0 clamp(1.2rem,5vw,3.4rem);}
+::selection{background:var(--dorado);color:var(--tinta);}
+
+/* --- marca de agua numérica reutilizable --- */
+.num-ghost{position:absolute;font-family:'Playfair Display',serif;font-weight:800;font-style:italic;color:var(--dorado);opacity:.1;line-height:.8;pointer-events:none;z-index:0;user-select:none;}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:9000;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:.9rem 1.3rem;
+  background:color-mix(in srgb, var(--verde2) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(230,189,58,.18);
+}
+.site-header{overflow:hidden;max-width:100vw;}
+.site-header .brand{display:flex;align-items:center;gap:.65rem;min-width:0;overflow:hidden;}
+.site-header .brand img{height:46px;width:46px;object-fit:contain;flex-shrink:0;}
+.site-header .brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0;overflow:hidden;}
+.site-header .brand-text b{font-family:'Playfair Display',serif;font-weight:800;letter-spacing:.16em;font-size:1.25rem;color:var(--naranja);white-space:nowrap;}
+.site-header .brand-text span{font-size:.5rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dorado);opacity:.85;white-space:nowrap;}
+@media (max-width:480px){
+  .site-header .brand img{height:38px;width:38px;}
+  .site-header .brand-text b{letter-spacing:.1em;font-size:1.02rem;}
+  .site-header .brand-text span{display:none;}
+}
+.site-header .mid{display:flex;align-items:center;gap:1.1rem;}
+.phone-link{display:flex;align-items:center;gap:.45rem;font-weight:500;font-size:.92rem;white-space:nowrap;color:var(--crema);opacity:.9;}
+.phone-link svg{width:15px;height:15px;flex-shrink:0;color:var(--dorado);}
+@media (max-width:640px){.site-header .phone-link{display:none;}}
+
+/* ---------- Hero: asimétrico, sangrado ---------- */
+.hero{min-height:100svh;display:flex;align-items:flex-end;background-size:cover;background-position:center;}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(10deg, rgba(6,14,11,.86) 4%, rgba(6,14,11,.24) 46%, rgba(6,14,11,.5) 100%);}
+.hero-inner{position:relative;z-index:2;color:var(--crema);padding:clamp(6rem,20vh,9rem) clamp(1.2rem,5vw,3.4rem) clamp(3rem,8vh,5rem);max-width:1220px;margin:0 auto;width:100%;}
+.hero-eyebrow{display:flex;align-items:center;gap:.9em;margin-bottom:.6em;}
+.hero-eyebrow .ln{width:38px;height:1px;background:var(--dorado);}
+.hero-eyebrow span{font-size:.78rem;letter-spacing:.36em;text-transform:uppercase;color:var(--dorado);}
+.hero h1{font-size:clamp(2.3rem,6.6vw,5rem);max-width:23ch;text-shadow:0 6px 40px rgba(0,0,0,.55);}
+.hero h1 em{font-style:italic;color:var(--dorado);font-weight:600;}
+.hero-claim{margin-top:1.1em;max-width:620px;font-size:clamp(.92rem,1.9vw,1.15rem);font-weight:500;color:var(--dorado);white-space:nowrap;line-height:1.6;}
+@media (max-width:640px){.hero-claim{white-space:normal;max-width:340px;}}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.1em;align-items:center;}
+.hero-scroll{position:absolute;right:clamp(1.2rem,5vw,3.4rem);bottom:2.4rem;z-index:2;color:var(--crema);opacity:.6;writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;display:flex;align-items:center;gap:.8em;}
+.hero-scroll::after{content:"";width:1px;height:52px;background:var(--dorado);transform-origin:top;animation:mkGrow 1.8s ease-in-out infinite alternate;}
+@keyframes mkGrow{from{transform:scaleY(.4);}to{transform:scaleY(1);}}
+@media (max-width:640px){.hero-scroll{display:none;}}
+
+/* ---------- CTA botones ---------- */
+.cta-big{display:inline-flex;align-items:center;gap:.6em;background:var(--dorado);color:#191305;padding:.85em 1.9em;font-weight:600;font-size:1rem;letter-spacing:.02em;white-space:nowrap;transition:transform .2s,background .2s;}
+.cta-big:hover{background:#f2ce5c;transform:translateY(-2px);}
+.cta-big.alt{background:transparent;border:1px solid var(--dorado);color:var(--dorado);}
+.cta-big.alt:hover{background:rgba(230,189,58,.1);}
+.cta-big svg{width:18px;height:18px;flex-shrink:0;}
+
+.label{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1rem,2.2vw,1.2rem);color:var(--vino);margin-bottom:.4em;}
+.on-dark .label{color:var(--dorado);}
+
+/* ---------- Marginalia: título de sección con numeral romano ---------- */
+.marginalia{display:flex;gap:1.6rem;align-items:baseline;margin-bottom:clamp(2.2rem,6vh,3.6rem);}
+.marginalia .roman{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.1rem);color:var(--dorado-mate);flex-shrink:0;}
+.marginalia .roman.on-dark{color:var(--dorado);}
+.marginalia .mtitle{font-size:clamp(2rem,5.4vw,3.4rem);}
+.marginalia .mtitle em{font-style:italic;color:var(--dorado-mate);}
+.on-dark .marginalia .mtitle em{color:var(--dorado);}
+
+/* ---------- Apertura: cita editorial asimétrica ---------- */
+.apertura{background:var(--verde);color:var(--crema);padding:clamp(5rem,15vh,9rem) 0;}
+.apertura .wrap{position:relative;}
+.apertura .mark{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(5rem,15vw,10rem);color:var(--dorado);opacity:.28;line-height:.6;position:absolute;top:-.3em;left:0;}
+.apertura blockquote{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1.1rem,2.3vw,1.55rem);line-height:1.45;max-width:38ch;padding-top:1.3em;}
+.apertura .fuerte{display:block;margin-top:.5em;color:var(--dorado);font-weight:800;font-style:normal;font-size:1.15em;}
+
+/* ---------- Sobre Mónica: composición solapada ---------- */
+.retrato-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);}
+.retrato-grid{display:grid;grid-template-columns:.62fr 1fr;gap:clamp(2rem,6vw,4.5rem);align-items:start;}
+@media (max-width:840px){.retrato-grid{grid-template-columns:1fr;}}
+.retrato-figure{position:relative;}
+.retrato-figure img{width:92%;aspect-ratio:1/1;object-fit:cover;filter:grayscale(.1) contrast(1.04);border-radius:50%;border:3px solid var(--dorado);box-shadow:0 20px 50px rgba(0,0,0,.25);}
+.retrato-tag{position:absolute;bottom:-1.6rem;left:-1.2rem;background:var(--vino);color:var(--crema);padding:1rem 1.4rem;max-width:76%;box-shadow:0 20px 40px rgba(0,0,0,.25);}
+.retrato-tag .rt-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.15rem;}
+.retrato-tag .rt-role{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-top:.3em;color:var(--dorado);}
+@media (max-width:640px){.retrato-tag{left:0;}}
+.retrato-stats{display:flex;gap:2.4rem;margin-top:3.2rem;padding-left:clamp(0rem,0vw,0rem);}
+.retrato-stats .rs-num{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(2.2rem,5vw,3rem);color:var(--vino);line-height:1;}
+.retrato-stats .rs-label{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;opacity:.62;margin-top:.4em;max-width:12ch;}
+.retrato-text p{font-size:clamp(1.05rem,2.2vw,1.25rem);line-height:1.75;font-weight:300;max-width:52ch;}
+.retrato-text p + p{margin-top:1.1em;}
+.retrato-text p.lead::first-letter{font-family:'Playfair Display',serif;font-weight:800;font-size:3.4em;float:left;line-height:.78;padding-right:.09em;color:var(--vino);}
+.formacion-toggle{margin-top:2rem;border-top:1px solid rgba(111,22,49,.22);padding-top:1.2rem;}
+.formacion-toggle summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:.6em;font-weight:600;color:var(--vino);font-size:.95rem;letter-spacing:.02em;}
+.formacion-toggle summary::-webkit-details-marker{display:none;}
+.formacion-toggle summary::before{content:"＋";font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dorado-mate);}
+.formacion-toggle[open] summary::before{content:"－";}
+.formacion-toggle ol{list-style:none;counter-reset:f;margin-top:1.1em;display:grid;gap:.65em;}
+.formacion-toggle li{padding-left:1.3em;position:relative;font-size:.94rem;font-weight:300;opacity:.8;line-height:1.55;}
+.formacion-toggle li::before{content:"—";position:absolute;left:0;color:var(--dorado-mate);}
+
+/* ---------- Trayectoria: banner de fotos en marquee ---------- */
+.retrato-banner{margin-top:clamp(3rem,7vh,4.5rem);}
+.retrato-banner .rb-label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin-bottom:1em;max-width:1220px;margin-left:auto;margin-right:auto;padding:0 clamp(1.2rem,5vw,3.4rem);}
+.retrato-banner .mk-marquee-track{animation-duration:34s;gap:1.1rem;padding-right:1.1rem;}
+.rb-card{position:relative;flex-shrink:0;width:clamp(150px,22vw,210px);aspect-ratio:4/5;border-radius:6px;overflow:hidden;box-shadow:0 10px 26px rgba(28,23,16,.16);}
+.rb-card img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.05);}
+.rb-card span{position:absolute;left:0;right:0;bottom:0;padding:.9em .8em .7em;background:linear-gradient(0deg, rgba(12,15,10,.88), transparent);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--crema);line-height:1.35;}
+
+/* ---------- El método: tercios en zigzag ---------- */
+.tercios-section{padding:clamp(5rem,13vh,8.5rem) 0 clamp(2rem,6vh,4rem);background:var(--verde);color:var(--crema);}
+.tercios-section .marginalia{max-width:900px;margin-left:auto;margin-right:auto;}
+.tercios-intro{max-width:60ch;margin:0 auto;text-align:center;font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;opacity:.82;line-height:1.75;}
+.tercios-triada{text-align:center;margin:1.2em auto clamp(3rem,8vh,5rem);font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(.92rem,2vw,1.1rem);color:var(--dorado);letter-spacing:.02em;}
+.tercio-tag{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dorado-mate);margin-bottom:.5em;}
+.tercios{max-width:760px;margin:0 auto;}
+.tercio{position:relative;padding:2.6rem 0;border-top:1px solid rgba(230,189,58,.18);}
+.tercio:first-child{border-top:none;}
+.tercio .num-ghost{font-size:clamp(6rem,16vw,10rem);top:-.4em;right:0;}
+.tercio-body{position:relative;z-index:1;max-width:60ch;}
+.tercio h3{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--dorado);}
+.tercio p{margin-top:.6em;font-size:1.02rem;font-weight:300;line-height:1.7;opacity:.85;}
+@media (max-width:640px){.tercio .num-ghost{left:0;right:auto;}}
+
+/* ---------- Misión: lista de claves como notas al margen ---------- */
+.claves-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);}
+.claves-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,4rem);}
+@media (max-width:840px){.claves-grid{grid-template-columns:1fr;}}
+.claves-intro p{font-size:clamp(1rem,2vw,1.12rem);font-weight:300;line-height:1.75;opacity:.78;max-width:38ch;}
+.claves-list{list-style:none;}
+.claves-list li{display:flex;gap:1.4rem;padding:1.5rem 0;border-bottom:1px solid rgba(28,23,16,.1);}
+.claves-list li:first-child{padding-top:0;}
+.claves-list .cl-num{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:1.5rem;color:var(--dorado-mate);flex-shrink:0;width:1.4em;}
+.claves-list .cl-text{font-size:clamp(1rem,2vw,1.1rem);line-height:1.6;}
+
+/* ---------- Ruptura: cita con retrato de Belmonte de fondo, como marca de agua ---------- */
+.ruptura{min-height:32vh;padding:3rem 0;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--verde2);}
+.ruptura-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% 42%;opacity:.28;filter:grayscale(1) contrast(1.08);mask-image:linear-gradient(100deg, transparent 0%, #000 40%, #000 100%);-webkit-mask-image:linear-gradient(100deg, transparent 0%, #000 40%, #000 100%);}
+.ruptura::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg, rgba(6,14,11,.8) 28%, rgba(6,14,11,.25) 78%);}
+.ruptura-inner{position:relative;z-index:2;max-width:640px;padding:1.5rem clamp(1.2rem,5vw,3.4rem);}
+.ruptura-inner p{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1.3rem,3.4vw,2rem);line-height:1.5;color:var(--crema);text-shadow:0 3px 20px rgba(0,0,0,.55);}
+.ruptura-credit{margin-top:1em;font-family:'Jost',sans-serif;font-style:normal;font-weight:400;font-size:.75rem!important;letter-spacing:.14em;text-transform:uppercase;opacity:.6;text-shadow:none!important;}
+
+/* ---------- Frases marquee ---------- */
+.frases-section{padding:2.4rem 0;background:var(--vino);border-top:1px solid rgba(230,189,58,.3);border-bottom:1px solid rgba(230,189,58,.3);}
+.frases-section .mk-marquee-track span{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.05rem,2.8vw,1.5rem);color:var(--crema);}
+.frases-section .mk-marquee-track .sep{color:var(--dorado);margin:0 1.6rem;font-style:normal;}
+.frases-section .mk-marquee-track small{display:inline-block;margin-left:.6em;font-size:.6em;font-style:normal;letter-spacing:.06em;text-transform:uppercase;opacity:.65;}
+
+/* ---------- Trayectoria: sangre completa con panel ---------- */
+.trayectoria-section{min-height:78vh;display:flex;align-items:flex-end;background-size:cover;background-position:center 38%;}
+.trayectoria-section::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(6,14,11,.9) 12%, rgba(6,14,11,.15) 62%);}
+.trayectoria-panel{position:relative;z-index:2;color:var(--crema);padding:clamp(3rem,8vh,5rem) 0 clamp(2.4rem,6vh,3.6rem);width:100%;}
+.trayectoria-panel h2{font-size:clamp(2rem,5.6vw,3.4rem);max-width:16ch;}
+.trayectoria-panel .mtitle em{color:var(--dorado);}
+.trayectoria-panel p{margin-top:.8em;max-width:52ch;font-size:clamp(1rem,2vw,1.1rem);font-weight:300;opacity:.85;line-height:1.7;}
+.sellos-linea{margin-top:1.8em;font-size:clamp(.9rem,1.8vw,1.02rem);line-height:2.1;opacity:.9;max-width:100%;}
+.sellos-linea b{white-space:nowrap;}
+.sellos-linea b{color:var(--dorado);font-weight:600;}
+.sellos-linea .div{color:var(--dorado-mate);margin:0 .5em;}
+
+/* ---------- Mujeres de luces ---------- */
+.mujeres-section{padding:0;background:var(--fondo);}
+.mujeres-grid{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;}
+@media (max-width:840px){.mujeres-grid{grid-template-columns:1fr;min-height:0;}}
+.mujeres-figure{position:relative;overflow:hidden;min-height:52vh;}
+.mujeres-figure img{width:100%;height:100%;object-fit:cover;object-position:center 32%;position:absolute;inset:0;}
+.mujeres-credit{position:absolute;left:1rem;bottom:.8rem;z-index:1;font-size:.68rem;letter-spacing:.04em;color:var(--crema);opacity:.75;text-shadow:0 1px 6px rgba(0,0,0,.6);}
+.mujeres-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(3rem,8vh,5rem) clamp(1.2rem,5vw,3.6rem);}
+.mujeres-copy .marginalia{margin-bottom:1.4rem;}
+.mujeres-copy p{font-size:clamp(1rem,1.9vw,1.12rem);font-weight:300;line-height:1.75;max-width:46ch;opacity:.82;}
+.mujeres-copy p + p{margin-top:1em;}
+.mujeres-quote{margin-top:1.8rem;border-left:2px solid var(--vino);padding-left:1.3rem;}
+.mujeres-quote p{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1.1rem,2.2vw,1.3rem);color:var(--vino);opacity:1;line-height:1.5;}
+.mujeres-quote span{display:block;margin-top:.5em;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;opacity:.55;font-weight:400;}
+
+/* ---------- Escuelas: inserto de programa ---------- */
+.escuelas-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--verde);color:var(--crema);}
+.escuelas-wrap{max-width:900px;margin:0 auto;}
+.escuelas-section .marginalia{max-width:none;}
+.escuelas-intro{font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;line-height:1.75;opacity:.85;max-width:56ch;}
+.escuelas-intro p + p{margin-top:1em;}
+.programa-insert{margin-top:2.6rem;background:var(--crema);color:var(--tinta);padding:clamp(1.8rem,4vw,2.8rem) clamp(1.6rem,4vw,2.6rem);transform:rotate(-.6deg);box-shadow:0 30px 60px rgba(0,0,0,.3);position:relative;}
+.programa-insert::before{content:"Programa";position:absolute;top:-.8em;left:1.6rem;background:var(--dorado);color:var(--verde2);font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:.85rem;padding:.3em .9em;transform:rotate(-2deg);}
+.programa-list{list-style:none;margin-top:.6rem;}
+.programa-list li{padding:.85rem 0;border-bottom:1px dotted rgba(28,23,16,.28);font-size:1rem;font-weight:400;}
+.programa-list li:last-child{border-bottom:none;}
+.escuelas-cta{margin-top:2.4rem;}
+
+/* ---------- Servicios: rejilla fotográfica ---------- */
+.servicios-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);}
+.servicios-intro{max-width:56ch;font-size:clamp(1rem,2.1vw,1.15rem);font-weight:300;opacity:.78;line-height:1.7;margin-bottom:clamp(2.4rem,6vh,3.6rem);}
+.servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem;}
+.svc-tile{background:#fff;box-shadow:0 14px 34px rgba(28,23,16,.1);}
+.svc-photo{position:relative;aspect-ratio:4/3;overflow:hidden;background-size:cover;background-position:center;}
+.svc-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(6,14,11,.82) 18%, rgba(6,14,11,.05) 65%);}
+.svc-photo-label{position:absolute;left:1.1rem;right:1.1rem;bottom:.9rem;z-index:1;font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.15rem,2.6vw,1.4rem);color:var(--crema);text-shadow:0 2px 10px rgba(0,0,0,.4);line-height:1.15;}
+.svc-info{padding:1.2rem 1.3rem 1.4rem;}
+.svc-row{display:flex;align-items:baseline;gap:.6em;}
+.svc-row .li-name{font-size:.92rem;font-weight:500;opacity:.85;}
+.svc-row .li-dots{flex:1;border-bottom:2px dotted rgba(169,134,42,.5);height:0;transform:translateY(-.4em);min-width:.8rem;}
+.svc-row .li-price{font-family:'Playfair Display',serif;font-weight:800;color:var(--vino);font-size:clamp(1rem,2.2vw,1.15rem);white-space:nowrap;flex-shrink:0;}
+.svc-info .ledger-desc{margin-top:.6em;font-size:.86rem;font-weight:300;opacity:.68;line-height:1.55;}
+
+/* ---------- CTA final ---------- */
+.cierre-section{padding:clamp(6rem,16vh,9.5rem) 0;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 0%, var(--verde) 0%, var(--verde2) 70%);color:var(--crema);position:relative;overflow:hidden;}
+.cierre-lockup{max-width:640px;margin:0 auto;position:relative;z-index:1;}
+.cierre-lockup p{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.6rem,4.6vw,2.7rem);line-height:1.28;}
+.cierre-brand{display:flex;flex-direction:column;align-items:center;margin:.7em 0;}
+.cierre-word{font-family:'Playfair Display',serif;font-weight:800;letter-spacing:.18em;font-size:clamp(1.6rem,4.6vw,2.7rem);color:var(--naranja);}
+.cierre-buttons{position:relative;z-index:1;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.6em;}
+
+/* ---------- Footer: talón de entrada ---------- */
+footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--crema);}
+.ticket{max-width:760px;margin:0 auto;border:1px solid rgba(230,189,58,.3);position:relative;padding:clamp(2rem,5vw,3rem);}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:26px;height:26px;background:#07120e;border-radius:50%;transform:translateY(-50%);}
+.ticket::before{left:-13px;}
+.ticket::after{right:-13px;}
+.ticket-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1.4rem;flex-wrap:wrap;border-bottom:1px dashed rgba(230,189,58,.35);padding-bottom:1.6rem;margin-bottom:1.6rem;}
+.ticket-top h2{font-size:clamp(1.6rem,4.4vw,2.3rem);max-width:14ch;}
+.ticket-top p{margin-top:.7em;font-size:.96rem;font-weight:300;opacity:.78;line-height:1.65;max-width:38ch;}
+.ticket-cta{display:flex;flex-direction:column;gap:.7rem;align-items:flex-start;}
+@media (max-width:560px){.ticket-cta{align-items:stretch;}}
+.foot-contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;}
+.foot-contact a,.foot-contact .fc-item{display:flex;align-items:center;gap:.6em;font-size:.88rem;color:var(--crema);opacity:.85;min-width:0;overflow-wrap:anywhere;}
+.foot-contact svg{width:18px;height:18px;color:var(--dorado);flex-shrink:0;}
+.foot-bottom{margin-top:2.6rem;text-align:center;font-size:.76rem;opacity:.5;letter-spacing:.03em;}
+
+/* ---------- Formulario de contacto ---------- */
+.contact-form{display:flex;flex-direction:column;gap:.8rem;min-width:min(320px,100%);}
+.contact-form input,.contact-form textarea{width:100%;background:rgba(230,189,58,.06);border:1px solid rgba(230,189,58,.3);color:var(--crema);padding:.7em .9em;font-family:'Jost',sans-serif;font-size:.92rem;resize:vertical;}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--crema);opacity:.5;}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--dorado);}
+.contact-form button{align-self:flex-start;}
+.contact-note{font-size:.72rem;opacity:.55;margin-top:-.2em;}
+.contact-sent{display:none;font-size:.86rem;color:var(--dorado);margin-top:.3em;}
+.contact-sent.show{display:block;}
+.contact-alt{margin-top:1.1rem;padding-top:1rem;border-top:1px dashed rgba(230,189,58,.25);}
+.contact-alt p{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;opacity:.55;margin-bottom:.6em;}
+.contact-alt-links{display:flex;flex-wrap:wrap;gap:.9rem;}
+.contact-alt-links a{display:flex;align-items:center;gap:.45em;font-size:.86rem;color:var(--crema);opacity:.9;}
+.contact-alt-links svg{width:16px;height:16px;color:var(--dorado);flex-shrink:0;}
+
+/* ---------- Carrito: icono del header ---------- */
+.cart-btn{position:relative;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(230,189,58,.4);border-radius:50%;background:transparent;cursor:pointer;flex-shrink:0;transition:border-color .2s;}
+.cart-btn:hover{border-color:var(--dorado);}
+.cart-btn svg{width:17px;height:17px;color:var(--dorado);}
+.cart-badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--vino);color:var(--crema);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1;border:1.5px solid var(--verde2);}
+.cart-badge[data-empty="true"]{display:none;}
+
+/* ---------- Tienda ---------- */
+.tienda-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--verde);color:var(--crema);}
+.tienda-intro{font-size:clamp(1rem,2vw,1.12rem);font-weight:300;opacity:.8;max-width:56ch;line-height:1.7;}
+.tienda-grid{margin-top:clamp(2.5rem,6vh,3.5rem);display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.6rem;}
+.tienda-card{background:var(--crema);color:var(--tinta);display:flex;flex-direction:column;box-shadow:0 14px 34px rgba(0,0,0,.25);}
+.tienda-photo{position:relative;aspect-ratio:1/1;overflow:hidden;background:#fff;cursor:pointer;}
+.tienda-photo img{width:100%;height:100%;object-fit:contain;padding:1rem;transition:transform .35s;}
+.tienda-photo:hover img{transform:scale(1.05);}
+.tienda-spin-hint{position:absolute;left:.7rem;bottom:.7rem;background:rgba(18,58,46,.85);color:var(--crema);font-size:.66rem;letter-spacing:.04em;padding:.3em .6em;border-radius:2px;opacity:0;transition:opacity .2s;pointer-events:none;}
+.tienda-photo:hover .tienda-spin-hint{opacity:1;}
+.tienda-body{padding:1.1rem 1.2rem 1.3rem;display:flex;flex-direction:column;flex:1;}
+.tienda-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.08rem;line-height:1.3;}
+.tienda-desc{margin-top:.4em;font-size:.82rem;font-weight:300;opacity:.68;line-height:1.5;}
+.tienda-price{margin-top:.7em;font-family:'Playfair Display',serif;font-weight:800;color:var(--vino);font-size:1.3rem;}
+.tienda-price small{font-family:'Jost',sans-serif;font-weight:400;font-size:.62em;opacity:.6;letter-spacing:.04em;}
+.tienda-foot{margin-top:auto;padding-top:1rem;display:flex;align-items:center;gap:.7rem;}
+.qty-stepper{display:flex;align-items:center;border:1px solid rgba(28,23,16,.18);flex-shrink:0;}
+.qty-stepper button{width:28px;height:32px;background:none;border:none;font-size:1.05rem;color:var(--vino);cursor:pointer;line-height:1;}
+.qty-stepper button:hover{background:rgba(111,22,49,.08);}
+.qty-stepper span{width:24px;text-align:center;font-size:.9rem;font-weight:600;}
+.btn-add{flex:1;background:var(--vino);color:var(--crema);border:none;padding:.6rem .8rem;font-family:'Jost',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+.btn-add:hover{background:#8a1d3e;}
+.btn-add.is-added{background:var(--dorado-mate);}
+
+/* ---------- Carrito: panel lateral ---------- */
+.cart-overlay{position:fixed;inset:0;background:rgba(6,14,11,.6);z-index:9998;opacity:0;pointer-events:none;transition:opacity .25s;}
+.cart-overlay.is-open{opacity:1;pointer-events:auto;}
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,92vw);background:var(--fondo);color:var(--tinta);z-index:9999;box-shadow:-10px 0 40px rgba(0,0,0,.35);transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column;}
+.cart-drawer.is-open{transform:translateX(0);}
+.cart-head{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.4rem;border-bottom:1px solid rgba(28,23,16,.12);}
+.cart-head h3{font-family:'Playfair Display',serif;font-weight:800;font-size:1.2rem;}
+.cart-close{background:none;border:none;font-size:1.4rem;line-height:1;cursor:pointer;color:var(--tinta);opacity:.6;}
+.cart-close:hover{opacity:1;}
+.cart-items{flex:1;overflow-y:auto;padding:1rem 1.4rem;}
+.cart-empty{opacity:.55;font-size:.9rem;padding:2rem 0;text-align:center;}
+.cart-line{display:flex;gap:.8rem;padding:.9rem 0;border-bottom:1px solid rgba(28,23,16,.08);align-items:center;}
+.cart-line img{width:54px;height:54px;object-fit:contain;background:#fff;border:1px solid rgba(28,23,16,.08);flex-shrink:0;}
+.cart-line-info{flex:1;min-width:0;}
+.cart-line-name{font-size:.86rem;font-weight:600;}
+.cart-line-price{font-size:.78rem;opacity:.6;margin-top:.15em;}
+.cart-line-remove{background:none;border:none;font-size:.72rem;color:var(--vino);opacity:.7;cursor:pointer;text-decoration:underline;margin-top:.3em;padding:0;}
+.cart-foot{padding:1.2rem 1.4rem 1.5rem;border-top:1px solid rgba(28,23,16,.12);}
+.cart-subtotal{display:flex;justify-content:space-between;align-items:baseline;font-family:'Playfair Display',serif;font-weight:800;font-size:1.15rem;margin-bottom:.9rem;}
+.cart-checkout{display:block;width:100%;text-align:center;background:var(--vino);color:var(--crema);padding:.85rem;font-family:'Jost',sans-serif;font-weight:600;font-size:.86rem;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;}
+.cart-checkout:hover{background:#8a1d3e;}
+.cart-note{margin-top:.7em;font-size:.72rem;opacity:.55;text-align:center;line-height:1.5;}
+
+/* ---------- Modal de producto: visor 360 ---------- */
+.pm-overlay{position:fixed;inset:0;background:rgba(6,14,11,.72);z-index:9998;opacity:0;pointer-events:none;transition:opacity .25s;}
+.pm-overlay.is-open{opacity:1;pointer-events:auto;}
+.product-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.96);width:min(880px,94vw);max-height:90vh;background:var(--fondo);color:var(--tinta);z-index:9999;box-shadow:0 30px 70px rgba(0,0,0,.4);display:flex;opacity:0;pointer-events:none;transition:opacity .25s, transform .25s;overflow:hidden;}
+.product-modal.is-open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1);}
+@media (max-width:720px){.product-modal{flex-direction:column;max-height:94vh;overflow-y:auto;}}
+.pm-close{position:absolute;top:.8rem;right:.9rem;z-index:2;background:rgba(255,255,255,.85);border:none;width:32px;height:32px;border-radius:50%;font-size:1.3rem;line-height:1;cursor:pointer;color:var(--tinta);}
+.pm-gallery{position:relative;flex:1 1 52%;background:#fff;display:flex;align-items:center;justify-content:center;min-height:320px;user-select:none;}
+.pm-gallery img{width:100%;height:100%;object-fit:contain;padding:2rem;pointer-events:none;}
+.pm-gallery.is-dragging{cursor:grabbing;}
+.pm-gallery:not(.is-dragging){cursor:grab;}
+.pm-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:none;background:rgba(28,23,16,.55);color:#fff;font-size:1.2rem;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;}
+.pm-arrow:hover{background:rgba(28,23,16,.8);}
+.pm-prev{left:.8rem;} .pm-next{right:.8rem;}
+.pm-dots{position:absolute;bottom:.9rem;left:0;right:0;display:flex;justify-content:center;gap:.4rem;z-index:2;}
+.pm-dots button{width:8px;height:8px;border-radius:50%;border:none;background:rgba(28,23,16,.25);padding:0;cursor:pointer;}
+.pm-dots button.is-active{background:var(--vino);}
+.pm-spin-badge{position:absolute;top:.8rem;left:.9rem;z-index:2;background:rgba(18,58,46,.85);color:var(--crema);font-size:.68rem;letter-spacing:.03em;padding:.35em .7em;border-radius:2px;}
+.pm-info{flex:1 1 48%;padding:1.8rem 2rem;display:flex;flex-direction:column;overflow-y:auto;}
+.pm-info h3{font-family:'Playfair Display',serif;font-weight:800;font-size:1.5rem;}
+.pm-info .pm-desc{margin-top:.5em;font-size:.92rem;font-weight:300;opacity:.72;line-height:1.6;}
+.pm-info .pm-price{margin-top:1rem;font-family:'Playfair Display',serif;font-weight:800;color:var(--vino);font-size:1.5rem;}
+.pm-sizes{margin-top:1.3rem;}
+.pm-sizes p{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-bottom:.5em;}
+.pm-size-opts{display:flex;gap:.6rem;}
+.pm-size-opts button{width:42px;height:42px;border:1px solid rgba(28,23,16,.25);background:none;font-family:'Jost',sans-serif;font-weight:600;cursor:pointer;color:var(--tinta);}
+.pm-size-opts button:hover{border-color:var(--vino);}
+.pm-size-opts button.is-selected{background:var(--vino);border-color:var(--vino);color:var(--crema);}
+.pm-size-warn{margin-top:.5em;font-size:.75rem;color:var(--vino);opacity:0;height:0;overflow:hidden;transition:opacity .2s;}
+.pm-size-warn.show{opacity:1;height:auto;}
+.pm-info .tienda-foot{margin-top:1.5rem;padding-top:0;}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="#top">
+    <img src="assets/logo.png" alt="TEMPLE">
+    <span class="brand-text"><b>TEMPLE</b><span>Nutrición con arte para atletas de luces</span></span>
+  </a>
+  <div class="mid">
+    <a class="phone-link" href="#contacto">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      Contacto
+    </a>
+    <button class="cart-btn" id="cartOpenBtn" aria-label="Ver carrito">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span class="cart-badge" id="cartBadge" data-empty="true">0</span>
+    </button>
+  </div>
+</header>
+
+<section id="top" class="hero" style="background-image:url('assets/hero-torero.jpg');">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="ln"></span><span>Temple · Mónica Rosa Terra</span></div>
+    <h1 class="mk-split">Nutrición con arte para atletas de luces</h1>
+    <p class="hero-claim">Coaching nutricional de alto rendimiento, exclusivo para profesionales taurinos.</p>
+    <div class="hero-cta">
+      <a class="cta-big alt" href="#metodo">Conozca el método</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Desliza</div>
+</section>
+
+<section class="apertura">
+  <div class="wrap">
+    <p class="mark">&ldquo;</p>
+    <blockquote>
+      El torero es un atleta de rendimiento extremo que necesita precisión, fuerza y templanza en cada milésima de segundo, expresando su arte en los pases con el compás y la elegancia que exige la tradición: convirtiendo el peligro en una obra de arte. Cuerpo y alma para templar la embestida.
+      <span class="fuerte">Su valor merece ciencia.</span>
+    </blockquote>
+  </div>
+</section>
+
+<section class="retrato-section">
+  <div class="wrap retrato-grid">
+    <div class="mk-reveal">
+      <div class="retrato-figure">
+        <img src="assets/monica-foto.jpg" alt="Mónica Rosa Terra">
+        <div class="retrato-tag">
+          <p class="rt-name">Mónica Rosa Terra</p>
+          <p class="rt-role">Coach Nutricional de Alto Rendimiento</p>
+        </div>
+      </div>
+      <div class="retrato-stats">
+        <div><span class="rs-num mk-counter" data-value="20" data-suffix="">0</span><p class="rs-label">Años en nutrición deportiva</p></div>
+        <div><span class="rs-num mk-counter" data-value="3" data-suffix="">0</span><p class="rs-label">Países: España, Uruguay, Brasil</p></div>
+      </div>
+    </div>
+    <div class="retrato-text mk-reveal">
+      <p class="label">Del podio al albero</p>
+      <div class="marginalia"><h2 class="mtitle">Sobre <em>Mónica</em></h2></div>
+      <p class="lead">Soy Mónica Rosa y durante 20 años mi trabajo y mi pasión han consistido en aplicar la ciencia de la nutrición para maximizar el rendimiento de atletas de élite. He diseñado estrategias nutricionales para atletas que buscaban una medalla, un récord o batir a su rival por milésimas de segundo. Sé exactamente cómo el combustible adecuado transforma y optimiza el rendimiento en preparaciones y competiciones bajo alta presión.</p>
+      <p>El camino recorrido por mi profesión me llevó por varios países y por distintas disciplinas deportivas, hasta que el destino me trajo a España, donde conocí el mundo de los toros y me apasionó. Asistiendo a las plazas vi deportistas de élite cuyo nivel de exigencia iba más allá de cualquier cronómetro: alguien que no compite por una copa, sino que se entrega en una comunión perfecta de valor y estética frente a un animal de media tonelada.</p>
+      <p>Me di cuenta de que el torero es un atleta de rendimiento extremo que necesita precisión milimétrica, porque en el ruedo el mínimo error físico o mental no cuesta una medalla: se paga con la vida.</p>
+      <p>De estas dos pasiones nace Temple. Decidí fusionar toda mi experiencia en la nutrición científica de alto rendimiento con los códigos, el respeto a la tradición y las necesidades reales al servicio del atleta de luces. Abrazo la ciencia de la salud moderna sin perder el compás, con respeto a la tradición. Hoy traslado el rigor científico al deportista más exigente del mundo: el torero. Porque donde un atleta busca una medalla, un torero busca la perfección salvaguardando su vida.</p>
+      <details class="formacion-toggle">
+        <summary>Formación y trayectoria académica</summary>
+        <ol>
+          <li>Máster en Coaching Nutricional — Universidad de Granada</li>
+          <li>Título Universitario Coach Nutricional — Universidad Nebrija</li>
+          <li>Experto Universitario en Nutrición Deportiva — Universidad de La Rioja</li>
+          <li>Diplomada en Nutrigenómica y Nutrigenética</li>
+        </ol>
+      </details>
+    </div>
+  </div>
+  <div class="retrato-banner mk-reveal">
+    <p class="rb-label">Su trayectoria con clubes y federaciones</p>
+    <div class="mk-marquee">
+      <div class="mk-marquee-track">
+        <div class="rb-card"><img src="assets/trayectoria-penarol.jpg" alt="Mónica Rosa Terra en el Club Atlético Peñarol"><span>Club Atlético Peñarol</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-nacional.jpg" alt="Mónica Rosa Terra con el plantel de Club Nacional de Football"><span>Club Nacional de Football</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-racing.jpg" alt="Mónica Rosa Terra con el cuerpo técnico de Racing Club"><span>Cuerpo técnico · Racing Club</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-liverpool.jpg" alt="Mónica Rosa Terra con el plantel de Liverpool Fútbol Club"><span>Liverpool Fútbol Club</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-wanderers.jpg" alt="Mónica Rosa Terra con las campeonas de Wanderers Femenino"><span>Campeonas · Wanderers Femenino</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-hockey.jpg" alt="Mónica Rosa Terra con la Selección Masculina de Hockey"><span>Selección Masculina de Hockey</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-boxeo.jpg" alt="Mónica Rosa Terra en la Fundación Quebracho, Escuela de Boxeo"><span>Fundación Quebracho · Escuela de Boxeo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trayectoria-section" style="background-image:url('assets/ganaderia-1-toros-campo.jpg');">
+  <div class="wrap trayectoria-panel mk-reveal">
+    <div class="marginalia"><h2 class="mtitle on-dark">Antes de <em>Temple</em></h2></div>
+    <p>Fútbol profesional de primera división, boxeo, baile deportivo, tiro olímpico y, hoy, las escuelas y clubes taurinos de Granada.</p>
+    <p class="sellos-linea">
+      <b>Mutual Uruguaya de Futbolistas Profesionales</b><span class="div">·</span><b>Peñarol</b><span class="div">·</span><b>Nacional</b><span class="div">·</span><b>Racing</b><span class="div">·</span><b>Liverpool</b><span class="div">·</span><b>Wanderers</b><span class="div">·</span><b>Selección Uruguaya Sub-20</b><br>
+      Fundación CB Granada<span class="div">·</span>Curro Segura Training Camp<span class="div">·</span>Figares Gym<span class="div">·</span>Club de Tenis de Mesa Almuñécar
+    </p>
+  </div>
+</section>
+
+<section id="metodo" class="tercios-section on-dark">
+  <div class="wrap">
+    <div class="marginalia" style="justify-content:center;">
+      <h2 class="mtitle">Método <em>Temple</em></h2>
+    </div>
+    <p class="tercios-intro">Forjamos su mejor versión sin cambiar la esencia. Nuestro método Temple, basado en la ciencia de la salud, respeta profundamente la tradición, los tiempos, rituales y costumbres del campo bravo. En el coaching nutricional, templar es nutrirse con estrategia: darle al cuerpo exactamente lo que necesita para rendir en el ruedo, recuperarse rápidamente de la fatiga o una cornada, aguantar una feria de cuatro tardes seguidas o mantenerse alerta en el callejón tras toda una noche viajando.</p>
+    <p class="tercios-triada">Parar: suavizar · Templar: ralentizar · Mandar: dominar</p>
+    <div class="tercios">
+      <div class="tercio mk-reveal">
+        <span class="num-ghost">01</span>
+        <div class="tercio-body">
+          <span class="tercio-tag">El diagnóstico y la base</span>
+          <h3>Parar</h3>
+          <p>Paramos y limpiamos. Frenamos con los hábitos antiguos para ver la situación actual de salud, energía, hábitos y carga física, y analizar los objetivos. Estudiamos a fondo el punto de partida para diseñar después la estrategia nutricional: parar el desgaste.</p>
+        </div>
+      </div>
+      <div class="tercio mk-reveal">
+        <span class="num-ghost">02</span>
+        <div class="tercio-body">
+          <span class="tercio-tag">La regulación de la energía</span>
+          <h3>Templar</h3>
+          <p>Templamos y optimizamos. Reequilibramos la fisiología mediante el cambio de hábitos, organizando la alimentación y ayudando también a templar el sistema nervioso, regulando y estabilizando las hormonas.</p>
+        </div>
+      </div>
+      <div class="tercio mk-reveal">
+        <span class="num-ghost">03</span>
+        <div class="tercio-body">
+          <span class="tercio-tag">El rendimiento absoluto</span>
+          <h3>Mandar</h3>
+          <p>Mandamos en la temporada. Control del rendimiento: cuando el cuerpo está limpio, fuerte y perfectamente nutrido, los músculos responden con velocidad explosiva.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="claves-section">
+  <div class="wrap claves-grid">
+    <div class="claves-intro mk-reveal">
+      <div class="marginalia"><h2 class="mtitle">La <em>misión</em></h2></div>
+      <p>Facilitar el cambio combinando el conocimiento técnico de la nutrición con habilidades psicológicas, para optimizar el rendimiento y la salud de un perfil que exige una alta demanda física y emocional. Acompañamos al atleta en la adopción de hábitos alimentarios conscientes y sostenibles frente a la exigencia extrema de la lidia, con un objetivo final: que el matador gestione de forma autónoma su alimentación y su mente, con la precisión, los reflejos y la templanza que exige el toro.</p>
+    </div>
+    <div class="claves-objetivos mk-reveal">
+      <p class="label">Objetivos</p>
+      <ul class="claves-list">
+        <li><span class="cl-num">01</span><span class="cl-text">Recomposición corporal</span></li>
+        <li><span class="cl-num">02</span><span class="cl-text">Flexibilidad metabólica</span></li>
+        <li><span class="cl-num">03</span><span class="cl-text">Prevención de la RED-S: disponibilidad energética óptima para evitar problemas hormonales y lesiones óseo-articulares o musculares</span></li>
+        <li><span class="cl-num">04</span><span class="cl-text">Acelerar la recuperación física</span></li>
+        <li><span class="cl-num">05</span><span class="cl-text">Planificación de la longevidad deportiva</span></li>
+        <li><span class="cl-num">06</span><span class="cl-text">Gobernar el "estómago cerrado"</span></li>
+        <li><span class="cl-num">07</span><span class="cl-text">Adaptar la nutrición a la itinerancia</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="ruptura">
+  <img class="ruptura-photo" src="assets/belmonte-ruptura.jpg" alt="">
+  <div class="ruptura-inner mk-reveal">
+    <p>&ldquo;El toreo es arte, misterio y liturgia.&rdquo;</p>
+    <p class="ruptura-credit">Juan Belmonte, 1926</p>
+  </div>
+</section>
+
+<section class="frases-section">
+  <div class="mk-marquee">
+    <div class="mk-marquee-track">
+      <span>El torero es un atleta de élite y su valor merece ciencia<span class="sep">·</span></span>
+      <span>El arte se lleva en el alma, la fuerza en el cuerpo<span class="sep">·</span></span>
+      <span>El arte del buen comer para el arte del buen torear<span class="sep">·</span></span>
+      <span>La ciencia de hoy al servicio del arte de siempre<span class="sep">·</span></span>
+      <span>El que sabe parar, domina<small>— Juan Belmonte</small><span class="sep">·</span></span>
+      <span>Se torea como se es<small>— Juan Belmonte</small><span class="sep">·</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="mujeres-section">
+  <div class="mujeres-grid">
+    <div class="mujeres-figure mk-reveal">
+      <img src="assets/mujeres-torera.jpg" alt="Rejoneadora en plena faena a caballo">
+      <span class="mujeres-credit">Léa Vicens · Foto: Pablo Cobos (CC BY-SA 4.0)</span>
+    </div>
+    <div class="mujeres-copy mk-reveal">
+      <div class="marginalia"><h2 class="mtitle">Mujeres de <em>luces</em></h2></div>
+      <p>Atleta de luces incluye a hombres y mujeres. Las toreras se abren camino en un mundo históricamente cerrado para ellas, y quiero que sepan que aquí también cuentan conmigo.</p>
+      <p>La mujer lleva toreando desde el siglo XVII, aunque una prohibición del siglo XIX las apartó de los ruedos hasta 1974. Conchita Cintrón, "la Diosa Rubia", toreó más de 1.200 toros en 25 años de carrera como rejoneadora. Cristina Sánchez fue, en 1996, la primera mujer en tomar la alternativa como matadora de toros en España, confirmada en Las Ventas en 1998.</p>
+      <p>Los requerimientos nutricionales de una mujer no son los mismos que los de un hombre: el gasto energético, los ciclos hormonales y la recuperación se trabajan de forma distinta. En Temple, el plan de la torera se diseña también desde ahí.</p>
+      <div class="mujeres-quote">
+        <p>&ldquo;Jamás especulé con mi condición de mujer, soy un torero.&rdquo;</p>
+        <span>Cristina Sánchez, matadora de toros</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="escuelas-section">
+  <div class="wrap escuelas-wrap">
+    <div class="marginalia"><h2 class="mtitle">Para escuelas de <em>tauromaquia</em></h2></div>
+    <div class="escuelas-intro mk-reveal">
+      <p>Una colaboración para integrar la optimización nutricional en la preparación de los alumnos: fuerza explosiva, agilidad, reflejos bajo presión y recuperación, con el mismo rigor que cualquier deporte de élite.</p>
+      <p>Sabemos lo importante que es empezar cuanto antes a cuidar el físico. Trabajo de la mano con los preparadores físicos de cada escuela: no vengo a sustituir su trabajo, sino a sumar desde la nutrición para que el joven torero o novillero llegue en su mejor momento.</p>
+    </div>
+    <div class="programa-insert mk-reveal">
+      <ul class="programa-list">
+        <li>Energía y resistencia para las largas jornadas de salón, campo y plaza</li>
+        <li>Composición corporal ágil: más velocidad de reacción</li>
+        <li>Hidratación y nutrición para la concentración y la toma de decisiones bajo presión</li>
+        <li>Recuperación rápida ante sobrecarga muscular y contusiones</li>
+        <li>Diferenciación real frente a otras escuelas</li>
+      </ul>
+    </div>
+    <div class="escuelas-cta mk-reveal">
+      <a class="cta-big alt" href="mailto:mrtcoachingnutricional@gmail.com">Solicitar propuesta para tu escuela</a>
+    </div>
+  </div>
+</section>
+
+<section class="servicios-section">
+  <div class="wrap">
+    <div class="marginalia"><h2 class="mtitle">Servicios y <em>honorarios</em></h2></div>
+    <p class="servicios-intro">Para toreros, novilleros y picadores: atención individual, por cuadrilla o para escuelas de tauromaquia, en consulta puntual o en un plan personalizado (PAC) mensual, semestral o anual. Cada programa se adapta al calendario de temporada y a las necesidades reales del atleta.</p>
+    <div class="servicios-grid">
+      <div class="svc-tile mk-reveal">
+        <div class="svc-photo" style="background-image:url('assets/svc-atleta.jpg');"><span class="svc-photo-label">Atleta profesional</span></div>
+        <div class="svc-info">
+          <div class="svc-row"><span class="li-name">Primera consulta</span><span class="li-dots"></span><span class="li-price">55 €</span></div>
+          <div class="svc-row" style="margin-top:.3rem;"><span class="li-name">Seguimiento</span><span class="li-dots"></span><span class="li-price">30 €</span></div>
+          <p class="ledger-desc">Plan nutricional personalizado, adaptado a su calendario de temporada, viajes y competición.</p>
+        </div>
+      </div>
+      <div class="svc-tile mk-reveal">
+        <div class="svc-photo" style="background-image:url('assets/svc-pac.jpg');"><span class="svc-photo-label">Plan personalizado (PAC)</span></div>
+        <div class="svc-info">
+          <div class="svc-row"><span class="li-name">Mensual · Semestral · Anual</span><span class="li-dots"></span><span class="li-price">Consulte</span></div>
+          <p class="ledger-desc">Seguimiento continuo durante toda la temporada, individual o en grupo.</p>
+        </div>
+      </div>
+      <div class="svc-tile mk-reveal">
+        <div class="svc-photo" style="background-image:url('assets/svc-cuadrillas.jpg');"><span class="svc-photo-label">Cuadrillas</span></div>
+        <div class="svc-info">
+          <div class="svc-row"><span class="li-name">Atención por equipo</span><span class="li-dots"></span><span class="li-price">A medida</span></div>
+          <p class="ledger-desc">Igual que en el deporte de alto rendimiento se trabaja por equipos, aquí atendemos a la cuadrilla completa.</p>
+        </div>
+      </div>
+      <div class="svc-tile mk-reveal">
+        <div class="svc-photo" style="background-image:url('assets/svc-escuelas.jpg');"><span class="svc-photo-label">Escuelas de tauromaquia</span></div>
+        <div class="svc-info">
+          <div class="svc-row"><span class="li-name">Talleres y charlas</span><span class="li-dots"></span><span class="li-price">A medida</span></div>
+          <p class="ledger-desc">Charlas y talleres de nutrición deportiva para la escuela, con seguimiento a los alumnos.</p>
+        </div>
+      </div>
+      <div class="svc-tile mk-reveal">
+        <div class="svc-photo" style="background-image:url('assets/svc-jovenes.jpg');"><span class="svc-photo-label">Jóvenes promesas</span></div>
+        <div class="svc-info">
+          <div class="svc-row"><span class="li-name">Futuros toreros</span><span class="li-dots"></span><span class="li-price">Consulte</span></div>
+          <p class="ledger-desc">Acompañamiento nutricional para los niños y jóvenes que están empezando, dentro de las escuelas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tienda-section" id="tienda">
+  <div class="wrap">
+    <div class="marginalia"><h2 class="mtitle on-dark">Tienda <em>Temple</em></h2></div>
+    <p class="tienda-intro">Prendas y detalles con el sello de la marca, para el día a día o para acompañar al atleta a la plaza. Envío a coordinar según destino.</p>
+    <div class="tienda-grid">
+      <div class="tienda-card mk-reveal" data-id="polo-blanco" data-name="Polo técnico blanco" data-price="27.90"
+           data-desc="Piqué transpirable, logo bordado en el pecho."
+           data-images="assets/tienda-polo-blanco.jpg,assets/tienda-polo-blanco-2.jpg" data-sizes="S,M,L">
+        <div class="tienda-photo"><img src="assets/tienda-polo-blanco.jpg" alt="Polo técnico blanco TEMPLE" loading="lazy"><span class="tienda-spin-hint">⟳ Ver en 360°</span></div>
+        <div class="tienda-body">
+          <p class="tienda-name">Polo técnico blanco</p>
+          <p class="tienda-desc">Piqué transpirable, logo bordado en el pecho.</p>
+          <p class="tienda-price">27,90 € <small>IVA incl.</small></p>
+          <div class="tienda-foot"><button type="button" class="btn-add btn-view">Elegir talla y ver</button></div>
+        </div>
+      </div>
+      <div class="tienda-card mk-reveal" data-id="polo-vino" data-name="Polo técnico vino" data-price="27.90"
+           data-desc="Piqué transpirable, logo bordado en el pecho."
+           data-images="assets/tienda-polo-vino.jpg,assets/tienda-polo-vino-2.jpg" data-sizes="S,M,L">
+        <div class="tienda-photo"><img src="assets/tienda-polo-vino.jpg" alt="Polo técnico vino TEMPLE" loading="lazy"><span class="tienda-spin-hint">⟳ Ver en 360°</span></div>
+        <div class="tienda-body">
+          <p class="tienda-name">Polo técnico vino</p>
+          <p class="tienda-desc">Piqué transpirable, logo bordado en el pecho.</p>
+          <p class="tienda-price">27,90 € <small>IVA incl.</small></p>
+          <div class="tienda-foot"><button type="button" class="btn-add btn-view">Elegir talla y ver</button></div>
+        </div>
+      </div>
+      <div class="tienda-card mk-reveal" data-id="gorra" data-name="Gorra bordada" data-price="16.90"
+           data-desc="Algodón, ajuste regulable, monograma dorado."
+           data-images="assets/tienda-gorra.jpg,assets/tienda-gorra-2.jpg" data-sizes="">
+        <div class="tienda-photo"><img src="assets/tienda-gorra.jpg" alt="Gorra bordada TEMPLE" loading="lazy"><span class="tienda-spin-hint">⟳ Ver en 360°</span></div>
+        <div class="tienda-body">
+          <p class="tienda-name">Gorra bordada</p>
+          <p class="tienda-desc">Algodón, ajuste regulable, monograma dorado.</p>
+          <p class="tienda-price">16,90 € <small>IVA incl.</small></p>
+          <div class="tienda-foot">
+            <div class="qty-stepper"><button type="button" class="qty-minus" aria-label="Restar">−</button><span class="qty-val">1</span><button type="button" class="qty-plus" aria-label="Sumar">+</button></div>
+            <button type="button" class="btn-add">Añadir</button>
+          </div>
+        </div>
+      </div>
+      <div class="tienda-card mk-reveal" data-id="pegatina" data-name="Pegatina Temple" data-price="3.50"
+           data-desc="Vinilo resistente al agua, 8 cm."
+           data-images="assets/tienda-sticker.png,assets/tienda-sticker-2.jpg" data-sizes="">
+        <div class="tienda-photo"><img src="assets/tienda-sticker.png" alt="Pegatina TEMPLE" loading="lazy"><span class="tienda-spin-hint">⟳ Ver en 360°</span></div>
+        <div class="tienda-body">
+          <p class="tienda-name">Pegatina Temple</p>
+          <p class="tienda-desc">Vinilo resistente al agua, 8 cm.</p>
+          <p class="tienda-price">3,50 € <small>IVA incl.</small></p>
+          <div class="tienda-foot">
+            <div class="qty-stepper"><button type="button" class="qty-minus" aria-label="Restar">−</button><span class="qty-val">1</span><button type="button" class="qty-plus" aria-label="Sumar">+</button></div>
+            <button type="button" class="btn-add">Añadir</button>
+          </div>
+        </div>
+      </div>
+      <div class="tienda-card mk-reveal" data-id="taza" data-name="Taza Temple" data-price="12.90"
+           data-desc="Cerámica blanca, 325 ml, apta lavavajillas."
+           data-images="assets/tienda-taza.jpg,assets/tienda-taza-2.jpg,assets/tienda-taza-3.jpg" data-sizes="">
+        <div class="tienda-photo"><img src="assets/tienda-taza.jpg" alt="Taza TEMPLE" loading="lazy"><span class="tienda-spin-hint">⟳ Ver en 360°</span></div>
+        <div class="tienda-body">
+          <p class="tienda-name">Taza Temple</p>
+          <p class="tienda-desc">Cerámica blanca, 325 ml, apta lavavajillas.</p>
+          <p class="tienda-price">12,90 € <small>IVA incl.</small></p>
+          <div class="tienda-foot">
+            <div class="qty-stepper"><button type="button" class="qty-minus" aria-label="Restar">−</button><span class="qty-val">1</span><button type="button" class="qty-plus" aria-label="Sumar">+</button></div>
+            <button type="button" class="btn-add">Añadir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cierre-section">
+  <div class="wrap mk-reveal">
+    <div class="cierre-lockup">
+      <p>Si busca alcanzar su mejor versión y llegar a la plaza en su justo compás, las puertas de</p>
+      <div class="cierre-brand">
+        <span class="cierre-word">TEMPLE</span>
+      </div>
+      <p>están abiertas para usted.</p>
+    </div>
+    <div class="cierre-buttons">
+      <a class="cta-big alt" href="mailto:mrtcoachingnutricional@gmail.com">Escribir un email</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div class="ticket">
+      <div class="ticket-top">
+        <div>
+          <h2>Hablemos de su temporada</h2>
+          <p>Cuánto le queda, cómo van los viajes, qué le preocupa de su preparación. Cuénteme y diseño la estrategia nutricional que necesita. Le respondo yo misma, el mismo día.</p>
+        </div>
+        <div class="ticket-cta">
+          <form class="contact-form" id="contactForm">
+            <input type="text" name="nombre" placeholder="Su nombre" required>
+            <input type="email" name="email" placeholder="Su email" required>
+            <textarea name="mensaje" rows="3" placeholder="Cuénteme brevemente su situación" required></textarea>
+            <p class="contact-note">Le respondo yo misma por correo, normalmente el mismo día.</p>
+            <button type="submit" class="cta-big mk-pulse">Enviar mensaje</button>
+            <p class="contact-sent" id="contactSent">Se ha abierto su gestor de correo con el mensaje listo — solo tiene que pulsar enviar.</p>
+          </form>
+        </div>
+      </div>
+      <div class="foot-contact">
+        <a href="mailto:mrtcoachingnutricional@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          mrtcoachingnutricional@gmail.com
+        </a>
+        <div class="fc-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Granada, España
+        </div>
+        <div class="fc-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          9:00–14:00 y 16:00–21:00
+        </div>
+        <a href="https://www.instagram.com/templecoachingnutricional/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61594261478376&locale=es_ES" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.linkedin.com/in/monica-rosa-b84281161/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A5.98 5.98 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="contact-alt">
+        <p>¿Prefiere escribir directamente?</p>
+        <div class="contact-alt-links">
+          <a href="mailto:mrtcoachingnutricional@gmail.com">Correo electrónico</a>
+          <a href="https://www.instagram.com/templecoachingnutricional/" target="_blank" rel="noopener">Mensaje privado en Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61594261478376&locale=es_ES" target="_blank" rel="noopener">Mensaje privado en Facebook</a>
+        </div>
+      </div>
+    </div>
+    <p class="foot-bottom">TEMPLE · Mónica Rosa Terra — Coaching Nutricional de Alto Rendimiento para Atletas de Luces</p>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compra">
+  <div class="cart-head">
+    <h3>Tu carrito</h3>
+    <button class="cart-close" id="cartCloseBtn" aria-label="Cerrar carrito">&times;</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Tu carrito está vacío.</p>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">0,00 €</span></div>
+    <a class="cart-checkout" id="cartCheckout" href="#">Finalizar por correo</a>
+    <p class="cart-note">Al finalizar se abre su correo con el pedido ya escrito — confirmamos stock, envío y forma de pago por ahí.</p>
+  </div>
+</aside>
+
+<div class="pm-overlay" id="pmOverlay"></div>
+<div class="product-modal" id="productModal" role="dialog" aria-label="Detalle del producto">
+  <button class="pm-close" id="pmClose" aria-label="Cerrar">&times;</button>
+  <div class="pm-gallery" id="pmGallery">
+    <span class="pm-spin-badge" id="pmSpinBadge">⟳ Arrastra para girar</span>
+    <img id="pmImage" src="" alt="">
+    <button type="button" class="pm-arrow pm-prev" id="pmPrev" aria-label="Anterior">‹</button>
+    <button type="button" class="pm-arrow pm-next" id="pmNext" aria-label="Siguiente">›</button>
+    <div class="pm-dots" id="pmDots"></div>
+  </div>
+  <div class="pm-info">
+    <h3 id="pmName"></h3>
+    <p class="pm-desc" id="pmDesc"></p>
+    <p class="pm-price" id="pmPrice"></p>
+    <div class="pm-sizes" id="pmSizesWrap">
+      <p>Talla</p>
+      <div class="pm-size-opts" id="pmSizeOpts"></div>
+      <p class="pm-size-warn" id="pmSizeWarn">Elige una talla para añadir al carrito.</p>
+    </div>
+    <div class="tienda-foot">
+      <div class="qty-stepper" id="pmQtyStepper"><button type="button" class="qty-minus" aria-label="Restar">−</button><span class="qty-val">1</span><button type="button" class="qty-plus" aria-label="Sumar">+</button></div>
+      <button type="button" class="btn-add" id="pmAddBtn">Añadir</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var CART_KEY = "temple_cart_v1";
+  var cart = [];
+  try { cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch(e){ cart = []; }
+
+  var euro = function(n){ return n.toLocaleString('es-ES', {minimumFractionDigits:2, maximumFractionDigits:2}) + " €"; };
+  var save = function(){ try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch(e){} };
+
+  function render(){
+    var itemsEl = document.getElementById('cartItems');
+    var badge = document.getElementById('cartBadge');
+    var subtotalEl = document.getElementById('cartSubtotal');
+    var checkoutEl = document.getElementById('cartCheckout');
+
+    var totalQty = cart.reduce(function(s,i){ return s + i.qty; }, 0);
+    badge.textContent = totalQty;
+    badge.setAttribute('data-empty', totalQty === 0 ? 'true' : 'false');
+
+    if (cart.length === 0){
+      itemsEl.innerHTML = '<p class="cart-empty">Tu carrito está vacío.</p>';
+    } else {
+      itemsEl.innerHTML = cart.map(function(item, idx){
+        return '<div class="cart-line">' +
+          '<img src="' + item.img + '" alt="">' +
+          '<div class="cart-line-info">' +
+            '<div class="cart-line-name">' + item.name + '</div>' +
+            '<div class="cart-line-price">' + item.qty + ' × ' + euro(item.price) + '</div>' +
+            '<button type="button" class="cart-line-remove" data-idx="' + idx + '">Quitar</button>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    var subtotal = cart.reduce(function(s,i){ return s + i.qty * i.price; }, 0);
+    subtotalEl.textContent = euro(subtotal);
+
+    var msgLines = cart.map(function(i){ return "• " + i.qty + " × " + i.name + " — " + euro(i.qty*i.price); });
+    var body = "Hola Mónica, quiero hacer este pedido de la tienda Temple:\n" + msgLines.join("\n") + "\nSubtotal: " + euro(subtotal);
+    checkoutEl.href = "mailto:mrtcoachingnutricional@gmail.com?subject=" + encodeURIComponent("Pedido tienda Temple") + "&body=" + encodeURIComponent(body);
+
+    itemsEl.querySelectorAll('.cart-line-remove').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        cart.splice(parseInt(btn.getAttribute('data-idx'), 10), 1);
+        save(); render();
+      });
+    });
+
+    save();
+  }
+
+  function addToCart(id, name, price, img, qty){
+    var existing = cart.find(function(i){ return i.id === id; });
+    if (existing){ existing.qty += qty; } else { cart.push({id:id, name:name, price:price, img:img, qty:qty}); }
+    render();
+  }
+
+  document.querySelectorAll('.tienda-card').forEach(function(card){
+    var qtyStepper = card.querySelector(':scope > .tienda-body .qty-stepper, .tienda-foot .qty-stepper');
+    var qtyEl = card.querySelector('.qty-val');
+    var minus = card.querySelector('.qty-minus');
+    var plus = card.querySelector('.qty-plus');
+    if (minus) minus.addEventListener('click', function(){
+      var v = parseInt(qtyEl.textContent, 10);
+      if (v > 1) qtyEl.textContent = v - 1;
+    });
+    if (plus) plus.addEventListener('click', function(){
+      qtyEl.textContent = parseInt(qtyEl.textContent, 10) + 1;
+    });
+    var addBtn = card.querySelector('.btn-add');
+    if (addBtn && !addBtn.classList.contains('btn-view')){
+      addBtn.addEventListener('click', function(){
+        var qty = parseInt(qtyEl.textContent, 10);
+        var img = card.getAttribute('data-images').split(',')[0];
+        addToCart(card.getAttribute('data-id'), card.getAttribute('data-name'), parseFloat(card.getAttribute('data-price')), img, qty);
+        qtyEl.textContent = "1";
+        addBtn.textContent = "Añadido ✓";
+        addBtn.classList.add('is-added');
+        setTimeout(function(){ addBtn.textContent = "Añadir"; addBtn.classList.remove('is-added'); }, 1200);
+        openCart();
+      });
+    }
+    card.querySelector('.tienda-photo').addEventListener('click', function(){ openProductModal(card); });
+    if (addBtn && addBtn.classList.contains('btn-view')){
+      addBtn.addEventListener('click', function(){ openProductModal(card); });
+    }
+  });
+
+  function openCart(){ document.getElementById('cartDrawer').classList.add('is-open'); document.getElementById('cartOverlay').classList.add('is-open'); }
+  function closeCart(){ document.getElementById('cartDrawer').classList.remove('is-open'); document.getElementById('cartOverlay').classList.remove('is-open'); }
+  document.getElementById('cartOpenBtn').addEventListener('click', openCart);
+  document.getElementById('cartCloseBtn').addEventListener('click', closeCart);
+  document.getElementById('cartOverlay').addEventListener('click', closeCart);
+
+  /* ---------- Modal de producto: galería que gira al arrastrar ---------- */
+  var pm = {
+    images: [], idx: 0, selectedSize: null,
+    id: '', name: '', price: 0, sizes: []
+  };
+  var pmImage = document.getElementById('pmImage');
+  var pmDots = document.getElementById('pmDots');
+  var pmGallery = document.getElementById('pmGallery');
+  var pmSizeOpts = document.getElementById('pmSizeOpts');
+  var pmSizesWrap = document.getElementById('pmSizesWrap');
+  var pmSizeWarn = document.getElementById('pmSizeWarn');
+  var pmQtyEl = document.querySelector('#pmQtyStepper .qty-val');
+
+  function pmSetImage(i){
+    pm.idx = ((i % pm.images.length) + pm.images.length) % pm.images.length;
+    pmImage.src = pm.images[pm.idx];
+    pmDots.querySelectorAll('button').forEach(function(b, bi){ b.classList.toggle('is-active', bi === pm.idx); });
+  }
+
+  function openProductModal(card){
+    pm.images = card.getAttribute('data-images').split(',');
+    pm.id = card.getAttribute('data-id');
+    pm.name = card.getAttribute('data-name');
+    pm.price = parseFloat(card.getAttribute('data-price'));
+    pm.sizes = (card.getAttribute('data-sizes') || '').split(',').filter(Boolean);
+    pm.selectedSize = null;
+    pm.idx = 0;
+
+    document.getElementById('pmName').textContent = pm.name;
+    document.getElementById('pmDesc').textContent = card.getAttribute('data-desc') || '';
+    document.getElementById('pmPrice').textContent = euro(pm.price);
+    pmQtyEl.textContent = '1';
+    document.getElementById('pmSpinBadge').style.display = pm.images.length > 1 ? 'block' : 'none';
+    document.getElementById('pmPrev').style.display = pm.images.length > 1 ? 'flex' : 'none';
+    document.getElementById('pmNext').style.display = pm.images.length > 1 ? 'flex' : 'none';
+
+    pmDots.innerHTML = pm.images.map(function(_, i){ return '<button type="button" data-i="' + i + '"></button>'; }).join('');
+    pmDots.querySelectorAll('button').forEach(function(b){ b.addEventListener('click', function(){ pmSetImage(parseInt(b.getAttribute('data-i'),10)); }); });
+    pmSetImage(0);
+
+    if (pm.sizes.length){
+      pmSizesWrap.style.display = 'block';
+      pmSizeOpts.innerHTML = pm.sizes.map(function(s){ return '<button type="button" data-size="' + s + '">' + s + '</button>'; }).join('');
+      pmSizeOpts.querySelectorAll('button').forEach(function(b){
+        b.addEventListener('click', function(){
+          pm.selectedSize = b.getAttribute('data-size');
+          pmSizeOpts.querySelectorAll('button').forEach(function(x){ x.classList.toggle('is-selected', x === b); });
+          pmSizeWarn.classList.remove('show');
+        });
+      });
+      pmSizeWarn.classList.remove('show');
+    } else {
+      pmSizesWrap.style.display = 'none';
+    }
+
+    document.getElementById('productModal').classList.add('is-open');
+    document.getElementById('pmOverlay').classList.add('is-open');
+  }
+
+  function closeProductModal(){
+    document.getElementById('productModal').classList.remove('is-open');
+    document.getElementById('pmOverlay').classList.remove('is-open');
+  }
+
+  document.getElementById('pmClose').addEventListener('click', closeProductModal);
+  document.getElementById('pmOverlay').addEventListener('click', closeProductModal);
+  document.getElementById('pmPrev').addEventListener('click', function(){ pmSetImage(pm.idx - 1); });
+  document.getElementById('pmNext').addEventListener('click', function(){ pmSetImage(pm.idx + 1); });
+  document.querySelector('#pmQtyStepper .qty-minus').addEventListener('click', function(){
+    var v = parseInt(pmQtyEl.textContent,10); if (v>1) pmQtyEl.textContent = v-1;
+  });
+  document.querySelector('#pmQtyStepper .qty-plus').addEventListener('click', function(){
+    pmQtyEl.textContent = parseInt(pmQtyEl.textContent,10) + 1;
+  });
+
+  document.getElementById('pmAddBtn').addEventListener('click', function(){
+    if (pm.sizes.length && !pm.selectedSize){
+      pmSizeWarn.classList.add('show');
+      return;
+    }
+    var qty = parseInt(pmQtyEl.textContent, 10);
+    var lineId = pm.selectedSize ? pm.id + '-' + pm.selectedSize : pm.id;
+    var lineName = pm.selectedSize ? pm.name + ' (talla ' + pm.selectedSize + ')' : pm.name;
+    addToCart(lineId, lineName, pm.price, pm.images[0], qty);
+    var btn = document.getElementById('pmAddBtn');
+    btn.textContent = 'Añadido ✓'; btn.classList.add('is-added');
+    setTimeout(function(){ btn.textContent = 'Añadir'; btn.classList.remove('is-added'); }, 1200);
+    closeProductModal();
+    openCart();
+  });
+
+  /* arrastrar la imagen para "girar" entre las fotos disponibles */
+  (function(){
+    var dragging = false, startX = 0, accum = 0, STEP = 55;
+    var start = function(x){ dragging = true; startX = x; accum = 0; pmGallery.classList.add('is-dragging'); };
+    var move = function(x){
+      if (!dragging || pm.images.length < 2) return;
+      var dx = x - startX;
+      accum += dx; startX = x;
+      if (Math.abs(accum) >= STEP){
+        pmSetImage(pm.idx + (accum > 0 ? -1 : 1));
+        accum = 0;
+      }
+    };
+    var end = function(){ dragging = false; pmGallery.classList.remove('is-dragging'); };
+    pmGallery.addEventListener('mousedown', function(e){ start(e.clientX); });
+    window.addEventListener('mousemove', function(e){ move(e.clientX); });
+    window.addEventListener('mouseup', end);
+    pmGallery.addEventListener('touchstart', function(e){ start(e.touches[0].clientX); }, {passive:true});
+    pmGallery.addEventListener('touchmove', function(e){ move(e.touches[0].clientX); }, {passive:true});
+    pmGallery.addEventListener('touchend', end);
+  })();
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){ closeProductModal(); closeCart(); }
+  });
+
+  /* ---------- Formulario de contacto: abre el correo con todo ya escrito ---------- */
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm){
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var nombre = contactForm.nombre.value.trim();
+      var email = contactForm.email.value.trim();
+      var mensaje = contactForm.mensaje.value.trim();
+      var body = "Nombre: " + nombre + "\nEmail: " + email + "\n\n" + mensaje;
+      var mailto = "mailto:mrtcoachingnutricional@gmail.com?subject=" + encodeURIComponent("Contacto desde la web — " + nombre) + "&body=" + encodeURIComponent(body);
+      window.location.href = mailto;
+      document.getElementById('contactSent').classList.add('show');
+    });
+  }
+
+  render();
+})();
+</script>
+<script src="motion.js"></script>
+</body>
+</html>
