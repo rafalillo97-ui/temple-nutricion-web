@@ -179,17 +179,6 @@ section{position:relative;}
 .frases-section .mk-marquee-track .sep{color:var(--dorado);margin:0 1.6rem;font-style:normal;}
 .frases-section .mk-marquee-track small{display:inline-block;margin-left:.6em;font-size:.6em;font-style:normal;letter-spacing:.06em;text-transform:uppercase;opacity:.65;}
 
-/* ---------- Trayectoria: sangre completa con panel ---------- */
-.trayectoria-section{min-height:78vh;display:flex;align-items:flex-end;background-size:cover;background-position:center 38%;}
-.trayectoria-section::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(6,14,11,.9) 12%, rgba(6,14,11,.15) 62%);}
-.trayectoria-panel{position:relative;z-index:2;color:var(--crema);padding:clamp(3rem,8vh,5rem) 0 clamp(2.4rem,6vh,3.6rem);width:100%;}
-.trayectoria-panel h2{font-size:clamp(2rem,5.6vw,3.4rem);max-width:16ch;}
-.trayectoria-panel .mtitle em{color:var(--dorado);}
-.trayectoria-panel p{margin-top:.8em;max-width:52ch;font-size:clamp(1rem,2vw,1.1rem);font-weight:300;opacity:.85;line-height:1.7;}
-.sellos-linea{margin-top:1.8em;font-size:clamp(.9rem,1.8vw,1.02rem);line-height:2.1;opacity:.9;max-width:100%;}
-.sellos-linea b{white-space:nowrap;}
-.sellos-linea b{color:var(--dorado);font-weight:600;}
-.sellos-linea .div{color:var(--dorado-mate);margin:0 .5em;}
 
 /* ---------- Mujeres de luces ---------- */
 .mujeres-section{padding:0;background:var(--fondo);}
@@ -350,13 +339,14 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 .pm-info .pm-desc{margin-top:.5em;font-size:.92rem;font-weight:300;opacity:.72;line-height:1.6;}
 .pm-info .pm-price{margin-top:1rem;font-family:'Playfair Display',serif;font-weight:800;color:var(--vino);font-size:1.5rem;}
 .pm-sizes{margin-top:1.3rem;}
-.pm-sizes p{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-bottom:.5em;}
-.pm-size-opts{display:flex;gap:.6rem;}
-.pm-size-opts button{width:42px;height:42px;border:1px solid rgba(28,23,16,.25);background:none;font-family:'Jost',sans-serif;font-weight:600;cursor:pointer;color:var(--tinta);}
-.pm-size-opts button:hover{border-color:var(--vino);}
-.pm-size-opts button.is-selected{background:var(--vino);border-color:var(--vino);color:var(--crema);}
-.pm-size-warn{margin-top:.5em;font-size:.75rem;color:var(--vino);opacity:0;height:0;overflow:hidden;transition:opacity .2s;}
+.pm-sizes p{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-bottom:.6em;}
+.pm-size-rows{display:flex;flex-direction:column;gap:.5rem;}
+.pm-size-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.35rem 0;border-bottom:1px solid rgba(28,23,16,.1);}
+.pm-size-row .pm-size-label{font-family:'Jost',sans-serif;font-weight:600;font-size:.95rem;width:28px;}
+.pm-size-warn{margin-top:.6em;font-size:.75rem;color:var(--vino);opacity:0;height:0;overflow:hidden;transition:opacity .2s;}
 .pm-size-warn.show{opacity:1;height:auto;}
+.pm-add-sizes{display:none;width:100%;margin-top:1.1rem;justify-content:center;}
+.pm-add-sizes.show{display:inline-flex;}
 .pm-info .tienda-foot{margin-top:1.5rem;padding-top:0;}
 </style>
 </head>
@@ -445,21 +435,25 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
         <div class="rb-card"><img src="assets/trayectoria-wanderers.jpg" alt="Mónica Rosa Terra con las campeonas de Wanderers Femenino"><span>Campeonas · Wanderers Femenino</span></div>
         <div class="rb-card"><img src="assets/trayectoria-hockey.jpg" alt="Mónica Rosa Terra con la Selección Masculina de Hockey"><span>Selección Masculina de Hockey</span></div>
         <div class="rb-card"><img src="assets/trayectoria-boxeo.jpg" alt="Mónica Rosa Terra en la Fundación Quebracho, Escuela de Boxeo"><span>Fundación Quebracho · Escuela de Boxeo</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-bostonriver.jpg" alt="Mónica Rosa Terra con el plantel de Boston River"><span>Boston River Fútbol Club</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-defensor.jpg" alt="Mónica Rosa Terra dando una charla técnica en Defensor Sporting"><span>Charla técnica · Defensor Sporting</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-rentistas.jpg" alt="Mónica Rosa Terra con el plantel de Club Rentistas"><span>Club Rentistas</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-torque.jpg" alt="Mónica Rosa Terra con el plantel de El Torque Fútbol Club"><span>El Torque Fútbol Club</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-mutual.jpg" alt="Mónica Rosa Terra con Diego Scotti, presidente de la Mutual Uruguaya de Futbolistas Profesionales"><span>Mutual Uruguaya de Futbolistas Profesionales</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-baloncesto.jpg" alt="Mónica Rosa Terra con el cuerpo técnico de San Pablo Burgos Baloncesto"><span>San Pablo Burgos · Baloncesto</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-aecc.jpg" alt="Mónica Rosa Terra colaborando con la Asociación Española Contra el Cáncer en Salamanca"><span>Asociación Española Contra el Cáncer</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-danza.jpg" alt="Mónica Rosa Terra en la Escuela de Danza Amor de Dios, Madrid"><span>Escuela de Danza Amor de Dios · Madrid</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-sanpablo-cantera.jpg" alt="Mónica Rosa Terra con la cantera del San Pablo Burgos Baloncesto"><span>San Pablo Burgos · Cantera</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-sanpablo-training.jpg" alt="Mónica Rosa Terra en el training camp del San Pablo Burgos, Almuñécar 2023"><span>San Pablo Burgos · Training Camp 2023</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-tenismesa.jpg" alt="Mónica Rosa Terra con jugadores federados del Club Tenis de Mesa Almuñécar"><span>CTM Almuñécar · Tenis de Mesa</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-bomberos.jpg" alt="Mónica Rosa Terra dando una charla a los Bomberos de Almuñécar"><span>Charla · Bomberos de Almuñécar</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-sanpablo-training2025.jpg" alt="Mónica Rosa Terra en el training camp del San Pablo Burgos, 2025"><span>San Pablo Burgos · Training Camp 2025</span></div>
+        <div class="rb-card"><img src="assets/trayectoria-colegio-ninas.jpg" alt="Mónica Rosa Terra dando una charla sobre deporte y alimentación para niñas en Almuñécar"><span>Charla · Deporte y alimentación para niñas</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="trayectoria-section" style="background-image:url('assets/ganaderia-1-toros-campo.jpg');">
-  <div class="wrap trayectoria-panel mk-reveal">
-    <div class="marginalia"><h2 class="mtitle on-dark">Antes de <em>Temple</em></h2></div>
-    <p>Fútbol profesional de primera división, boxeo, baile deportivo, tiro olímpico y, hoy, las escuelas y clubes taurinos de Granada.</p>
-    <p class="sellos-linea">
-      <b>Mutual Uruguaya de Futbolistas Profesionales</b><span class="div">·</span><b>Peñarol</b><span class="div">·</span><b>Nacional</b><span class="div">·</span><b>Racing</b><span class="div">·</span><b>Liverpool</b><span class="div">·</span><b>Wanderers</b><span class="div">·</span><b>Selección Uruguaya Sub-20</b><br>
-      Fundación CB Granada<span class="div">·</span>Curro Segura Training Camp<span class="div">·</span>Figares Gym<span class="div">·</span>Club de Tenis de Mesa Almuñécar
-    </p>
-  </div>
-</section>
 
 <section id="metodo" class="tercios-section on-dark">
   <div class="wrap">
@@ -501,7 +495,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   <div class="wrap claves-grid">
     <div class="claves-intro mk-reveal">
       <div class="marginalia"><h2 class="mtitle">La <em>misión</em></h2></div>
-      <p>Facilitar el cambio combinando el conocimiento técnico de la nutrición con habilidades psicológicas, para optimizar el rendimiento y la salud de un perfil que exige una alta demanda física y emocional. Acompañamos al atleta en la adopción de hábitos alimentarios conscientes y sostenibles frente a la exigencia extrema de la lidia, con un objetivo final: que el matador gestione de forma autónoma su alimentación y su mente, con la precisión, los reflejos y la templanza que exige el toro.</p>
+      <p>Facilitar el cambio combinando el conocimiento técnico de la nutrición con habilidades psicológicas, para optimizar el rendimiento y la salud de un perfil que exige una alta demanda física y emocional. Acompañamos al atleta en la adopción de hábitos alimentarios conscientes y sostenibles frente a la exigencia extrema de la lidia, con un objetivo final: que el atleta gestione de forma autónoma su alimentación y su mente, con la precisión, los reflejos y la templanza que exige el toro.</p>
     </div>
     <div class="claves-objetivos mk-reveal">
       <p class="label">Objetivos</p>
@@ -666,13 +660,27 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
           </div>
         </div>
       </div>
-      <div class="tienda-card mk-reveal" data-id="pegatina" data-name="Pegatina Temple" data-price="3.50"
-           data-desc="Vinilo resistente al agua, 8 cm."
-           data-images="assets/tienda-sticker.png,assets/tienda-sticker-2.jpg" data-sizes="">
-        <div class="tienda-photo"><img src="assets/tienda-sticker.png" alt="Pegatina TEMPLE" loading="lazy"><span class="tienda-spin-hint">⟳ Ver en 360°</span></div>
+      <div class="tienda-card mk-reveal" data-id="pegatina-temple" data-name="Pegatina Temple" data-price="3.50"
+           data-desc="Vinilo resistente al agua, 8 cm. Solo la palabra TEMPLE."
+           data-images="assets/tienda-pegatina-temple.jpg,assets/tienda-pegatina-temple-2.jpg" data-sizes="">
+        <div class="tienda-photo"><img src="assets/tienda-pegatina-temple.jpg" alt="Pegatina TEMPLE" loading="lazy"><span class="tienda-spin-hint">⟳ Ver en 360°</span></div>
         <div class="tienda-body">
           <p class="tienda-name">Pegatina Temple</p>
-          <p class="tienda-desc">Vinilo resistente al agua, 8 cm.</p>
+          <p class="tienda-desc">Vinilo resistente al agua, 8 cm. Solo la palabra TEMPLE.</p>
+          <p class="tienda-price">3,50 € <small>IVA incl.</small></p>
+          <div class="tienda-foot">
+            <div class="qty-stepper"><button type="button" class="qty-minus" aria-label="Restar">−</button><span class="qty-val">1</span><button type="button" class="qty-plus" aria-label="Sumar">+</button></div>
+            <button type="button" class="btn-add">Añadir</button>
+          </div>
+        </div>
+      </div>
+      <div class="tienda-card mk-reveal" data-id="pegatina-logo" data-name="Pegatina Logo Temple" data-price="3.50"
+           data-desc="Vinilo resistente al agua, 8 cm. Solo el escudo."
+           data-images="assets/tienda-pegatina-logo.jpg,assets/tienda-pegatina-logo-2.jpg" data-sizes="">
+        <div class="tienda-photo"><img src="assets/tienda-pegatina-logo.jpg" alt="Pegatina Logo TEMPLE" loading="lazy"><span class="tienda-spin-hint">⟳ Ver en 360°</span></div>
+        <div class="tienda-body">
+          <p class="tienda-name">Pegatina Logo Temple</p>
+          <p class="tienda-desc">Vinilo resistente al agua, 8 cm. Solo el escudo.</p>
           <p class="tienda-price">3,50 € <small>IVA incl.</small></p>
           <div class="tienda-foot">
             <div class="qty-stepper"><button type="button" class="qty-minus" aria-label="Restar">−</button><span class="qty-val">1</span><button type="button" class="qty-plus" aria-label="Sumar">+</button></div>
@@ -802,14 +810,15 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     <p class="pm-desc" id="pmDesc"></p>
     <p class="pm-price" id="pmPrice"></p>
     <div class="pm-sizes" id="pmSizesWrap">
-      <p>Talla</p>
-      <div class="pm-size-opts" id="pmSizeOpts"></div>
-      <p class="pm-size-warn" id="pmSizeWarn">Elige una talla para añadir al carrito.</p>
+      <p>Elige cantidad por talla</p>
+      <div class="pm-size-rows" id="pmSizeOpts"></div>
+      <p class="pm-size-warn" id="pmSizeWarn">Elige al menos una talla y cantidad para añadir al carrito.</p>
     </div>
-    <div class="tienda-foot">
+    <div class="tienda-foot" id="pmPlainQtyWrap">
       <div class="qty-stepper" id="pmQtyStepper"><button type="button" class="qty-minus" aria-label="Restar">−</button><span class="qty-val">1</span><button type="button" class="qty-plus" aria-label="Sumar">+</button></div>
       <button type="button" class="btn-add" id="pmAddBtn">Añadir</button>
     </div>
+    <button type="button" class="btn-add pm-add-sizes" id="pmAddSizesBtn">Añadir al carrito</button>
   </div>
 </div>
 
@@ -909,7 +918,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 
   /* ---------- Modal de producto: galería que gira al arrastrar ---------- */
   var pm = {
-    images: [], idx: 0, selectedSize: null,
+    images: [], idx: 0,
     id: '', name: '', price: 0, sizes: []
   };
   var pmImage = document.getElementById('pmImage');
@@ -919,6 +928,9 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   var pmSizesWrap = document.getElementById('pmSizesWrap');
   var pmSizeWarn = document.getElementById('pmSizeWarn');
   var pmQtyEl = document.querySelector('#pmQtyStepper .qty-val');
+  var pmPlainQtyWrap = document.getElementById('pmPlainQtyWrap');
+  var pmAddSizesBtn = document.getElementById('pmAddSizesBtn');
+  var pmSizeQty = {};
 
   function pmSetImage(i){
     pm.idx = ((i % pm.images.length) + pm.images.length) % pm.images.length;
@@ -932,7 +944,6 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     pm.name = card.getAttribute('data-name');
     pm.price = parseFloat(card.getAttribute('data-price'));
     pm.sizes = (card.getAttribute('data-sizes') || '').split(',').filter(Boolean);
-    pm.selectedSize = null;
     pm.idx = 0;
 
     document.getElementById('pmName').textContent = pm.name;
@@ -949,17 +960,34 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 
     if (pm.sizes.length){
       pmSizesWrap.style.display = 'block';
-      pmSizeOpts.innerHTML = pm.sizes.map(function(s){ return '<button type="button" data-size="' + s + '">' + s + '</button>'; }).join('');
-      pmSizeOpts.querySelectorAll('button').forEach(function(b){
-        b.addEventListener('click', function(){
-          pm.selectedSize = b.getAttribute('data-size');
-          pmSizeOpts.querySelectorAll('button').forEach(function(x){ x.classList.toggle('is-selected', x === b); });
+      pmPlainQtyWrap.style.display = 'none';
+      pmAddSizesBtn.classList.add('show');
+      pmSizeQty = {};
+      pm.sizes.forEach(function(s){ pmSizeQty[s] = 0; });
+      pmSizeOpts.innerHTML = pm.sizes.map(function(s){
+        return '<div class="pm-size-row" data-size="' + s + '">' +
+          '<span class="pm-size-label">' + s + '</span>' +
+          '<div class="qty-stepper"><button type="button" class="qty-minus" aria-label="Restar">−</button><span class="qty-val">0</span><button type="button" class="qty-plus" aria-label="Sumar">+</button></div>' +
+        '</div>';
+      }).join('');
+      pmSizeOpts.querySelectorAll('.pm-size-row').forEach(function(row){
+        var size = row.getAttribute('data-size');
+        var valEl = row.querySelector('.qty-val');
+        row.querySelector('.qty-minus').addEventListener('click', function(){
+          var v = parseInt(valEl.textContent, 10);
+          if (v > 0){ v -= 1; valEl.textContent = v; pmSizeQty[size] = v; }
+        });
+        row.querySelector('.qty-plus').addEventListener('click', function(){
+          var v = parseInt(valEl.textContent, 10) + 1;
+          valEl.textContent = v; pmSizeQty[size] = v;
           pmSizeWarn.classList.remove('show');
         });
       });
       pmSizeWarn.classList.remove('show');
     } else {
       pmSizesWrap.style.display = 'none';
+      pmPlainQtyWrap.style.display = 'flex';
+      pmAddSizesBtn.classList.remove('show');
     }
 
     document.getElementById('productModal').classList.add('is-open');
@@ -983,17 +1011,28 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   });
 
   document.getElementById('pmAddBtn').addEventListener('click', function(){
-    if (pm.sizes.length && !pm.selectedSize){
-      pmSizeWarn.classList.add('show');
-      return;
-    }
     var qty = parseInt(pmQtyEl.textContent, 10);
-    var lineId = pm.selectedSize ? pm.id + '-' + pm.selectedSize : pm.id;
-    var lineName = pm.selectedSize ? pm.name + ' (talla ' + pm.selectedSize + ')' : pm.name;
-    addToCart(lineId, lineName, pm.price, pm.images[0], qty);
+    addToCart(pm.id, pm.name, pm.price, pm.images[0], qty);
     var btn = document.getElementById('pmAddBtn');
     btn.textContent = 'Añadido ✓'; btn.classList.add('is-added');
     setTimeout(function(){ btn.textContent = 'Añadir'; btn.classList.remove('is-added'); }, 1200);
+    closeProductModal();
+    openCart();
+  });
+
+  pmAddSizesBtn.addEventListener('click', function(){
+    var sizesToAdd = pm.sizes.filter(function(s){ return pmSizeQty[s] > 0; });
+    if (!sizesToAdd.length){
+      pmSizeWarn.classList.add('show');
+      return;
+    }
+    sizesToAdd.forEach(function(s){
+      var lineId = pm.id + '-' + s;
+      var lineName = pm.name + ' (talla ' + s + ')';
+      addToCart(lineId, lineName, pm.price, pm.images[0], pmSizeQty[s]);
+    });
+    pmAddSizesBtn.textContent = 'Añadido ✓'; pmAddSizesBtn.classList.add('is-added');
+    setTimeout(function(){ pmAddSizesBtn.textContent = 'Añadir al carrito'; pmAddSizesBtn.classList.remove('is-added'); }, 1200);
     closeProductModal();
     openCart();
   });
