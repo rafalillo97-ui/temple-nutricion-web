@@ -120,7 +120,7 @@ section{position:relative;}
 .retrato-stats{display:flex;gap:2.4rem;margin-top:3.2rem;padding-left:clamp(0rem,0vw,0rem);}
 .retrato-stats .rs-num{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(2.2rem,5vw,3rem);color:var(--vino);line-height:1;}
 .retrato-stats .rs-label{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;opacity:.62;margin-top:.4em;max-width:12ch;}
-.retrato-text p{font-size:clamp(1.05rem,2.2vw,1.25rem);line-height:1.75;font-weight:300;max-width:52ch;}
+.retrato-text p{font-size:clamp(1.05rem,2.2vw,1.25rem);line-height:1.75;font-weight:300;max-width:52ch;text-align:justify;}
 .retrato-text p + p{margin-top:1.1em;}
 .retrato-text p.lead::first-letter{font-family:'Playfair Display',serif;font-weight:800;font-size:3.4em;float:left;line-height:.78;padding-right:.09em;color:var(--vino);}
 .formacion-toggle{margin-top:2rem;border-top:1px solid rgba(111,22,49,.22);padding-top:1.2rem;}
@@ -143,9 +143,9 @@ section{position:relative;}
 /* ---------- El método: tercios en zigzag ---------- */
 .tercios-section{padding:clamp(5rem,13vh,8.5rem) 0 clamp(2rem,6vh,4rem);background:var(--verde);color:var(--crema);}
 .tercios-section .marginalia{max-width:900px;margin-left:auto;margin-right:auto;}
-.tercios-intro{max-width:60ch;margin:0 auto;text-align:center;font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;opacity:.82;line-height:1.75;}
-.tercios-triada{text-align:center;margin:1.2em auto clamp(3rem,8vh,5rem);font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(.92rem,2vw,1.1rem);color:var(--dorado);letter-spacing:.02em;}
-.tercio-tag{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dorado-mate);margin-bottom:.5em;}
+.tercios-intro{max-width:68ch;margin:0 auto clamp(3rem,8vh,5rem);text-align:left;font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;opacity:.88;line-height:1.75;}
+.tercios-intro p + p{margin-top:1em;}
+.temple-word{font-family:'Playfair Display',serif;font-style:normal;font-weight:800;letter-spacing:.1em;color:var(--dorado);}
 .tercios{max-width:1080px;margin:0 auto;}
 .tercio{position:relative;padding:3.2rem 0;border-top:1px solid rgba(230,189,58,.18);display:grid;grid-template-columns:.85fr 1fr;gap:clamp(1.8rem,4vw,3.4rem);align-items:center;}
 .tercio:first-child{border-top:none;}
@@ -155,7 +155,6 @@ section{position:relative;}
 .tercio .num-ghost{font-size:clamp(5rem,12vw,7.5rem);top:-.5em;right:0;}
 .tercio-media{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 40px rgba(6,14,11,.4);}
 .tercio-media img{width:100%;height:100%;object-fit:cover;}
-.tercio-media .tm-tag{position:absolute;left:0;right:0;bottom:0;padding:1.1em 1.1em .9em;background:linear-gradient(0deg, rgba(6,14,11,.88), transparent);font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--dorado);font-size:1.05rem;}
 .tercio-body{position:relative;z-index:1;max-width:60ch;}
 .tercio h3{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--dorado);}
 .tercio p{margin-top:.6em;font-size:1.02rem;font-weight:300;line-height:1.7;opacity:.85;}
@@ -170,6 +169,7 @@ section{position:relative;}
 .claves-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,4rem);}
 @media (max-width:840px){.claves-grid{grid-template-columns:1fr;}}
 .claves-intro p{font-size:clamp(1rem,2vw,1.12rem);font-weight:300;line-height:1.75;opacity:.78;max-width:38ch;}
+.claves-intro p + p{margin-top:1em;}
 .claves-list{list-style:none;}
 .claves-list li{display:flex;gap:1.4rem;padding:1.5rem 0;border-bottom:1px solid rgba(28,23,16,.1);}
 .claves-list li:first-child{padding-top:0;}
@@ -202,9 +202,8 @@ section{position:relative;}
 .mujeres-copy .marginalia{margin-bottom:1.4rem;}
 .mujeres-copy p{font-size:clamp(1rem,1.9vw,1.12rem);font-weight:300;line-height:1.75;max-width:46ch;opacity:.82;}
 .mujeres-copy p + p{margin-top:1em;}
-.mujeres-quote{margin-top:1.8rem;border-left:2px solid var(--vino);padding-left:1.3rem;}
+.mujeres-quote{margin-bottom:1.4rem;border-left:2px solid var(--vino);padding-left:1.3rem;}
 .mujeres-quote p{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1.1rem,2.2vw,1.3rem);color:var(--vino);opacity:1;line-height:1.5;}
-.mujeres-quote span{display:block;margin-top:.5em;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;opacity:.55;font-weight:400;}
 
 /* ---------- Escuelas: inserto de programa ---------- */
 .escuelas-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--verde);color:var(--crema);}
@@ -221,7 +220,8 @@ section{position:relative;}
 
 /* ---------- Servicios: rejilla fotográfica ---------- */
 .servicios-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);}
-.servicios-intro{max-width:56ch;font-size:clamp(1rem,2.1vw,1.15rem);font-weight:300;opacity:.78;line-height:1.7;margin-bottom:clamp(2.4rem,6vh,3.6rem);}
+.servicios-intro{max-width:56ch;font-size:clamp(1rem,2.1vw,1.15rem);font-weight:300;opacity:.78;line-height:1.7;}
+.servicios-discrecion{max-width:56ch;font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--vino);opacity:.85;margin-top:.6em;margin-bottom:clamp(2.4rem,6vh,3.6rem);}
 .servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem;}
 .svc-tile{background:#fff;box-shadow:0 14px 34px rgba(28,23,16,.1);}
 .svc-photo{position:relative;aspect-ratio:4/3;overflow:hidden;background-size:cover;background-position:center;}
@@ -384,7 +384,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   <div class="hero-inner">
     <div class="hero-eyebrow"><span class="ln"></span><span>Temple · Mónica Rosa Terra</span></div>
     <h1 class="mk-split">Nutrición con arte para atletas de luces</h1>
-    <p class="hero-claim">Coaching nutricional de alto rendimiento, exclusivo para profesionales taurinos.</p>
+    <p class="hero-claim">Coaching nutricional de alto rendimiento exclusivo para profesionales taurinos.</p>
     <div class="hero-cta">
       <a class="cta-big alt" href="#metodo">Conozca el método</a>
     </div>
@@ -396,7 +396,8 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   <div class="wrap">
     <p class="mark">&ldquo;</p>
     <blockquote>
-      El atleta de luces rinde al extremo: necesita precisión, fuerza y templanza en cada milésima de segundo, expresando su arte en los pases con el compás y la elegancia que exige la tradición: convirtiendo el peligro en una obra de arte. Cuerpo y alma para templar la embestida, temporada tras temporada, sin margen para el error.
+      El atleta de luces debe rendir al extremo. Para ello necesita precisión, fuerza y templanza en cada milésima de segundo, expresando su arte con el compás y la elegancia que exige la tradición.
+      Está presente en cuerpo y alma para templar la embestida, convirtiendo el peligro en una obra de arte.
       <span class="fuerte">Su valor merece ciencia.</span>
     </blockquote>
   </div>
@@ -420,9 +421,9 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     <div class="retrato-text mk-reveal">
       <p class="label">Del podio al albero</p>
       <div class="marginalia"><h2 class="mtitle">Sobre <em>Mónica</em></h2></div>
-      <p class="lead">Soy Mónica Rosa. Durante 20 años he aplicado la ciencia de la nutrición para maximizar el rendimiento de atletas de élite, diseñando estrategias para quienes buscaban una medalla, un récord o ganarle milésimas a su rival. Sé cómo el combustible adecuado optimiza el rendimiento en preparación y competición bajo alta presión.</p>
-      <p>Mi profesión me llevó por varios países y disciplinas deportivas, hasta que el destino me trajo a España, donde conocí el mundo de los toros. En las plazas encontré una exigencia distinta a la de cualquier cronómetro: no se compite por una copa, sino que se entrega valor y estética frente a un animal de media tonelada, donde el mínimo error físico o mental no cuesta una medalla, sino la integridad del atleta.</p>
-      <p>De ahí nace Temple: la fusión de mi experiencia en nutrición científica de alto rendimiento con el respeto a la tradición y las necesidades reales del atleta de luces. Hoy aplico ese mismo rigor al deportista más exigente que conozco, para quien el objetivo no es una medalla, sino la perfección que salvaguarda su vida.</p>
+      <p class="lead">Soy Mónica Rosa. Durante 20 años he aplicado la ciencia de la nutrición para maximizar el rendimiento de atletas de élite, diseñando estrategias para quienes buscaban una medalla, un récord, ganarle milésimas a su rival o ganar campeonatos internacionales. Sé cómo el combustible adecuado ayuda a optimizar el rendimiento tanto en preparación de pretemporada como en competiciones bajo alta presión.</p>
+      <p>Mi profesión me ha llevado por varios países y disciplinas deportivas, hasta que el destino me trajo a España, donde conocí el mundo de los toros. En las plazas encontré una exigencia mucho mayor a la de cualquier deportista: no se compite por una copa, sino que se entrega valor y estética frente a un animal de media tonelada, donde el mínimo error físico o mental no cuesta un campeonato, sino la integridad del atleta.</p>
+      <p>TEMPLE nace de la fusión de mi experiencia en nutrición deportiva de alto rendimiento aplicada a las necesidades reales del atleta de luces, respetando la tradición. Va más allá de una dieta: vemos al profesional en su totalidad.</p>
       <details class="formacion-toggle">
         <summary>Formación y trayectoria académica</summary>
         <ol>
@@ -468,36 +469,37 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 <section id="metodo" class="tercios-section on-dark">
   <div class="wrap">
     <div class="marginalia" style="justify-content:center;">
-      <h2 class="mtitle">Método <em>Temple</em></h2>
+      <h2 class="mtitle">El <em>Método</em></h2>
     </div>
-    <p class="tercios-intro">Forjamos su mejor versión sin cambiar la esencia. El concepto de TEMPLE, respecto al coaching nutricional, combina ciencia y tradición: darle al cuerpo exactamente lo que necesita para rendir en el ruedo, recuperarse rápidamente de la fatiga o una cornada, aguantar una feria de cuatro tardes seguidas o mantenerse alerta en el callejón tras toda una noche viajando.</p>
-    <p class="tercios-triada">Parar: suavizar · Templar: ralentizar · Mandar: dominar</p>
+    <div class="tercios-intro">
+      <p>Forjamos vuestra mejor versión sin cambiar la esencia.</p>
+      <p><span class="temple-word">TEMPLE</span> está diseñado exclusivamente para profesionales taurinos combinando ciencia y tradición, basado en un sistema de alto rendimiento deportivo y gestión del estrés extremo, para que el organismo del atleta funcione con compás, equilibrio y máxima eficiencia. No son pautas restrictivas, sino un protocolo de preparación biológica integral estructurado en varias fases. El objetivo general es alinear el coaching nutricional con la exigencia física y la solemnidad del ruedo, permitiendo al profesional mantener la lucidez, fuerza explosiva, flexibilidad, ligereza y el fondo físico intactos en cada compromiso, preservando su integridad.</p>
+      <p>Combina ciencia y tradición: darle al cuerpo exactamente lo que necesita para rendir en el ruedo, recuperarse rápidamente de la fatiga o una cornada, aguantar una feria de cuatro tardes seguidas o mantenerse alerta en el callejón tras toda una noche viajando, acompañando en el proceso y facilitando los cambios para alcanzar sus objetivos.</p>
+      <p>Gestionar los obstáculos, adoptando herramientas prácticas para las soluciones del día a día o de las temporadas de luces. Sintiendo orgullo por el autocuidado personal en cada detalle. Siendo protagonista de sus propios logros.</p>
+    </div>
     <div class="tercios">
       <div class="tercio mk-reveal">
         <span class="num-ghost">01</span>
-        <div class="tercio-media"><img src="assets/torero-4-plaza-madrid.jpg" alt="Atleta parando la embestida con el capote, cara a cara con el toro"><span class="tm-tag">La cita</span></div>
+        <div class="tercio-media"><img src="assets/torero-4-plaza-madrid.jpg" alt="Atleta parando la embestida con el capote, cara a cara con el toro"></div>
         <div class="tercio-body">
-          <span class="tercio-tag">El diagnóstico y la base</span>
           <h3>Parar</h3>
-          <p>Paramos y limpiamos. Frenamos con los hábitos antiguos para ver la situación actual de salud, energía, hábitos y carga física, y analizar los objetivos. Estudiamos a fondo el punto de partida para diseñar después la estrategia nutricional: parar el desgaste.</p>
+          <p>El diagnóstico. Estudiamos a fondo el punto de partida conociendo la situación actual de salud, composición corporal, hábitos, energía y carga física. Planteamos conjuntamente los objetivos para luego diseñar el plan de acción con las estrategias nutricionales que optimicen los resultados.</p>
         </div>
       </div>
       <div class="tercio mk-reveal">
         <span class="num-ghost">02</span>
-        <div class="tercio-media"><img src="assets/hero-torero.jpg" alt="Atleta con el compás templado, dominando el ritmo del pase"><span class="tm-tag">El temple del capote</span></div>
+        <div class="tercio-media"><img src="assets/hero-torero.jpg" alt="Atleta con el compás templado, dominando el ritmo del pase"></div>
         <div class="tercio-body">
-          <span class="tercio-tag">La regulación de la energía</span>
           <h3>Templar</h3>
-          <p>Templamos y optimizamos. Reequilibramos la fisiología mediante el cambio de hábitos, organizando la alimentación y ayudando también a templar el sistema nervioso, regulando y estabilizando las hormonas.</p>
+          <p>Suavizar la transición, reeducando y adecuando la alimentación a sus necesidades, gustos y estilo de vida, disminuyendo la ansiedad por ver resultados inmediatos, para la regulación de la energía, estabilizando y mejorando el sistema digestivo y nervioso.</p>
         </div>
       </div>
       <div class="tercio mk-reveal">
         <span class="num-ghost">03</span>
-        <div class="tercio-media"><img src="assets/tercio-mandar.jpg" alt="Atleta dominando la embestida del toro con la muleta, en plena explosión de fuerza"><span class="tm-tag">El mando</span></div>
+        <div class="tercio-media"><img src="assets/tercio-mandar.jpg" alt="Atleta dominando la embestida del toro con la muleta, en plena explosión de fuerza"></div>
         <div class="tercio-body">
-          <span class="tercio-tag">El rendimiento absoluto</span>
           <h3>Mandar</h3>
-          <p>Mandamos en la temporada. Control del rendimiento: cuando el cuerpo está limpio, fuerte y perfectamente nutrido, los músculos responden con velocidad explosiva.</p>
+          <p>Una vez que hay sincronía y el atleta ya confía en el proceso, el coach guía y acompaña la estrategia hacia el máximo rendimiento físico y el cumplimiento de sus objetivos.</p>
         </div>
       </div>
     </div>
@@ -507,8 +509,10 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 <section class="claves-section">
   <div class="wrap claves-grid">
     <div class="claves-intro mk-reveal">
-      <div class="marginalia"><h2 class="mtitle">La <em>misión</em></h2></div>
-      <p>Facilitar el cambio combinando el conocimiento técnico de la nutrición con habilidades psicológicas, para optimizar el rendimiento y la salud de un perfil que exige una alta demanda física y emocional. Acompañamos al atleta en la adopción de hábitos alimentarios conscientes y sostenibles frente a la exigencia extrema de la lidia, con un objetivo final: que el atleta gestione de forma autónoma su alimentación y su mente, con la precisión, los reflejos y la templanza que exige el toro.</p>
+      <div class="marginalia"><h2 class="mtitle">La <em>filosofía</em></h2></div>
+      <p>Acompañar a los profesionales de la tauromaquia en la gestión de la preparación física y el entrenamiento invisible, desarrollando protocolos científicos de nutrición y hábitos que blinden su organismo frente al estrés de la temporada, aceleren su recuperación y preserven su integridad física.</p>
+      <p>Facilitar el cambio en la adopción de nuevos hábitos alimentarios conscientes y sostenibles durante el trabajo de campo y la exigencia extrema de la lidia.</p>
+      <p>Optimizar el rendimiento biofisiológico y la capacidad de respuesta adaptativa proporcionando un método personalizado en concordancia con la preparación física, y así afrontar el rigor de los entrenamientos con su máximo potencial.</p>
     </div>
     <div class="claves-objetivos mk-reveal">
       <p class="label">Objetivos</p>
@@ -554,13 +558,12 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     </div>
     <div class="mujeres-copy mk-reveal">
       <div class="marginalia"><h2 class="mtitle">Mujeres de <em>luces</em></h2></div>
-      <p>Atleta de luces incluye a hombres y mujeres. Las atletas se abren camino en un mundo históricamente cerrado para ellas, y quiero que sepan que aquí también cuentan conmigo.</p>
-      <p>La mujer lleva toreando desde el siglo XVII, aunque una prohibición del siglo XIX las apartó de los ruedos hasta 1974. Conchita Cintrón, "la Diosa Rubia", toreó más de 1.200 toros en 25 años de carrera como rejoneadora. Cristina Sánchez fue, en 1996, la primera mujer en tomar la alternativa como matadora de toros en España, confirmada en Las Ventas en 1998.</p>
-      <p>Los requerimientos nutricionales de una mujer no son los mismos que los de un hombre: el gasto energético, los ciclos hormonales y la recuperación se trabajan de forma distinta. En Temple, el plan de la atleta se diseña también desde ahí.</p>
       <div class="mujeres-quote">
-        <p>&ldquo;Jamás especulé con mi condición de mujer, soy un torero.&rdquo;</p>
-        <span>Cristina Sánchez, matadora de toros</span>
+        <p>&ldquo;Vuestra fuerza tiene su propia naturaleza. Nutra la ventaja de ser mujer en el ruedo.&rdquo;</p>
       </div>
+      <p>La mujer no solo se enfrenta al animal y al miedo, sino también a una fisonomía diferente.</p>
+      <p>Los requerimientos nutricionales no son los mismos que los de un hombre: el gasto energético, los ciclos hormonales y la recuperación se trabajan de forma distinta. El plan de coaching nutricional de la atleta se diseña desde las diferencias en los factores biológicos, fisiológicos y biomecánicos que influyen directamente en el rendimiento deportivo.</p>
+      <p>Optimizamos y potenciamos vuestro rendimiento respetando la biología, biomecánica y psicología propias de la mujer. Para que vuestra fuerza en el ruedo sea imparable utilizamos el ciclo folicular, la eficiencia metabólica, la gestión energética más constante y la resistencia a la fatiga y flexibilidad como ventajas tácticas vinculadas a las estrategias nutricionales.</p>
     </div>
   </div>
 </section>
@@ -569,16 +572,16 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   <div class="wrap escuelas-wrap">
     <div class="marginalia"><h2 class="mtitle">Para escuelas de <em>tauromaquia</em></h2></div>
     <div class="escuelas-intro mk-reveal">
-      <p>Una colaboración para integrar la optimización nutricional en la preparación de los alumnos: fuerza explosiva, agilidad, reflejos bajo presión y recuperación, con el mismo rigor que cualquier deporte de élite.</p>
-      <p>Sabemos lo importante que es empezar cuanto antes a cuidar el físico. Trabajo de la mano con los preparadores físicos de cada escuela: no vengo a sustituir su trabajo, sino a sumar desde la nutrición para que el joven atleta o novillero llegue en su mejor momento.</p>
+      <p>La optimización nutricional adaptada a los futuros toreros.</p>
+      <p>Sabemos que el toreo exige una preparación física muy exigente al nivel de cualquier deporte de élite o más, y lo importante que es empezar cuanto antes a cuidar la salud física.</p>
+      <p>Trabajo de la mano con los preparadores físicos de las escuelas para sumar desde la nutrición y que el joven atleta o novillero llegue en su mejor momento.</p>
+      <p>Mediante el coaching nutricional ayudo a los jóvenes atletas a:</p>
     </div>
     <div class="programa-insert mk-reveal">
       <ul class="programa-list">
-        <li>Energía y resistencia para las largas jornadas de salón, campo y plaza</li>
-        <li>Composición corporal ágil: más velocidad de reacción</li>
-        <li>Hidratación y nutrición para la concentración y la toma de decisiones bajo presión</li>
-        <li>Recuperación rápida ante sobrecarga muscular y contusiones</li>
-        <li>Diferenciación real frente a otras escuelas</li>
+        <li>Maximizar la preparación física integrando los nutrientes necesarios para cubrir todas las demandas energéticas de su vida diaria, estudios, crecimiento, y los entrenamientos en jornadas de campo, salón y tardes de luces</li>
+        <li>Mejorar el enfoque mental y concentración aplicando estrategias de hidratación y nutrición</li>
+        <li>Facilitar los días de viaje planificando la alimentación adaptándola a la temporada, viajes y traslados</li>
       </ul>
     </div>
     <div class="escuelas-cta mk-reveal">
@@ -591,6 +594,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   <div class="wrap">
     <div class="marginalia"><h2 class="mtitle">Servicios y <em>honorarios</em></h2></div>
     <p class="servicios-intro">Para atletas, novilleros y picadores: atención individual, por cuadrilla o para escuelas de tauromaquia, en consulta puntual o en un plan personalizado (PAC) mensual, semestral o anual. Cada programa se adapta al calendario de temporada y a las necesidades reales del atleta.</p>
+    <p class="servicios-discrecion">Trato con total discreción y confidencialidad, dentro y fuera del ruedo.</p>
     <div class="servicios-grid">
       <div class="svc-tile mk-reveal">
         <div class="svc-photo" style="background-image:url('assets/svc-atleta.jpg');"><span class="svc-photo-label">Atleta profesional</span></div>
