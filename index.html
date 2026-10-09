@@ -50,14 +50,13 @@ section{position:relative;}
 }
 .site-header{overflow:hidden;max-width:100vw;}
 .site-header .brand{display:flex;align-items:center;gap:.65rem;min-width:0;overflow:hidden;}
-.site-header .brand img{height:46px;width:46px;object-fit:contain;flex-shrink:0;}
+.site-header .brand > img{height:46px;width:46px;object-fit:contain;flex-shrink:0;}
 .site-header .brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0;overflow:hidden;}
-.site-header .brand-text b{font-family:'Arvo',serif;font-weight:700;letter-spacing:.1em;font-size:1.18rem;color:var(--naranja);white-space:nowrap;}
-.site-header .brand-text b::first-letter{font-size:1.45em;}
+.site-header .brand-wordmark{height:20px;width:auto;object-fit:contain;}
 .site-header .brand-text span{font-size:.5rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dorado);opacity:.85;white-space:nowrap;}
 @media (max-width:480px){
-  .site-header .brand img{height:38px;width:38px;}
-  .site-header .brand-text b{letter-spacing:.1em;font-size:1.02rem;}
+  .site-header .brand > img{height:38px;width:38px;}
+  .site-header .brand-wordmark{height:17px;}
   .site-header .brand-text span{display:none;}
 }
 .site-header .mid{display:flex;align-items:center;gap:1.1rem;}
@@ -92,10 +91,8 @@ section{position:relative;}
 .label{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1rem,2.2vw,1.2rem);color:var(--vino);margin-bottom:.4em;}
 .on-dark .label{color:var(--dorado);}
 
-/* ---------- Marginalia: título de sección con numeral romano ---------- */
+/* ---------- Marginalia: título de sección ---------- */
 .marginalia{display:flex;gap:1.6rem;align-items:baseline;margin-bottom:clamp(2.2rem,6vh,3.6rem);}
-.marginalia .roman{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.1rem);color:var(--dorado-mate);flex-shrink:0;}
-.marginalia .roman.on-dark{color:var(--dorado);}
 .marginalia .mtitle{font-size:clamp(2rem,5.4vw,3.4rem);}
 .marginalia .mtitle em{font-style:italic;color:var(--dorado-mate);}
 .on-dark .marginalia .mtitle em{color:var(--dorado);}
@@ -242,8 +239,7 @@ section{position:relative;}
 .cierre-lockup{max-width:640px;margin:0 auto;position:relative;z-index:1;}
 .cierre-lockup p{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.6rem,4.6vw,2.7rem);line-height:1.28;}
 .cierre-brand{display:flex;flex-direction:column;align-items:center;margin:.7em 0;}
-.cierre-word{font-family:'Arvo',serif;font-weight:700;letter-spacing:.1em;font-size:clamp(1.6rem,4.6vw,2.7rem);color:var(--naranja);}
-.cierre-word::first-letter{font-size:1.4em;}
+.cierre-wordmark{height:clamp(32px,6vw,52px);width:auto;object-fit:contain;}
 .cierre-buttons{position:relative;z-index:1;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.6em;}
 
 /* ---------- Footer: talón de entrada ---------- */
@@ -370,7 +366,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 <header class="site-header">
   <a class="brand" href="#top">
     <img src="assets/logo.png" alt="TEMPLE">
-    <span class="brand-text"><b>TEMPLE</b><span>Nutrición con arte para atletas de luces</span></span>
+    <span class="brand-text"><img class="brand-wordmark" src="assets/temple-wordmark.png" alt="TEMPLE"><span>Nutrición con arte para atletas de luces</span></span>
   </a>
   <div class="mid">
     <a class="phone-link" href="#contacto">
@@ -431,10 +427,14 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
       <details class="formacion-toggle">
         <summary>Formación y trayectoria académica</summary>
         <ol>
+          <li>Técnico en Nutrición y Dietética — Instituto Elite, Salamanca</li>
           <li>Máster en Coaching Nutricional — Universidad de Granada</li>
           <li>Título Universitario Coach Nutricional — Universidad Nebrija</li>
           <li>Experto Universitario en Nutrición Deportiva — Universidad de La Rioja</li>
-          <li>Diplomada en Nutrigenómica y Nutrigenética</li>
+          <li>Diplomada en Nutrigenómica y Nutrigenética — Instituto de Nutrigenómica, Madrid</li>
+          <li>Postgrados en Musculación y Fitness, Entrenador Personal y Coaching Deportivo — Universidad Miguel de Cervantes / Euroinnova</li>
+          <li>Diplomado en Coaching Nutricional — Instituto ICS, Montevideo</li>
+          <li>Certificaciones en Nutrición y Suplementación Deportiva, Planificación Deportiva de Alto Rendimiento y Entrenadora Personal — I.C.A.D, Buenos Aires</li>
         </ol>
       </details>
     </div>
@@ -736,7 +736,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     <div class="cierre-lockup">
       <p>Si busca alcanzar su mejor versión y llegar a la plaza en su justo compás, las puertas de</p>
       <div class="cierre-brand">
-        <span class="cierre-word">TEMPLE</span>
+        <img class="cierre-wordmark" src="assets/temple-wordmark.png" alt="TEMPLE">
       </div>
       <p>están abiertas para usted.</p>
     </div>
