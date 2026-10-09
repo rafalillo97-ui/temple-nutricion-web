@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&family=Arvo:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="motion.css">
 <style>
 :root{
@@ -52,7 +52,8 @@ section{position:relative;}
 .site-header .brand{display:flex;align-items:center;gap:.65rem;min-width:0;overflow:hidden;}
 .site-header .brand img{height:46px;width:46px;object-fit:contain;flex-shrink:0;}
 .site-header .brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0;overflow:hidden;}
-.site-header .brand-text b{font-family:'Playfair Display',serif;font-weight:800;letter-spacing:.16em;font-size:1.25rem;color:var(--naranja);white-space:nowrap;}
+.site-header .brand-text b{font-family:'Arvo',serif;font-weight:700;letter-spacing:.1em;font-size:1.18rem;color:var(--naranja);white-space:nowrap;}
+.site-header .brand-text b::first-letter{font-size:1.45em;}
 .site-header .brand-text span{font-size:.5rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dorado);opacity:.85;white-space:nowrap;}
 @media (max-width:480px){
   .site-header .brand img{height:38px;width:38px;}
@@ -145,7 +146,8 @@ section{position:relative;}
 .tercios-section .marginalia{max-width:900px;margin-left:auto;margin-right:auto;}
 .tercios-intro{max-width:68ch;margin:0 auto clamp(3rem,8vh,5rem);text-align:left;font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;opacity:.88;line-height:1.75;}
 .tercios-intro p + p{margin-top:1em;}
-.temple-word{font-family:'Playfair Display',serif;font-style:normal;font-weight:800;letter-spacing:.1em;color:var(--dorado);}
+.temple-word{font-family:'Arvo',serif;font-style:normal;font-weight:700;letter-spacing:.06em;color:var(--dorado);}
+.temple-word::first-letter{font-size:1.4em;}
 .tercios{max-width:1080px;margin:0 auto;}
 .tercio{position:relative;padding:3.2rem 0;border-top:1px solid rgba(230,189,58,.18);display:grid;grid-template-columns:.85fr 1fr;gap:clamp(1.8rem,4vw,3.4rem);align-items:center;}
 .tercio:first-child{border-top:none;}
@@ -168,7 +170,7 @@ section{position:relative;}
 .claves-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);}
 .claves-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,4rem);}
 @media (max-width:840px){.claves-grid{grid-template-columns:1fr;}}
-.claves-intro p{font-size:clamp(1rem,2vw,1.12rem);font-weight:300;line-height:1.75;opacity:.78;max-width:38ch;}
+.claves-intro p{font-size:clamp(1rem,2vw,1.12rem);font-weight:300;line-height:1.75;opacity:.78;max-width:44ch;text-align:justify;}
 .claves-intro p + p{margin-top:1em;}
 .claves-list{list-style:none;}
 .claves-list li{display:flex;gap:1.4rem;padding:1.5rem 0;border-bottom:1px solid rgba(28,23,16,.1);}
@@ -211,6 +213,7 @@ section{position:relative;}
 .escuelas-section .marginalia{max-width:none;}
 .escuelas-intro{font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;line-height:1.75;opacity:.85;max-width:56ch;}
 .escuelas-intro p + p{margin-top:1em;}
+.escuelas-tagline{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--dorado);opacity:1;font-size:clamp(1.05rem,2.3vw,1.25rem)!important;}
 .programa-insert{margin-top:2.6rem;background:var(--crema);color:var(--tinta);padding:clamp(1.8rem,4vw,2.8rem) clamp(1.6rem,4vw,2.6rem);transform:rotate(-.6deg);box-shadow:0 30px 60px rgba(0,0,0,.3);position:relative;}
 .programa-insert::before{content:"Programa";position:absolute;top:-.8em;left:1.6rem;background:var(--dorado);color:var(--verde2);font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:.85rem;padding:.3em .9em;transform:rotate(-2deg);}
 .programa-list{list-style:none;margin-top:.6rem;}
@@ -239,7 +242,8 @@ section{position:relative;}
 .cierre-lockup{max-width:640px;margin:0 auto;position:relative;z-index:1;}
 .cierre-lockup p{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.6rem,4.6vw,2.7rem);line-height:1.28;}
 .cierre-brand{display:flex;flex-direction:column;align-items:center;margin:.7em 0;}
-.cierre-word{font-family:'Playfair Display',serif;font-weight:800;letter-spacing:.18em;font-size:clamp(1.6rem,4.6vw,2.7rem);color:var(--naranja);}
+.cierre-word{font-family:'Arvo',serif;font-weight:700;letter-spacing:.1em;font-size:clamp(1.6rem,4.6vw,2.7rem);color:var(--naranja);}
+.cierre-word::first-letter{font-size:1.4em;}
 .cierre-buttons{position:relative;z-index:1;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.6em;}
 
 /* ---------- Footer: talón de entrada ---------- */
@@ -570,18 +574,22 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 
 <section class="escuelas-section">
   <div class="wrap escuelas-wrap">
-    <div class="marginalia"><h2 class="mtitle">Para escuelas de <em>tauromaquia</em></h2></div>
+    <div class="marginalia"><h2 class="mtitle">Escuelas de <em>tauromaquia</em></h2></div>
     <div class="escuelas-intro mk-reveal">
       <p>La optimización nutricional adaptada a los futuros toreros.</p>
-      <p>Sabemos que el toreo exige una preparación física muy exigente al nivel de cualquier deporte de élite o más, y lo importante que es empezar cuanto antes a cuidar la salud física.</p>
-      <p>Trabajo de la mano con los preparadores físicos de las escuelas para sumar desde la nutrición y que el joven atleta o novillero llegue en su mejor momento.</p>
-      <p>Mediante el coaching nutricional ayudo a los jóvenes atletas a:</p>
+      <p class="escuelas-tagline">&ldquo;Nutrición para el traje de luces: combustible y rendimiento en el ruedo&rdquo;</p>
+      <p>El toreo evoluciona y las grandes figuras de hoy se cuidan como atletas de élite. Empezar esa educación desde la base es fundamental para que los jóvenes crezcan, desarrollen su potencial y alcancen el máximo rendimiento en su futura profesión.</p>
+      <p>Introducir el coaching nutricional en el programa de la escuela no solo protege la salud de los alumnos, sino que les ayudará exponencialmente en el rendimiento y los resultados, generando una diferenciación competitiva: listos para triunfar y dejar el nombre de la escuela en lo más alto.</p>
+      <p>Trabajamos con escuelas taurinas de toda España y otros países mediante un sistema adaptado a vuestros horarios y necesidades, tanto en forma presencial como online, coordinando con la dirección de la escuela para ser parte del staff multidisciplinario y sumar desde la nutrición en el rendimiento del joven atleta.</p>
+      <p>Nos adaptamos a la estructura y presupuesto de la escuela mediante programas flexibles con diferentes formatos de trabajo:</p>
     </div>
     <div class="programa-insert mk-reveal">
       <ul class="programa-list">
-        <li>Maximizar la preparación física integrando los nutrientes necesarios para cubrir todas las demandas energéticas de su vida diaria, estudios, crecimiento, y los entrenamientos en jornadas de campo, salón y tardes de luces</li>
-        <li>Mejorar el enfoque mental y concentración aplicando estrategias de hidratación y nutrición</li>
-        <li>Facilitar los días de viaje planificando la alimentación adaptándola a la temporada, viajes y traslados</li>
+        <li>Talleres grupales (online o presencial)</li>
+        <li>Sesiones dinámicas para alumnos y profesores</li>
+        <li>Planes nutricionales colectivos</li>
+        <li>Seguimiento premium individual</li>
+        <li>Asesoría y seguimiento digital</li>
       </ul>
     </div>
     <div class="escuelas-cta mk-reveal">
