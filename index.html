@@ -141,7 +141,7 @@ section{position:relative;}
 /* ---------- El método: tercios en zigzag ---------- */
 .tercios-section{padding:clamp(5rem,13vh,8.5rem) 0 clamp(2rem,6vh,4rem);background:var(--verde);color:var(--crema);}
 .tercios-section .marginalia{max-width:900px;margin-left:auto;margin-right:auto;}
-.tercios-intro{max-width:68ch;margin:0 auto clamp(3rem,8vh,5rem);text-align:left;font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;opacity:.88;line-height:1.75;}
+.tercios-intro{max-width:68ch;margin:0 auto clamp(3rem,8vh,5rem);text-align:justify;font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;opacity:.88;line-height:1.75;}
 .tercios-intro p + p{margin-top:1em;}
 .temple-word{font-family:'Arvo',serif;font-style:normal;font-weight:700;letter-spacing:.06em;color:var(--dorado);}
 .temple-word::first-letter{font-size:1.4em;}
@@ -208,7 +208,7 @@ section{position:relative;}
 .escuelas-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--verde);color:var(--crema);}
 .escuelas-wrap{max-width:900px;margin:0 auto;}
 .escuelas-section .marginalia{max-width:none;}
-.escuelas-intro{font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;line-height:1.75;opacity:.85;max-width:56ch;}
+.escuelas-intro{font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;line-height:1.75;opacity:.85;max-width:56ch;text-align:justify;}
 .escuelas-intro p + p{margin-top:1em;}
 .escuelas-tagline{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--dorado);opacity:1;font-size:clamp(1.05rem,2.3vw,1.25rem)!important;}
 .programa-insert{margin-top:2.6rem;background:var(--crema);color:var(--tinta);padding:clamp(1.8rem,4vw,2.8rem) clamp(1.6rem,4vw,2.6rem);transform:rotate(-.6deg);box-shadow:0 30px 60px rgba(0,0,0,.3);position:relative;}
@@ -224,15 +224,20 @@ section{position:relative;}
 .servicios-discrecion{max-width:56ch;font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--vino);opacity:.85;margin-top:.6em;margin-bottom:clamp(2.4rem,6vh,3.6rem);}
 .servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem;}
 .svc-tile{background:#fff;box-shadow:0 14px 34px rgba(28,23,16,.1);}
+.svc-tile summary{list-style:none;cursor:pointer;}
+.svc-tile summary::-webkit-details-marker{display:none;}
 .svc-photo{position:relative;aspect-ratio:4/3;overflow:hidden;background-size:cover;background-position:center;}
 .svc-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(6,14,11,.82) 18%, rgba(6,14,11,.05) 65%);}
-.svc-photo-label{position:absolute;left:1.1rem;right:1.1rem;bottom:.9rem;z-index:1;font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.15rem,2.6vw,1.4rem);color:var(--crema);text-shadow:0 2px 10px rgba(0,0,0,.4);line-height:1.15;}
+.svc-photo-label{position:absolute;left:1.1rem;right:1.1rem;bottom:.9rem;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:.6em;font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.15rem,2.6vw,1.4rem);color:var(--crema);text-shadow:0 2px 10px rgba(0,0,0,.4);line-height:1.15;}
+.svc-photo-label::after{content:"＋";font-family:'Playfair Display',serif;font-weight:700;font-size:1.2rem;color:var(--dorado);flex-shrink:0;transition:transform .2s;}
+.svc-tile[open] .svc-photo-label::after{content:"－";}
 .svc-info{padding:1.2rem 1.3rem 1.4rem;}
-.svc-row{display:flex;align-items:baseline;gap:.6em;}
-.svc-row .li-name{font-size:.92rem;font-weight:500;opacity:.85;}
-.svc-row .li-dots{flex:1;border-bottom:2px dotted rgba(169,134,42,.5);height:0;transform:translateY(-.4em);min-width:.8rem;}
-.svc-row .li-price{font-family:'Playfair Display',serif;font-weight:800;color:var(--vino);font-size:clamp(1rem,2.2vw,1.15rem);white-space:nowrap;flex-shrink:0;}
-.svc-info .ledger-desc{margin-top:.6em;font-size:.86rem;font-weight:300;opacity:.68;line-height:1.55;}
+.svc-info .ledger-desc{font-size:.9rem;font-weight:300;opacity:.75;line-height:1.6;}
+.svc-plan-list{list-style:none;margin-top:.9em;display:grid;gap:.6em;}
+.svc-plan-list li{padding-left:1.1em;position:relative;font-size:.86rem;font-weight:400;opacity:.85;line-height:1.5;}
+.svc-plan-list li::before{content:"—";position:absolute;left:0;color:var(--dorado-mate);}
+.svc-plan-list li b{display:block;font-weight:600;opacity:1;margin-bottom:.1em;}
+.svc-cta{margin-top:1.2rem;font-size:.82rem;padding:.7em 1.3em;}
 
 /* ---------- CTA final ---------- */
 .cierre-section{padding:clamp(6rem,16vh,9.5rem) 0;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 0%, var(--verde) 0%, var(--verde2) 70%);color:var(--crema);position:relative;overflow:hidden;}
@@ -567,7 +572,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
       </div>
       <p>La mujer no solo se enfrenta al animal y al miedo, sino también a una fisonomía diferente.</p>
       <p>Los requerimientos nutricionales no son los mismos que los de un hombre: el gasto energético, los ciclos hormonales y la recuperación se trabajan de forma distinta. El plan de coaching nutricional de la atleta se diseña desde las diferencias en los factores biológicos, fisiológicos y biomecánicos que influyen directamente en el rendimiento deportivo.</p>
-      <p>Optimizamos y potenciamos vuestro rendimiento respetando la biología, biomecánica y psicología propias de la mujer. Para que vuestra fuerza en el ruedo sea imparable utilizamos el ciclo folicular, la eficiencia metabólica, la gestión energética más constante y la resistencia a la fatiga y flexibilidad como ventajas tácticas vinculadas a las estrategias nutricionales.</p>
+      <p>Optimizamos y potenciamos vuestro rendimiento respetando la biología, biomecánica y psicología propias de la mujer. Para que vuestra fuerza en el ruedo sea imparable utilizamos el ciclo folicular, la eficiencia metabólica, la gestión energética más constante, la resistencia a la fatiga y la flexibilidad como ventajas tácticas vinculadas a las estrategias nutricionales.</p>
     </div>
   </div>
 </section>
@@ -601,45 +606,52 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 <section class="servicios-section">
   <div class="wrap">
     <div class="marginalia"><h2 class="mtitle">Servicios y <em>honorarios</em></h2></div>
-    <p class="servicios-intro">Para atletas, novilleros y picadores: atención individual, por cuadrilla o para escuelas de tauromaquia, en consulta puntual o en un plan personalizado (PAC) mensual, semestral o anual. Cada programa se adapta al calendario de temporada y a las necesidades reales del atleta.</p>
+    <p class="servicios-intro">Cada cuerpo y cada temporada requiere un esfuerzo diferente. Diseño su presupuesto tras analizar la situación actual y el calendario de contratos — consulta individual, por cuadrilla o para su escuela, en formato online, presencial o híbrido.</p>
     <p class="servicios-discrecion">Trato con total discreción y confidencialidad, dentro y fuera del ruedo.</p>
     <div class="servicios-grid">
-      <div class="svc-tile mk-reveal">
-        <div class="svc-photo" style="background-image:url('assets/svc-atleta.jpg');"><span class="svc-photo-label">Atleta profesional</span></div>
+      <details class="svc-tile mk-reveal">
+        <summary>
+          <div class="svc-photo" style="background-image:url('assets/svc-atleta.jpg');"><span class="svc-photo-label">Profesional individual</span></div>
+        </summary>
         <div class="svc-info">
-          <div class="svc-row"><span class="li-name">Primera consulta</span><span class="li-dots"></span><span class="li-price">55 €</span></div>
-          <div class="svc-row" style="margin-top:.3rem;"><span class="li-name">Seguimiento</span><span class="li-dots"></span><span class="li-price">30 €</span></div>
           <p class="ledger-desc">Plan nutricional personalizado, adaptado a su calendario de temporada, viajes y competición.</p>
+          <ul class="svc-plan-list">
+            <li>Mensual</li>
+            <li>Trimestral básico</li>
+            <li>Semestral pro</li>
+            <li>Anual premium</li>
+            <li>Planes por temporadas</li>
+            <li>Bono solo fiestas (5 fiestas)</li>
+          </ul>
+          <a class="cta-big alt svc-cta" href="mailto:mrtcoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Profesional%20individual">Solicitar presupuesto a medida</a>
         </div>
-      </div>
-      <div class="svc-tile mk-reveal">
-        <div class="svc-photo" style="background-image:url('assets/svc-pac.jpg');"><span class="svc-photo-label">Plan personalizado (PAC)</span></div>
+      </details>
+      <details class="svc-tile mk-reveal">
+        <summary>
+          <div class="svc-photo" style="background-image:url('assets/svc-cuadrillas.jpg');"><span class="svc-photo-label">Cuadrillas</span></div>
+        </summary>
         <div class="svc-info">
-          <div class="svc-row"><span class="li-name">Mensual · Semestral · Anual</span><span class="li-dots"></span><span class="li-price">Consulte</span></div>
-          <p class="ledger-desc">Seguimiento continuo durante toda la temporada, individual o en grupo.</p>
+          <p class="ledger-desc">Rendimiento colectivo: ideal para matadores o apoderados que quieren asegurar que todo el equipo rinda al máximo durante la temporada.</p>
+          <ul class="svc-plan-list">
+            <li><b>Talleres grupales</b>Online o presencial, antes de iniciar la temporada, para coordinar las pautas de alimentación de todo el equipo.</li>
+            <li><b>Planes individuales para subalternos</b>Estrategias antifatiga, el botiquín de hidratación en el callejón, menús de furgoneta y ruta.</li>
+          </ul>
+          <a class="cta-big alt svc-cta" href="mailto:mrtcoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Cuadrilla">Solicitar presupuesto para mi cuadrilla</a>
         </div>
-      </div>
-      <div class="svc-tile mk-reveal">
-        <div class="svc-photo" style="background-image:url('assets/svc-cuadrillas.jpg');"><span class="svc-photo-label">Cuadrillas</span></div>
+      </details>
+      <details class="svc-tile mk-reveal">
+        <summary>
+          <div class="svc-photo" style="background-image:url('assets/svc-escuelas.jpg');"><span class="svc-photo-label">Escuelas</span></div>
+        </summary>
         <div class="svc-info">
-          <div class="svc-row"><span class="li-name">Atención por equipo</span><span class="li-dots"></span><span class="li-price">A medida</span></div>
-          <p class="ledger-desc">Igual que en el deporte de alto rendimiento se trabaja por equipos, aquí atendemos a la cuadrilla completa.</p>
+          <p class="ledger-desc">La optimización nutricional adaptada a los futuros toreros — la cantera de las figuras del mañana.</p>
+          <ul class="svc-plan-list">
+            <li><b>Talleres grupales</b>Charlas y talleres de nutrición deportiva para toda la escuela.</li>
+            <li><b>Planes individuales</b>Seguimiento personalizado para los alumnos que quieran ir más allá.</li>
+          </ul>
+          <a class="cta-big alt svc-cta" href="mailto:mrtcoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Escuela">Solicitar presupuesto a medida</a>
         </div>
-      </div>
-      <div class="svc-tile mk-reveal">
-        <div class="svc-photo" style="background-image:url('assets/svc-escuelas.jpg');"><span class="svc-photo-label">Escuelas de tauromaquia</span></div>
-        <div class="svc-info">
-          <div class="svc-row"><span class="li-name">Talleres y charlas</span><span class="li-dots"></span><span class="li-price">A medida</span></div>
-          <p class="ledger-desc">Charlas y talleres de nutrición deportiva para la escuela, con seguimiento a los alumnos.</p>
-        </div>
-      </div>
-      <div class="svc-tile mk-reveal">
-        <div class="svc-photo" style="background-image:url('assets/svc-jovenes.jpg');"><span class="svc-photo-label">Jóvenes promesas</span></div>
-        <div class="svc-info">
-          <div class="svc-row"><span class="li-name">Futuros atletas</span><span class="li-dots"></span><span class="li-price">Consulte</span></div>
-          <p class="ledger-desc">Acompañamiento nutricional para los niños y jóvenes que están empezando, dentro de las escuelas — la cantera de las figuras del mañana.</p>
-        </div>
-      </div>
+      </details>
     </div>
   </div>
 </section>
@@ -760,7 +772,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
             <input type="email" name="email" placeholder="Su email" required>
             <textarea name="mensaje" rows="3" placeholder="Cuénteme brevemente su situación" required></textarea>
             <p class="contact-note">Le respondo yo misma por correo, normalmente el mismo día.</p>
-            <button type="submit" class="cta-big mk-pulse">Enviar mensaje</button>
+            <button type="submit" class="cta-big mk-pulse">Solicitar valoración</button>
             <p class="contact-sent" id="contactSent">Se ha abierto su gestor de correo con el mensaje listo — solo tiene que pulsar enviar.</p>
           </form>
         </div>
