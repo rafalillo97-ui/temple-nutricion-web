@@ -68,10 +68,13 @@ section{position:relative;}
 .hero{min-height:100svh;display:flex;align-items:flex-end;background-size:cover;background-position:center;}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(10deg, rgba(6,14,11,.86) 4%, rgba(6,14,11,.24) 46%, rgba(6,14,11,.5) 100%);}
 .hero-inner{position:relative;z-index:2;color:var(--crema);padding:clamp(6rem,20vh,9rem) clamp(1.2rem,5vw,3.4rem) clamp(3rem,8vh,5rem);max-width:1220px;margin:0 auto;width:100%;}
+.hero-brand{display:flex;align-items:center;gap:.9rem;margin-bottom:1.1em;}
+.hero-brand img.hero-logo{height:clamp(54px,7.4vw,86px);width:auto;filter:drop-shadow(0 4px 18px rgba(0,0,0,.5));}
+.hero-brand img.hero-wordmark{height:clamp(32px,4.6vw,52px);width:auto;}
 .hero-eyebrow{display:flex;align-items:center;gap:.9em;margin-bottom:.6em;}
 .hero-eyebrow .ln{width:38px;height:1px;background:var(--dorado);}
 .hero-eyebrow span{font-size:.78rem;letter-spacing:.36em;text-transform:uppercase;color:var(--dorado);}
-.hero h1{font-size:clamp(2.3rem,6.6vw,5rem);max-width:23ch;text-shadow:0 6px 40px rgba(0,0,0,.55);}
+.hero h1{font-size:clamp(1.35rem,2.8vw,2.1rem);font-weight:600;max-width:28ch;text-shadow:0 6px 40px rgba(0,0,0,.55);opacity:.92;}
 .hero h1 em{font-style:italic;color:var(--dorado);font-weight:600;}
 .hero-claim{margin-top:1.1em;max-width:620px;font-size:clamp(.92rem,1.9vw,1.15rem);font-weight:500;color:var(--dorado);white-space:nowrap;line-height:1.6;}
 @media (max-width:640px){.hero-claim{white-space:normal;max-width:340px;}}
@@ -177,7 +180,7 @@ section{position:relative;}
 
 /* ---------- Ruptura: cita con retrato de Belmonte de fondo, como marca de agua ---------- */
 .ruptura{min-height:25vh;padding:2.2rem 0;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--verde2);}
-.ruptura-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% 42%;opacity:.28;filter:grayscale(1) contrast(1.08);mask-image:linear-gradient(100deg, transparent 0%, #000 40%, #000 100%);-webkit-mask-image:linear-gradient(100deg, transparent 0%, #000 40%, #000 100%);}
+.ruptura-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 24%;opacity:.4;filter:saturate(1.15) contrast(1.05);mask-image:linear-gradient(100deg, transparent 0%, #000 40%, #000 100%);-webkit-mask-image:linear-gradient(100deg, transparent 0%, #000 40%, #000 100%);}
 .ruptura::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg, rgba(6,14,11,.8) 28%, rgba(6,14,11,.25) 78%);}
 .ruptura-inner{position:relative;z-index:2;max-width:640px;padding:1.5rem clamp(1.2rem,5vw,3.4rem);}
 .ruptura-inner p{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1.3rem,3.4vw,2rem);line-height:1.5;color:var(--crema);text-shadow:0 3px 20px rgba(0,0,0,.55);}
@@ -218,26 +221,16 @@ section{position:relative;}
 .programa-list li:last-child{border-bottom:none;}
 .escuelas-cta{margin-top:2.4rem;}
 
-/* ---------- Servicios: rejilla fotográfica ---------- */
-.servicios-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);}
+/* ---------- Contacto profesional ---------- */
+.contacto-pro-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);}
 .servicios-intro{max-width:56ch;font-size:clamp(1rem,2.1vw,1.15rem);font-weight:300;opacity:.78;line-height:1.7;}
 .servicios-discrecion{max-width:56ch;font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--vino);opacity:.85;margin-top:.6em;margin-bottom:clamp(2.4rem,6vh,3.6rem);}
-.servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem;}
-.svc-tile{background:#fff;box-shadow:0 14px 34px rgba(28,23,16,.1);}
-.svc-tile summary{list-style:none;cursor:pointer;}
-.svc-tile summary::-webkit-details-marker{display:none;}
-.svc-photo{position:relative;aspect-ratio:4/3;overflow:hidden;background-size:cover;background-position:center;}
-.svc-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(6,14,11,.82) 18%, rgba(6,14,11,.05) 65%);}
-.svc-photo-label{position:absolute;left:1.1rem;right:1.1rem;bottom:.9rem;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:.6em;font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.15rem,2.6vw,1.4rem);color:var(--crema);text-shadow:0 2px 10px rgba(0,0,0,.4);line-height:1.15;}
-.svc-photo-label::after{content:"＋";font-family:'Playfair Display',serif;font-weight:700;font-size:1.2rem;color:var(--dorado);flex-shrink:0;transition:transform .2s;}
-.svc-tile[open] .svc-photo-label::after{content:"－";}
-.svc-info{padding:1.2rem 1.3rem 1.4rem;}
-.svc-info .ledger-desc{font-size:.9rem;font-weight:300;opacity:.75;line-height:1.6;}
-.svc-plan-list{list-style:none;margin-top:.9em;display:grid;gap:.6em;}
-.svc-plan-list li{padding-left:1.1em;position:relative;font-size:.86rem;font-weight:400;opacity:.85;line-height:1.5;}
-.svc-plan-list li::before{content:"—";position:absolute;left:0;color:var(--dorado-mate);}
-.svc-plan-list li b{display:block;font-weight:600;opacity:1;margin-bottom:.1em;}
-.svc-cta{margin-top:1.2rem;font-size:.82rem;padding:.7em 1.3em;}
+.contacto-pro-card{max-width:560px;border:1px solid rgba(169,42,42,.16);background:#fff;box-shadow:0 14px 34px rgba(28,23,16,.1);padding:clamp(2.2rem,5vw,3rem);text-align:center;}
+.contacto-pro-label{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;opacity:.55;margin-bottom:.9em;}
+.contacto-pro-phone{display:inline-flex;align-items:center;gap:.65em;font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.6rem,4.2vw,2.3rem);color:var(--vino);text-decoration:none;line-height:1;}
+.contacto-pro-phone svg{width:.85em;height:.85em;flex-shrink:0;}
+.contacto-pro-note{margin-top:1.1em;font-size:.92rem;opacity:.75;line-height:1.65;max-width:40ch;margin-left:auto;margin-right:auto;}
+.contacto-pro-card .cta-big{margin-top:1.6rem;}
 
 /* ---------- CTA final ---------- */
 .cierre-section{padding:clamp(6rem,16vh,9.5rem) 0;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 0%, var(--verde) 0%, var(--verde2) 70%);color:var(--crema);position:relative;overflow:hidden;}
@@ -387,7 +380,11 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 
 <section id="top" class="hero" style="background-image:url('assets/hero-torero.jpg');">
   <div class="hero-inner">
-    <div class="hero-eyebrow"><span class="ln"></span><span>Temple · Mónica Rosa Terra</span></div>
+    <div class="hero-brand">
+      <img class="hero-logo" src="assets/logo.png" alt="">
+      <img class="hero-wordmark" src="assets/temple-wordmark.png" alt="TEMPLE">
+    </div>
+    <div class="hero-eyebrow"><span class="ln"></span><span>Mónica Rosa Terra</span></div>
     <h1 class="mk-split">Nutrición con arte para atletas de luces</h1>
     <p class="hero-claim">Coaching nutricional de alto rendimiento exclusivo para profesionales taurinos.</p>
     <div class="hero-cta">
@@ -539,7 +536,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 </section>
 
 <section class="ruptura">
-  <img class="ruptura-photo" src="assets/belmonte-ruptura.jpg" alt="">
+  <img class="ruptura-photo" src="assets/nutricion-frutas.jpg" alt="">
   <div class="ruptura-inner mk-reveal">
     <p>&ldquo;El toreo es arte, misterio y liturgia.&rdquo;</p>
     <p class="ruptura-credit">Juan Belmonte, 1926</p>
@@ -603,55 +600,19 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   </div>
 </section>
 
-<section class="servicios-section">
+<section class="contacto-pro-section">
   <div class="wrap">
-    <div class="marginalia"><h2 class="mtitle">Servicios</h2></div>
-    <p class="servicios-intro">Cada cuerpo y cada temporada requiere un esfuerzo diferente. Diseño su presupuesto tras analizar la situación actual y el calendario de contratos — consulta individual, por cuadrilla o para su escuela, en formato online, presencial o híbrido.</p>
+    <div class="marginalia"><h2 class="mtitle">Contacto <em>profesional</em></h2></div>
+    <p class="servicios-intro">Trabajo con profesionales individuales, cuadrillas y escuelas de tauromaquia, en formato online, presencial o híbrido. Cada presupuesto se diseña a medida tras valorar su situación actual y su calendario de contratos — no hay tarifas estándar.</p>
     <p class="servicios-discrecion">Trato con total discreción y confidencialidad, dentro y fuera del ruedo.</p>
-    <div class="servicios-grid">
-      <details class="svc-tile mk-reveal">
-        <summary>
-          <div class="svc-photo" style="background-image:url('assets/svc-atleta.jpg');"><span class="svc-photo-label">Profesional individual</span></div>
-        </summary>
-        <div class="svc-info">
-          <p class="ledger-desc">Plan nutricional personalizado, adaptado a su calendario de temporada, viajes y competición.</p>
-          <ul class="svc-plan-list">
-            <li>Mensual</li>
-            <li>Trimestral básico</li>
-            <li>Semestral pro</li>
-            <li>Anual premium</li>
-            <li>Planes por temporadas</li>
-            <li>Bono solo fiestas (5 fiestas)</li>
-          </ul>
-          <a class="cta-big alt svc-cta" href="mailto:mrtcoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Profesional%20individual">Solicitar presupuesto a medida</a>
-        </div>
-      </details>
-      <details class="svc-tile mk-reveal">
-        <summary>
-          <div class="svc-photo" style="background-image:url('assets/svc-cuadrillas.jpg');"><span class="svc-photo-label">Cuadrillas</span></div>
-        </summary>
-        <div class="svc-info">
-          <p class="ledger-desc">Rendimiento colectivo: ideal para matadores o apoderados que quieren asegurar que todo el equipo rinda al máximo durante la temporada.</p>
-          <ul class="svc-plan-list">
-            <li><b>Talleres grupales</b>Online o presencial, antes de iniciar la temporada, para coordinar las pautas de alimentación de todo el equipo.</li>
-            <li><b>Planes individuales para subalternos</b>Estrategias antifatiga, el botiquín de hidratación en el callejón, menús de furgoneta y ruta.</li>
-          </ul>
-          <a class="cta-big alt svc-cta" href="mailto:mrtcoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Cuadrilla">Solicitar presupuesto para mi cuadrilla</a>
-        </div>
-      </details>
-      <details class="svc-tile mk-reveal">
-        <summary>
-          <div class="svc-photo" style="background-image:url('assets/svc-escuelas.jpg');"><span class="svc-photo-label">Escuelas</span></div>
-        </summary>
-        <div class="svc-info">
-          <p class="ledger-desc">La optimización nutricional adaptada a los futuros toreros — la cantera de las figuras del mañana.</p>
-          <ul class="svc-plan-list">
-            <li><b>Talleres grupales</b>Charlas y talleres de nutrición deportiva para toda la escuela.</li>
-            <li><b>Planes individuales</b>Seguimiento personalizado para los alumnos que quieran ir más allá.</li>
-          </ul>
-          <a class="cta-big alt svc-cta" href="mailto:mrtcoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Escuela">Solicitar presupuesto a medida</a>
-        </div>
-      </details>
+    <div class="contacto-pro-card mk-reveal">
+      <p class="contacto-pro-label">Para una valoración seria de su caso</p>
+      <a class="contacto-pro-phone" href="tel:+34610065935">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>+34 610 06 59 35</span>
+      </a>
+      <p class="contacto-pro-note">La atiendo yo misma. Si realmente le interesa, lo mejor es que me llame y hablamos de su caso.</p>
+      <a class="cta-big alt" href="mailto:mrtcoachingnutricional@gmail.com">O escríbame un email</a>
     </div>
   </div>
 </section>
@@ -659,30 +620,8 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 <section class="tienda-section" id="tienda">
   <div class="wrap">
     <div class="marginalia"><h2 class="mtitle on-dark">Tienda <em>Temple</em></h2></div>
-    <p class="tienda-intro">Prendas y detalles con el sello de la marca, para el día a día o para acompañar al atleta a la plaza. Envío a coordinar según destino.</p>
+    <p class="tienda-intro">Detalles con el sello de la marca, para el día a día o para acompañar al atleta a la plaza. Envío a coordinar según destino.</p>
     <div class="tienda-grid">
-      <div class="tienda-card mk-reveal" data-id="polo-blanco" data-name="Polo técnico blanco" data-price="27.90"
-           data-desc="Piqué transpirable, logo bordado en el pecho."
-           data-images="assets/tienda-polo-blanco.jpg,assets/tienda-polo-blanco-2.jpg" data-sizes="S,M,L">
-        <div class="tienda-photo"><img src="assets/tienda-polo-blanco.jpg" alt="Polo técnico blanco TEMPLE" loading="lazy"><span class="tienda-spin-hint">⟳ Ver en 360°</span></div>
-        <div class="tienda-body">
-          <p class="tienda-name">Polo técnico blanco</p>
-          <p class="tienda-desc">Piqué transpirable, logo bordado en el pecho.</p>
-          <p class="tienda-price">27,90 € <small>IVA incl.</small></p>
-          <div class="tienda-foot"><button type="button" class="btn-add btn-view">Elegir talla y ver</button></div>
-        </div>
-      </div>
-      <div class="tienda-card mk-reveal" data-id="polo-vino" data-name="Polo técnico vino" data-price="27.90"
-           data-desc="Piqué transpirable, logo bordado en el pecho."
-           data-images="assets/tienda-polo-vino.jpg,assets/tienda-polo-vino-2.jpg" data-sizes="S,M,L">
-        <div class="tienda-photo"><img src="assets/tienda-polo-vino.jpg" alt="Polo técnico vino TEMPLE" loading="lazy"><span class="tienda-spin-hint">⟳ Ver en 360°</span></div>
-        <div class="tienda-body">
-          <p class="tienda-name">Polo técnico vino</p>
-          <p class="tienda-desc">Piqué transpirable, logo bordado en el pecho.</p>
-          <p class="tienda-price">27,90 € <small>IVA incl.</small></p>
-          <div class="tienda-foot"><button type="button" class="btn-add btn-view">Elegir talla y ver</button></div>
-        </div>
-      </div>
       <div class="tienda-card mk-reveal" data-id="gorra" data-name="Gorra bordada" data-price="16.90"
            data-desc="Algodón, ajuste regulable, monograma dorado."
            data-images="assets/tienda-gorra.jpg,assets/tienda-gorra-2.jpg" data-sizes="">
