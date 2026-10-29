@@ -275,8 +275,9 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 .cart-btn{position:relative;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(230,189,58,.4);border-radius:50%;background:transparent;cursor:pointer;flex-shrink:0;transition:border-color .2s;}
 .cart-btn:hover{border-color:var(--dorado);}
 .cart-btn svg{width:17px;height:17px;color:var(--dorado);}
-.cart-badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--vino);color:var(--crema);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1;border:1.5px solid var(--verde2);}
+.cart-badge{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--vino);color:var(--crema);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1;border:1.5px solid var(--verde2);transition:transform .25s ease;}
 .cart-badge[data-empty="true"]{display:none;}
+.cart-badge.is-bump{transform:scale(1.5);}
 
 /* ---------- Tienda ---------- */
 .tienda-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--verde);color:var(--crema);}
@@ -323,6 +324,8 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 .cart-subtotal{display:flex;justify-content:space-between;align-items:baseline;font-family:'Playfair Display',serif;font-weight:800;font-size:1.15rem;margin-bottom:.9rem;}
 .cart-checkout{display:block;width:100%;text-align:center;background:var(--vino);color:var(--crema);padding:.85rem;font-family:'Jost',sans-serif;font-weight:600;font-size:.86rem;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;}
 .cart-checkout:hover{background:#8a1d3e;}
+.cart-checkout.is-disabled,.cart-checkout-alt.is-disabled{opacity:.4;pointer-events:none;}
+.cart-checkout-alt{display:block;text-align:center;margin-top:.6em;font-size:.78rem;color:var(--vino);text-decoration:underline;}
 .cart-note{margin-top:.7em;font-size:.72rem;opacity:.55;text-align:center;line-height:1.5;}
 
 /* ---------- Modal de producto: visor 360 ---------- */
@@ -766,8 +769,9 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   </div>
   <div class="cart-foot">
     <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">0,00 €</span></div>
-    <a class="cart-checkout" id="cartCheckout" href="#">Finalizar por correo</a>
-    <p class="cart-note">Al finalizar se abre su correo con el pedido ya escrito — confirmamos stock, envío y forma de pago por ahí.</p>
+    <a class="cart-checkout" id="cartCheckout" href="#" target="_blank" rel="noopener">Finalizar por WhatsApp</a>
+    <a class="cart-checkout-alt" id="cartCheckoutEmail" href="#">o por correo electrónico</a>
+    <p class="cart-note">Se abre con el pedido ya escrito — confirmamos stock, envío y forma de pago por ahí.</p>
   </div>
 </aside>
 
@@ -837,7 +841,16 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 
     var msgLines = cart.map(function(i){ return "• " + i.qty + " × " + i.name + " — " + euro(i.qty*i.price); });
     var body = "Hola Mónica, quiero hacer este pedido de la tienda Temple:\n" + msgLines.join("\n") + "\nSubtotal: " + euro(subtotal);
-    checkoutEl.href = "mailto:mrtcoachingnutricional@gmail.com?subject=" + encodeURIComponent("Pedido tienda Temple") + "&body=" + encodeURIComponent(body);
+    var emailEl = document.getElementById('cartCheckoutEmail');
+    checkoutEl.href = "https://wa.me/34610065935?text=" + encodeURIComponent(body);
+    if (cart.length === 0){
+      checkoutEl.classList.add('is-disabled');
+      emailEl.classList.add('is-disabled');
+    } else {
+      checkoutEl.classList.remove('is-disabled');
+      emailEl.classList.remove('is-disabled');
+    }
+    emailEl.href = "mailto:mrtcoachingnutricional@gmail.com?subject=" + encodeURIComponent("Pedido tienda Temple") + "&body=" + encodeURIComponent(body);
 
     itemsEl.querySelectorAll('.cart-line-remove').forEach(function(btn){
       btn.addEventListener('click', function(){
@@ -853,6 +866,9 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     var existing = cart.find(function(i){ return i.id === id; });
     if (existing){ existing.qty += qty; } else { cart.push({id:id, name:name, price:price, img:img, qty:qty}); }
     render();
+    var badge = document.getElementById('cartBadge');
+    badge.classList.add('is-bump');
+    setTimeout(function(){ badge.classList.remove('is-bump'); }, 250);
   }
 
   document.querySelectorAll('.tienda-card').forEach(function(card){
@@ -877,7 +893,6 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
         addBtn.textContent = "Añadido ✓";
         addBtn.classList.add('is-added');
         setTimeout(function(){ addBtn.textContent = "Añadir"; addBtn.classList.remove('is-added'); }, 1200);
-        openCart();
       });
     }
     card.querySelector('.tienda-photo').addEventListener('click', function(){ openProductModal(card); });
@@ -993,7 +1008,6 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     btn.textContent = 'Añadido ✓'; btn.classList.add('is-added');
     setTimeout(function(){ btn.textContent = 'Añadir'; btn.classList.remove('is-added'); }, 1200);
     closeProductModal();
-    openCart();
   });
 
   pmAddSizesBtn.addEventListener('click', function(){
@@ -1010,7 +1024,6 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     pmAddSizesBtn.textContent = 'Añadido ✓'; pmAddSizesBtn.classList.add('is-added');
     setTimeout(function(){ pmAddSizesBtn.textContent = 'Añadir al carrito'; pmAddSizesBtn.classList.remove('is-added'); }, 1200);
     closeProductModal();
-    openCart();
   });
 
   /* arrastrar la imagen para "girar" entre las fotos disponibles */
