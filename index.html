@@ -68,15 +68,12 @@ section{position:relative;}
 .hero{min-height:100svh;display:flex;align-items:flex-end;background-size:cover;background-position:center;}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(10deg, rgba(6,14,11,.86) 4%, rgba(6,14,11,.24) 46%, rgba(6,14,11,.5) 100%);}
 .hero-inner{position:relative;z-index:2;color:var(--crema);padding:clamp(6rem,20vh,9rem) clamp(1.2rem,5vw,3.4rem) clamp(3rem,8vh,5rem);max-width:1220px;margin:0 auto;width:100%;}
-.hero-brand{display:flex;align-items:center;gap:.9rem;margin-bottom:1.1em;}
-.hero-brand img.hero-logo{height:clamp(54px,7.4vw,86px);width:auto;filter:drop-shadow(0 4px 18px rgba(0,0,0,.5));}
-.hero-brand img.hero-wordmark{height:clamp(32px,4.6vw,52px);width:auto;}
-.hero-eyebrow{display:flex;align-items:center;gap:.9em;margin-bottom:.6em;}
-.hero-eyebrow .ln{width:38px;height:1px;background:var(--dorado);}
-.hero-eyebrow span{font-size:.78rem;letter-spacing:.36em;text-transform:uppercase;color:var(--dorado);}
-.hero h1{font-size:clamp(1.35rem,2.8vw,2.1rem);font-weight:600;max-width:28ch;text-shadow:0 6px 40px rgba(0,0,0,.55);opacity:.92;}
-.hero h1 em{font-style:italic;color:var(--dorado);font-weight:600;}
-.hero-claim{margin-top:1.1em;max-width:620px;font-size:clamp(.92rem,1.9vw,1.15rem);font-weight:500;color:var(--dorado);white-space:nowrap;line-height:1.6;}
+.hero-brand{display:flex;align-items:center;gap:1.1rem;}
+.hero-brand img.hero-logo{height:clamp(72px,10vw,120px);width:auto;filter:drop-shadow(0 4px 18px rgba(0,0,0,.5));}
+.hero-brand-text{display:flex;flex-direction:column;gap:.35em;}
+.hero-brand img.hero-wordmark{height:clamp(46px,6.6vw,76px);width:auto;}
+.hero h1{font-family:'Jost',sans-serif;font-size:clamp(.95rem,1.7vw,1.3rem);font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--crema);text-shadow:0 3px 14px rgba(0,0,0,.6);}
+.hero-claim{margin-top:clamp(2.6rem,9vh,4.5rem);max-width:620px;font-size:clamp(.92rem,1.9vw,1.15rem);font-weight:500;color:var(--dorado);line-height:1.6;}
 @media (max-width:640px){.hero-claim{white-space:normal;max-width:340px;}}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.1em;align-items:center;}
 .hero-scroll{position:absolute;right:clamp(1.2rem,5vw,3.4rem);bottom:2.4rem;z-index:2;color:var(--crema);opacity:.6;writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;display:flex;align-items:center;gap:.8em;}
@@ -124,14 +121,6 @@ section{position:relative;}
 .retrato-text p{font-size:clamp(1.05rem,2.2vw,1.25rem);line-height:1.75;font-weight:300;max-width:52ch;text-align:justify;}
 .retrato-text p + p{margin-top:1.1em;}
 .retrato-text p.lead::first-letter{font-family:'Playfair Display',serif;font-weight:800;font-size:3.4em;float:left;line-height:.78;padding-right:.09em;color:var(--vino);}
-.formacion-toggle{margin-top:2rem;border-top:1px solid rgba(111,22,49,.22);padding-top:1.2rem;}
-.formacion-toggle summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:.6em;font-weight:600;color:var(--vino);font-size:.95rem;letter-spacing:.02em;}
-.formacion-toggle summary::-webkit-details-marker{display:none;}
-.formacion-toggle summary::before{content:"＋";font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dorado-mate);}
-.formacion-toggle[open] summary::before{content:"－";}
-.formacion-toggle ol{list-style:none;counter-reset:f;margin-top:1.1em;display:grid;gap:.65em;}
-.formacion-toggle li{padding-left:1.3em;position:relative;font-size:.94rem;font-weight:300;opacity:.8;line-height:1.55;}
-.formacion-toggle li::before{content:"—";position:absolute;left:0;color:var(--dorado-mate);}
 
 /* ---------- Trayectoria: banner de fotos en marquee ---------- */
 .retrato-banner{margin-top:clamp(3rem,7vh,4.5rem);}
@@ -221,15 +210,26 @@ section{position:relative;}
 .programa-list li:last-child{border-bottom:none;}
 .escuelas-cta{margin-top:2.4rem;}
 
-/* ---------- Contacto profesional ---------- */
-.contacto-pro-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);}
+/* ---------- Servicios: rejilla fotográfica ---------- */
+.servicios-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);}
 .servicios-intro{max-width:56ch;font-size:clamp(1rem,2.1vw,1.15rem);font-weight:300;opacity:.78;line-height:1.7;}
 .servicios-discrecion{max-width:56ch;font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--vino);opacity:.85;margin-top:.6em;margin-bottom:clamp(2.4rem,6vh,3.6rem);}
-.contacto-pro-card{max-width:560px;border:1px solid rgba(169,42,42,.16);background:#fff;box-shadow:0 14px 34px rgba(28,23,16,.1);padding:clamp(2.2rem,5vw,3rem);text-align:center;}
-.contacto-pro-label{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;opacity:.55;margin-bottom:.9em;}
-.contacto-pro-phone{display:inline-flex;align-items:center;gap:.5em;font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.3rem,3.2vw,1.8rem);color:var(--vino);text-decoration:none;line-height:1;}
-.contacto-pro-phone svg{width:.75em;height:.75em;flex-shrink:0;}
-.contacto-pro-note{margin-top:1.1em;font-size:.92rem;opacity:.75;line-height:1.65;max-width:40ch;margin-left:auto;margin-right:auto;}
+.servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.6rem;}
+.svc-tile{background:#fff;box-shadow:0 14px 34px rgba(28,23,16,.1);}
+.svc-tile summary{list-style:none;cursor:pointer;}
+.svc-tile summary::-webkit-details-marker{display:none;}
+.svc-photo{position:relative;aspect-ratio:4/3;overflow:hidden;background-size:cover;background-position:center;}
+.svc-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(6,14,11,.82) 18%, rgba(6,14,11,.05) 65%);}
+.svc-photo-label{position:absolute;left:1.1rem;right:1.1rem;bottom:.9rem;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:.6em;font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.15rem,2.6vw,1.4rem);color:var(--crema);text-shadow:0 2px 10px rgba(0,0,0,.4);line-height:1.15;}
+.svc-photo-label::after{content:"＋";font-family:'Playfair Display',serif;font-weight:700;font-size:1.2rem;color:var(--dorado);flex-shrink:0;transition:transform .2s;}
+.svc-tile[open] .svc-photo-label::after{content:"－";}
+.svc-info{padding:1.2rem 1.3rem 1.4rem;}
+.svc-info .ledger-desc{font-size:.9rem;font-weight:300;opacity:.75;line-height:1.6;}
+.svc-plan-list{list-style:none;margin-top:.9em;display:grid;gap:.6em;}
+.svc-plan-list li{padding-left:1.1em;position:relative;font-size:.86rem;font-weight:400;opacity:.85;line-height:1.5;}
+.svc-plan-list li::before{content:"—";position:absolute;left:0;color:var(--dorado-mate);}
+.svc-plan-list li b{display:block;font-weight:600;opacity:1;margin-bottom:.1em;}
+.svc-cta{margin-top:1.2rem;font-size:.82rem;padding:.7em 1.3em;}
 
 /* ---------- CTA final ---------- */
 .cierre-section{padding:clamp(6rem,16vh,9.5rem) 0;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 0%, var(--verde) 0%, var(--verde2) 70%);color:var(--crema);position:relative;overflow:hidden;}
@@ -252,6 +252,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 @media (max-width:560px){.ticket-cta{align-items:stretch;}}
 .foot-contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;}
 .foot-contact a,.foot-contact .fc-item{display:flex;align-items:center;gap:.6em;font-size:.88rem;color:var(--crema);opacity:.85;min-width:0;overflow-wrap:anywhere;}
+.foot-contact a[href^="mailto"]{grid-column:1/-1;font-size:.92rem;}
 .foot-contact svg{width:18px;height:18px;color:var(--dorado);flex-shrink:0;}
 .foot-bottom{margin-top:2.6rem;text-align:center;font-size:.76rem;opacity:.5;letter-spacing:.03em;}
 
@@ -384,11 +385,12 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   <div class="hero-inner">
     <div class="hero-brand">
       <img class="hero-logo" src="assets/logo.png" alt="">
-      <img class="hero-wordmark" src="assets/temple-wordmark.png" alt="TEMPLE">
+      <div class="hero-brand-text">
+        <img class="hero-wordmark" src="assets/temple-wordmark.png" alt="TEMPLE">
+        <h1 class="mk-split">Nutrición con arte</h1>
+      </div>
     </div>
-    <div class="hero-eyebrow"><span class="ln"></span><span>Mónica Rosa Terra</span></div>
-    <h1 class="mk-split">Nutrición con arte</h1>
-    <p class="hero-claim">Coaching nutricional de alto rendimiento exclusivo para profesionales taurinos.</p>
+    <p class="hero-claim">Mónica Rosa Terra — Coaching nutricional de alto rendimiento exclusivo para profesionales taurinos.</p>
     <div class="hero-cta">
       <a class="cta-big alt" href="#metodo">Conozca el método</a>
     </div>
@@ -428,19 +430,6 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
       <p class="lead">Soy Mónica Rosa. Durante 20 años he aplicado la ciencia de la nutrición para maximizar el rendimiento de atletas de élite, diseñando estrategias para quienes buscaban una medalla, un récord, ganarle milésimas a su rival o ganar campeonatos internacionales. Sé cómo el combustible adecuado ayuda a optimizar el rendimiento tanto en preparación de pretemporada como en competiciones bajo alta presión.</p>
       <p>Mi profesión me ha llevado por varios países y disciplinas deportivas, hasta que el destino me trajo a España, donde conocí el mundo de los toros. En las plazas encontré una exigencia mucho mayor a la de cualquier deportista: no se compite por una copa, sino que se entrega valor y estética frente a un animal de media tonelada, donde el mínimo error físico o mental no cuesta un campeonato, sino la integridad del atleta.</p>
       <p>TEMPLE nace de la fusión de mi experiencia en nutrición deportiva de alto rendimiento aplicada a las necesidades reales del atleta de luces, respetando la tradición. Va más allá de una dieta: vemos al profesional en su totalidad.</p>
-      <details class="formacion-toggle">
-        <summary>Formación y trayectoria académica</summary>
-        <ol>
-          <li>Técnico en Nutrición y Dietética — Instituto Elite, Salamanca</li>
-          <li>Máster en Coaching Nutricional — Universidad de Granada</li>
-          <li>Título Universitario Coach Nutricional — Universidad Nebrija</li>
-          <li>Experto Universitario en Nutrición Deportiva — Universidad de La Rioja</li>
-          <li>Diplomada en Nutrigenómica y Nutrigenética — Instituto de Nutrigenómica, Madrid</li>
-          <li>Postgrados en Musculación y Fitness, Entrenador Personal y Coaching Deportivo — Universidad Miguel de Cervantes / Euroinnova</li>
-          <li>Diplomado en Coaching Nutricional — Instituto ICS, Montevideo</li>
-          <li>Certificaciones en Nutrición y Suplementación Deportiva, Planificación Deportiva de Alto Rendimiento y Entrenadora Personal — I.C.A.D, Buenos Aires</li>
-        </ol>
-      </details>
     </div>
   </div>
   <div class="retrato-banner mk-reveal">
@@ -602,18 +591,55 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   </div>
 </section>
 
-<section class="contacto-pro-section">
+<section class="servicios-section">
   <div class="wrap">
-    <div class="marginalia"><h2 class="mtitle">Contacto <em>profesional</em></h2></div>
-    <p class="servicios-intro">Trabajo con profesionales individuales, cuadrillas y escuelas de tauromaquia, en formato online, presencial o híbrido. Cada presupuesto se diseña a medida tras valorar su situación actual y su calendario de contratos — no hay tarifas estándar.</p>
+    <div class="marginalia"><h2 class="mtitle">Servicios</h2></div>
+    <p class="servicios-intro">Cada cuerpo y cada temporada requiere un esfuerzo diferente. Diseño su presupuesto tras analizar la situación actual y el calendario de contratos — consulta individual, por cuadrilla o para su escuela, en formato online, presencial o híbrido.</p>
     <p class="servicios-discrecion">Trato con total discreción y confidencialidad, dentro y fuera del ruedo.</p>
-    <div class="contacto-pro-card mk-reveal">
-      <p class="contacto-pro-label">¿Le interesa trabajar conmigo?</p>
-      <a class="contacto-pro-phone" href="mailto:templecoachingnutricional@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-        <span>Escríbame un email</span>
-      </a>
-      <p class="contacto-pro-note">La atiendo yo misma. Cuénteme brevemente su caso y la llamo yo.</p>
+    <div class="servicios-grid">
+      <details class="svc-tile mk-reveal">
+        <summary>
+          <div class="svc-photo" style="background-image:url('assets/svc-atleta.jpg');"><span class="svc-photo-label">Profesional individual</span></div>
+        </summary>
+        <div class="svc-info">
+          <p class="ledger-desc">Plan nutricional personalizado, adaptado a su calendario de temporada, viajes y competición.</p>
+          <ul class="svc-plan-list">
+            <li>Mensual</li>
+            <li>Trimestral básico</li>
+            <li>Semestral pro</li>
+            <li>Anual premium</li>
+            <li>Planes por temporadas</li>
+            <li>Bono solo fiestas (5 fiestas)</li>
+          </ul>
+          <a class="cta-big alt svc-cta" href="mailto:templecoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Profesional%20individual">Solicitar presupuesto a medida</a>
+        </div>
+      </details>
+      <details class="svc-tile mk-reveal">
+        <summary>
+          <div class="svc-photo" style="background-image:url('assets/svc-cuadrillas.jpg');"><span class="svc-photo-label">Cuadrillas</span></div>
+        </summary>
+        <div class="svc-info">
+          <p class="ledger-desc">Rendimiento colectivo: ideal para matadores o apoderados que quieren asegurar que todo el equipo rinda al máximo durante la temporada.</p>
+          <ul class="svc-plan-list">
+            <li><b>Talleres grupales</b>Online o presencial, antes de iniciar la temporada, para coordinar las pautas de alimentación de todo el equipo.</li>
+            <li><b>Planes individuales para subalternos</b>Estrategias antifatiga, el botiquín de hidratación en el callejón, menús de furgoneta y ruta.</li>
+          </ul>
+          <a class="cta-big alt svc-cta" href="mailto:templecoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Cuadrilla">Solicitar presupuesto para mi cuadrilla</a>
+        </div>
+      </details>
+      <details class="svc-tile mk-reveal">
+        <summary>
+          <div class="svc-photo" style="background-image:url('assets/svc-escuelas.jpg');"><span class="svc-photo-label">Escuelas</span></div>
+        </summary>
+        <div class="svc-info">
+          <p class="ledger-desc">La optimización nutricional adaptada a los futuros toreros — la cantera de las figuras del mañana.</p>
+          <ul class="svc-plan-list">
+            <li><b>Talleres grupales</b>Charlas y talleres de nutrición deportiva para toda la escuela.</li>
+            <li><b>Planes individuales</b>Seguimiento personalizado para los alumnos que quieran ir más allá.</li>
+          </ul>
+          <a class="cta-big alt svc-cta" href="mailto:templecoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Escuela">Solicitar presupuesto a medida</a>
+        </div>
+      </details>
     </div>
   </div>
 </section>
