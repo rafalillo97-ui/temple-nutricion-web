@@ -69,11 +69,14 @@ section{position:relative;}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(10deg, rgba(6,14,11,.86) 4%, rgba(6,14,11,.24) 46%, rgba(6,14,11,.5) 100%);}
 .hero-inner{position:relative;z-index:2;color:var(--crema);padding:clamp(6rem,20vh,9rem) clamp(1.2rem,5vw,3.4rem) clamp(3rem,8vh,5rem);max-width:1220px;margin:0 auto;width:100%;}
 .hero-brand{display:flex;align-items:center;gap:1.1rem;}
-.hero-brand img.hero-logo{height:clamp(72px,10vw,120px);width:auto;filter:drop-shadow(0 4px 18px rgba(0,0,0,.5));}
+.hero-brand img.hero-logo{height:clamp(94px,13vw,156px);width:auto;filter:drop-shadow(0 4px 18px rgba(0,0,0,.5));}
 .hero-brand-text{display:flex;flex-direction:column;gap:.35em;}
 .hero-brand img.hero-wordmark{height:clamp(46px,6.6vw,76px);width:auto;}
-.hero h1{font-family:'Jost',sans-serif;font-size:clamp(.95rem,1.7vw,1.3rem);font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--crema);text-shadow:0 3px 14px rgba(0,0,0,.6);}
-.hero-claim{margin-top:clamp(2.6rem,9vh,4.5rem);max-width:620px;font-size:clamp(.92rem,1.9vw,1.15rem);font-weight:500;color:var(--dorado);line-height:1.6;}
+.hero h1{font-family:'Jost',sans-serif;font-size:clamp(.95rem,1.7vw,1.3rem);font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--dorado);text-shadow:0 3px 14px rgba(0,0,0,.6);}
+.hero-eyebrow{display:flex;align-items:center;gap:.9em;margin-top:1em;}
+.hero-eyebrow .ln{width:38px;height:1px;background:var(--dorado);}
+.hero-eyebrow span{font-size:.78rem;letter-spacing:.36em;text-transform:uppercase;color:var(--dorado);}
+.hero-claim{margin-top:clamp(2.6rem,9vh,4.5rem);max-width:620px;font-size:clamp(.92rem,1.9vw,1.15rem);font-weight:500;color:var(--crema);line-height:1.6;}
 @media (max-width:640px){.hero-claim{white-space:normal;max-width:340px;}}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.1em;align-items:center;}
 .hero-scroll{position:absolute;right:clamp(1.2rem,5vw,3.4rem);bottom:2.4rem;z-index:2;color:var(--crema);opacity:.6;writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;display:flex;align-items:center;gap:.8em;}
@@ -156,7 +159,9 @@ section{position:relative;}
 @media (max-width:640px){.tercio .num-ghost{left:0;right:auto;}}
 
 /* ---------- Misión: lista de claves como notas al margen ---------- */
-.claves-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);}
+.claves-section{padding:clamp(5rem,13vh,8.5rem) 0;background:var(--fondo);position:relative;overflow:hidden;}
+.claves-section::after{content:"";position:absolute;right:0;top:0;bottom:0;width:42%;background-image:url('assets/nutricion-frutas.jpg');background-size:cover;background-position:62% 28%;opacity:.17;mask-image:linear-gradient(90deg, transparent 0%, #000 55%);-webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 55%);pointer-events:none;}
+.claves-grid{position:relative;z-index:1;}
 .claves-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,4rem);}
 @media (max-width:840px){.claves-grid{grid-template-columns:1fr;}}
 .claves-intro p{font-size:clamp(1rem,2vw,1.12rem);font-weight:300;line-height:1.75;opacity:.78;max-width:44ch;text-align:justify;}
@@ -237,7 +242,6 @@ section{position:relative;}
 .cierre-lockup p{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.6rem,4.6vw,2.7rem);line-height:1.28;}
 .cierre-brand{display:flex;flex-direction:column;align-items:center;margin:.7em 0;}
 .cierre-wordmark{height:clamp(32px,6vw,52px);width:auto;object-fit:contain;}
-.cierre-buttons{position:relative;z-index:1;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.6em;}
 
 /* ---------- Footer: talón de entrada ---------- */
 footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--crema);}
@@ -381,7 +385,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   </div>
 </header>
 
-<section id="top" class="hero" style="background-image:url('assets/hero-torero.jpg');">
+<section id="top" class="hero" style="background-image:url('assets/hero-torero.jpg');background-position:68% center;">
   <div class="hero-inner">
     <div class="hero-brand">
       <img class="hero-logo" src="assets/logo.png" alt="">
@@ -390,7 +394,8 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
         <h1 class="mk-split">Nutrición con arte</h1>
       </div>
     </div>
-    <p class="hero-claim">Mónica Rosa Terra — Coaching nutricional de alto rendimiento exclusivo para profesionales taurinos.</p>
+    <div class="hero-eyebrow"><span class="ln"></span><span>Mónica Rosa Terra</span></div>
+    <p class="hero-claim">Coaching nutricional de alto rendimiento exclusivo para profesionales taurinos.</p>
     <div class="hero-cta">
       <a class="cta-big alt" href="#metodo">Conozca el método</a>
     </div>
@@ -717,9 +722,6 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
         <img class="cierre-wordmark" src="assets/temple-wordmark.png" alt="TEMPLE">
       </div>
       <p>están abiertas para usted.</p>
-    </div>
-    <div class="cierre-buttons">
-      <a class="cta-big alt" href="mailto:templecoachingnutricional@gmail.com">Escribir un email</a>
     </div>
   </div>
 </section>
