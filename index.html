@@ -73,7 +73,7 @@ section{position:relative;}
 .hero-brand-text{display:flex;flex-direction:column;gap:.35em;}
 .hero-brand img.hero-wordmark{height:clamp(34px,4.8vw,56px);width:auto;}
 .hero h1{font-family:'Jost',sans-serif;font-size:clamp(.95rem,1.7vw,1.3rem);font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--crema);text-shadow:0 3px 14px rgba(0,0,0,.6);}
-.hero-claim{margin-top:clamp(2.6rem,9vh,4.5rem);max-width:620px;font-size:clamp(.92rem,1.9vw,1.15rem);font-weight:500;color:var(--crema);line-height:1.6;}
+.hero-claim{margin-top:clamp(2.6rem,9vh,4.5rem);font-size:clamp(.68rem,1.35vw,.98rem);font-weight:500;color:var(--crema);line-height:1.6;white-space:nowrap;}
 @media (max-width:640px){.hero-claim{white-space:normal;max-width:340px;}}
 .hero-scroll{position:absolute;right:clamp(1.2rem,5vw,3.4rem);bottom:2.4rem;z-index:2;color:var(--crema);opacity:.6;writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;display:flex;align-items:center;gap:.8em;}
 .hero-scroll::after{content:"";width:1px;height:52px;background:var(--dorado);transform-origin:top;animation:mkGrow 1.8s ease-in-out infinite alternate;}
@@ -95,6 +95,7 @@ section{position:relative;}
 .marginalia .mtitle{font-size:clamp(2rem,5.4vw,3.4rem);}
 .marginalia .mtitle em{font-style:italic;color:var(--dorado-mate);}
 .on-dark .marginalia .mtitle em{color:var(--dorado);}
+.mtitle-wordmark{display:inline-block;height:.68em;width:auto;vertical-align:-0.05em;margin-left:.1em;}
 
 /* ---------- Apertura: cita editorial asimétrica ---------- */
 .apertura{background:var(--verde);color:var(--crema);padding:clamp(2.6rem,7vh,4rem) 0;overflow:hidden;}
@@ -175,7 +176,10 @@ section{position:relative;}
 .ruptura-credit{margin-top:1em;font-family:'Jost',sans-serif;font-style:normal;font-weight:400;font-size:.75rem!important;letter-spacing:.14em;text-transform:uppercase;opacity:.6;text-shadow:none!important;}
 
 /* ---------- Frases marquee ---------- */
-.frases-section{padding:2.4rem 0;background:var(--vino);border-top:1px solid rgba(230,189,58,.3);border-bottom:1px solid rgba(230,189,58,.3);}
+.frases-section{padding:2.4rem 0;position:relative;overflow:hidden;background:var(--vino);border-top:1px solid rgba(230,189,58,.3);border-bottom:1px solid rgba(230,189,58,.3);}
+.frases-section::before{content:"";position:absolute;inset:0;background-image:url('assets/nutricion-frutas.jpg');background-size:cover;background-position:60% 18%;opacity:.6;}
+.frases-section::after{content:"";position:absolute;inset:0;background:rgba(111,22,49,.48);}
+.frases-section .mk-marquee{position:relative;z-index:1;}
 .frases-section .mk-marquee-track span{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.05rem,2.8vw,1.5rem);color:var(--crema);}
 .frases-section .mk-marquee-track .sep{color:var(--dorado);margin:0 1.6rem;font-style:normal;}
 .frases-section .mk-marquee-track small{display:inline-block;margin-left:.6em;font-size:.6em;font-style:normal;letter-spacing:.06em;text-transform:uppercase;opacity:.65;}
@@ -232,10 +236,11 @@ section{position:relative;}
 
 /* ---------- CTA final ---------- */
 .cierre-section{padding:clamp(6rem,16vh,9.5rem) 0;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 0%, var(--verde) 0%, var(--verde2) 70%);color:var(--crema);position:relative;overflow:hidden;}
-.cierre-lockup{max-width:640px;margin:0 auto;position:relative;z-index:1;}
-.cierre-lockup p{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.6rem,4.6vw,2.7rem);line-height:1.28;}
-.cierre-brand{display:flex;flex-direction:column;align-items:center;margin:.7em 0;}
-.cierre-wordmark{height:clamp(32px,6vw,52px);width:auto;object-fit:contain;}
+.cierre-lockup{max-width:980px;margin:0 auto;position:relative;z-index:1;}
+.cierre-lockup p{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.1rem,3.1vw,2.1rem);line-height:1.5;}
+.cierre-line{white-space:nowrap;}
+@media (max-width:640px){.cierre-line{white-space:normal;}}
+.cierre-wordmark-inline{display:inline-block;height:.62em;width:auto;vertical-align:-.08em;margin:0 .12em;}
 
 /* ---------- Footer: talón de entrada ---------- */
 footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--crema);}
@@ -378,7 +383,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
   </div>
 </header>
 
-<section id="top" class="hero" style="background-image:url('assets/hero-torero.jpg');background-position:78% center;">
+<section id="top" class="hero" style="background-image:url('assets/hero-torero.jpg');background-position:88% center;">
   <div class="hero-inner">
     <div class="hero-brand">
       <img class="hero-logo" src="assets/logo.png" alt="">
@@ -640,7 +645,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 
 <section class="tienda-section" id="tienda">
   <div class="wrap">
-    <div class="marginalia"><h2 class="mtitle on-dark">Tienda <em>Temple</em></h2></div>
+    <div class="marginalia"><h2 class="mtitle on-dark">Tienda <img class="mtitle-wordmark" src="assets/temple-wordmark.png" alt="Temple"></h2></div>
     <p class="tienda-intro">Detalles con el sello de la marca, para el día a día o para acompañar al atleta a la plaza. Envío a coordinar según destino.</p>
     <div class="tienda-grid">
       <div class="tienda-card mk-reveal" data-id="gorra" data-name="Gorra bordada" data-price="16.90"
@@ -706,11 +711,9 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 <section class="cierre-section">
   <div class="wrap mk-reveal">
     <div class="cierre-lockup">
-      <p>Si busca alcanzar su mejor versión y llegar a la plaza en su justo compás, las puertas de</p>
-      <div class="cierre-brand">
-        <img class="cierre-wordmark" src="assets/temple-wordmark.png" alt="TEMPLE">
-      </div>
-      <p>están abiertas para usted.</p>
+      <p class="cierre-line">Si busca alcanzar su mejor versión</p>
+      <p class="cierre-line">y llegar a la plaza en su justo compás,</p>
+      <p class="cierre-line">las puertas de <img class="cierre-wordmark-inline" src="assets/temple-wordmark.png" alt="TEMPLE"> están abiertas para usted.</p>
     </div>
   </div>
 </section>
