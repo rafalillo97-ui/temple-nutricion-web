@@ -53,7 +53,7 @@ section{position:relative;}
 .site-header .brand > img{height:46px;width:46px;object-fit:contain;flex-shrink:0;}
 .site-header .brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0;overflow:hidden;}
 .site-header .brand-wordmark{height:20px;width:auto;object-fit:contain;}
-.site-header .brand-text span{font-size:.5rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dorado);opacity:.85;white-space:nowrap;padding-left:7.16%;box-sizing:border-box;}
+.site-header .brand-text span{font-size:.5rem;letter-spacing:.13em;text-transform:uppercase;color:var(--crema);opacity:.85;white-space:nowrap;padding-left:7.16%;box-sizing:border-box;text-align:justify;text-align-last:justify;}
 @media (max-width:480px){
   .site-header .brand > img{height:38px;width:38px;}
   .site-header .brand-wordmark{height:17px;}
@@ -136,8 +136,7 @@ section{position:relative;}
 .tercios-section .marginalia{max-width:900px;margin-left:auto;margin-right:auto;}
 .tercios-intro{max-width:68ch;margin:0 auto clamp(3rem,8vh,5rem);text-align:justify;font-size:clamp(1rem,2.1vw,1.18rem);font-weight:300;opacity:.88;line-height:1.75;}
 .tercios-intro p + p{margin-top:1em;}
-.temple-word{font-family:'Arvo',serif;font-style:normal;font-weight:700;letter-spacing:.06em;color:var(--dorado);}
-.temple-word::first-letter{font-size:1.4em;}
+.temple-word-img{display:inline-block;height:1em;width:auto;vertical-align:-.14em;margin-right:.08em;}
 .tercios{max-width:1080px;margin:0 auto;}
 .tercio{position:relative;padding:3.2rem 0;border-top:1px solid rgba(230,189,58,.18);display:grid;grid-template-columns:.85fr 1fr;gap:clamp(1.8rem,4vw,3.4rem);align-items:center;}
 .tercio:first-child{border-top:none;}
@@ -178,8 +177,6 @@ section{position:relative;}
 
 /* ---------- Frases marquee ---------- */
 .frases-section{padding:2.4rem 0;position:relative;overflow:hidden;background:var(--vino);border-top:1px solid rgba(230,189,58,.3);border-bottom:1px solid rgba(230,189,58,.3);}
-.frases-section::before{content:"";position:absolute;inset:0;background-image:url('assets/nutricion-frutas.jpg');background-size:cover;background-position:60% 18%;opacity:.6;}
-.frases-section::after{content:"";position:absolute;inset:0;background:rgba(111,22,49,.48);}
 .frases-section .mk-marquee{position:relative;z-index:1;}
 .frases-section .mk-marquee-track span{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.05rem,2.8vw,1.5rem);color:var(--crema);}
 .frases-section .mk-marquee-track .sep{color:var(--dorado);margin:0 1.6rem;font-style:normal;}
@@ -393,7 +390,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
         <h1 class="mk-split">Nutrición con arte</h1>
       </div>
     </div>
-    <p class="hero-claim">Mónica Rosa Terra — Coaching nutricional de alto rendimiento exclusivo para profesionales taurinos.</p>
+    <p class="hero-claim">Mónica Rosa Terra — Coaching nutricional de alto&nbsp;rendimiento exclusivo para profesionales taurinos.</p>
   </div>
   <div class="hero-scroll">Desliza</div>
 </section>
@@ -416,7 +413,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
         <img src="assets/monica-foto.jpg" alt="Mónica Rosa Terra">
         <div class="retrato-tag">
           <p class="rt-name">Mónica Rosa Terra</p>
-          <p class="rt-role">Coach Nutricional de Alto Rendimiento</p>
+          <p class="rt-role">Coach Nutricional de Alto&nbsp;Rendimiento</p>
         </div>
       </div>
       <div class="retrato-stats">
@@ -429,7 +426,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
       <div class="marginalia"><h2 class="mtitle">Sobre <em>Mónica</em></h2></div>
       <p class="lead">Soy Mónica Rosa. Durante 20 años he aplicado la ciencia de la nutrición para maximizar el rendimiento de atletas de élite, diseñando estrategias para quienes buscaban una medalla, un récord, ganarle milésimas a su rival o ganar campeonatos internacionales. Sé cómo el combustible adecuado ayuda a optimizar el rendimiento tanto en preparación de pretemporada como en competiciones bajo alta presión.</p>
       <p>Mi profesión me ha llevado por varios países y disciplinas deportivas, hasta que el destino me trajo a España, donde conocí el mundo de los toros. En las plazas encontré una exigencia mucho mayor a la de cualquier deportista: no se compite por una copa, sino que se entrega valor y estética frente a un animal de media tonelada, donde el mínimo error físico o mental no cuesta un campeonato, sino la integridad del atleta.</p>
-      <p>TEMPLE nace de la fusión de mi experiencia en nutrición deportiva de alto rendimiento aplicada a las necesidades reales del atleta de luces, respetando la tradición. Va más allá de una dieta: vemos al profesional en su totalidad.</p>
+      <p>TEMPLE nace de la fusión de mi experiencia en nutrición deportiva de alto&nbsp;rendimiento aplicada a las necesidades reales del atleta de luces, respetando la tradición. Va más allá de una dieta: vemos al profesional en su totalidad.</p>
     </div>
   </div>
   <div class="retrato-banner mk-reveal">
@@ -470,8 +467,8 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     </div>
     <div class="tercios-intro">
       <p>Forjamos vuestra mejor versión sin cambiar la esencia.</p>
-      <p><span class="temple-word">TEMPLE</span> está diseñado exclusivamente para profesionales taurinos combinando ciencia y tradición, basado en un sistema de alto rendimiento deportivo y gestión del estrés extremo, para que el organismo del atleta funcione con compás, equilibrio y máxima eficiencia. No son pautas restrictivas, sino un protocolo de preparación biológica integral estructurado en varias fases. El objetivo general es alinear el coaching nutricional con la exigencia física y la solemnidad del ruedo, permitiendo al profesional mantener la lucidez, fuerza explosiva, flexibilidad, ligereza y el fondo físico intactos en cada compromiso, preservando su integridad.</p>
-      <p>Combina ciencia y tradición: darle al cuerpo exactamente lo que necesita para rendir en el ruedo, recuperarse rápidamente de la fatiga o una cornada, aguantar una feria de cuatro tardes seguidas o mantenerse alerta en el callejón tras toda una noche viajando, acompañando en el proceso y facilitando los cambios para alcanzar sus objetivos.</p>
+      <p><img class="temple-word-img" src="assets/temple-wordmark.png" alt="TEMPLE"> está diseñado exclusivamente para profesionales taurinos combinando ciencia y tradición, basado en un sistema de alto&nbsp;rendimiento deportivo y gestión del estrés extremo, para que el organismo del atleta funcione con compás, equilibrio y máxima eficiencia. No son pautas restrictivas, sino un protocolo de preparación biológica integral estructurado en varias fases. El objetivo general es alinear el coaching nutricional con la exigencia física y la solemnidad del ruedo, permitiendo al profesional mantener la lucidez, fuerza explosiva, flexibilidad, ligereza y el fondo físico intactos en cada compromiso, preservando su integridad.</p>
+      <p>Combinamos ciencia y tradición para darle al cuerpo exactamente lo que necesita: rendir en el ruedo, recuperarse rápidamente de la fatiga o de una cornada, aguantar una feria de cuatro tardes seguidas o mantenerse alerta en el callejón tras toda una noche viajando. Acompañamos el proceso y facilitamos los cambios para alcanzar sus objetivos.</p>
       <p>Gestionamos los obstáculos con herramientas prácticas para el día a día o para las temporadas de luces, sintiendo el orgullo del autocuidado en cada detalle y siendo protagonista de sus propios logros.</p>
     </div>
     <div class="tercios">
@@ -594,7 +591,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
 <section class="servicios-section">
   <div class="wrap">
     <div class="marginalia"><h2 class="mtitle">Servicios</h2></div>
-    <p class="servicios-intro">Cada cuerpo y cada temporada requiere un esfuerzo diferente. Diseño su presupuesto tras analizar la situación actual y el calendario de contratos — consulta individual, por cuadrilla o para su escuela, en formato online, presencial o híbrido.</p>
+    <p class="servicios-intro">Cada cuerpo y cada temporada requiere un esfuerzo diferente. Diseño su presupuesto tras analizar la situación actual y el calendario de contratos, ya sea para una consulta individual, una cuadrilla o una escuela, en formato online, presencial o híbrido.</p>
     <p class="servicios-discrecion">Trato con total discreción y confidencialidad, dentro y fuera del ruedo.</p>
     <div class="servicios-grid">
       <details class="svc-tile mk-reveal">
@@ -714,7 +711,8 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
     <div class="cierre-lockup">
       <p class="cierre-line">Si busca alcanzar su mejor versión</p>
       <p class="cierre-line">y llegar a la plaza en su justo compás,</p>
-      <p class="cierre-line">las puertas de <img class="cierre-wordmark-inline" src="assets/temple-wordmark.png" alt="TEMPLE"> están abiertas para usted.</p>
+      <p class="cierre-line">las puertas de <img class="cierre-wordmark-inline" src="assets/temple-wordmark.png" alt="TEMPLE"></p>
+      <p class="cierre-line">están abiertas para usted.</p>
     </div>
   </div>
 </section>
@@ -773,7 +771,7 @@ footer{background:#07120e;padding:clamp(3.5rem,9vh,5.5rem) 0 2.5rem;color:var(--
         </div>
       </div>
     </div>
-    <p class="foot-bottom">TEMPLE · Mónica Rosa Terra — Coaching Nutricional de Alto Rendimiento para Atletas de Luces</p>
+    <p class="foot-bottom">TEMPLE · Mónica Rosa Terra — Coaching Nutricional de Alto&nbsp;Rendimiento para Atletas de Luces</p>
   </div>
 </footer>
 
