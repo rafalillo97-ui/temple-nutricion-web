@@ -78,7 +78,7 @@ section[id],footer[id]{scroll-margin-top:calc(var(--header-h) - 1px);}
 .site-header .brand > img{height:46px;width:auto;object-fit:contain;flex-shrink:0;}
 .site-header .brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0;}
 .site-header .brand-wordmark{height:20px;width:auto;object-fit:contain;}
-.site-header .brand-text span{font-size:.5rem;letter-spacing:.13em;text-transform:uppercase;color:var(--crema);opacity:.85;white-space:nowrap;text-align:left;contain:inline-size;}
+.site-header .brand-text span{font-size:.5rem;letter-spacing:.13em;text-transform:uppercase;color:#fff;opacity:1;white-space:nowrap;text-align:left;contain:inline-size;}
 @media (max-width:480px){
   .site-header .brand > img{height:38px;}
   .site-header .brand-wordmark{height:17px;}
@@ -150,13 +150,20 @@ section[id],footer[id]{scroll-margin-top:calc(var(--header-h) - 1px);}
 .on-dark .marginalia .mtitle em,.escuelas-section .mtitle em,.tienda-section .mtitle em{color:var(--dorado);}
 .mtitle-wordmark{display:inline-block;height:.68em;width:auto;vertical-align:-0.05em;margin-left:.1em;}
 
-/* ---------- Apertura: la cita, a gran tamaño, sobre las dos rayas del ruedo ---------- */
-.apertura{background:var(--verde);color:var(--crema);padding:clamp(4.5rem,12vh,8rem) 0;overflow:hidden;}
-.apertura::after{content:"";position:absolute;right:-16vw;top:50%;width:52vw;aspect-ratio:1;border-radius:50%;transform:translateY(-50%);border:1px solid rgba(230,189,58,.3);box-shadow:0 0 0 2.4vw var(--verde),0 0 0 calc(2.4vw + 1px) rgba(230,189,58,.2);pointer-events:none;}
-.apertura .wrap{position:relative;z-index:1;}
-.apertura .mark{font-family:var(--display);font-style:italic;font-size:clamp(5rem,11vw,8.5rem);color:var(--dorado);line-height:.6;height:.42em;}
-.apertura blockquote{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(1.3rem,2.7vw,2.2rem);line-height:1.42;max-width:38ch;text-wrap:pretty;}
-.apertura .fuerte{display:block;margin-top:.75em;color:var(--dorado);font-weight:800;font-style:normal;font-size:1.5em;line-height:1.1;letter-spacing:-.01em;}
+/* ---------- Apertura: la cita, frase a frase, junto al plato dibujado como un ruedo ---------- */
+.apertura{background:var(--verde);color:var(--crema);padding:clamp(4.5rem,11vh,7.5rem) 0;overflow:hidden;}
+.apertura-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(2rem,5vw,4.5rem);align-items:center;}
+.apertura .mark{font-family:var(--display);font-style:italic;font-size:clamp(5rem,10vw,8rem);color:var(--dorado);line-height:.6;height:.42em;}
+.apertura blockquote{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(1.18rem,2.05vw,1.7rem);line-height:1.45;}
+.apertura .frase{display:block;text-wrap:pretty;}
+.apertura .frase + .frase{margin-top:.75em;}
+.apertura .fuerte{display:block;margin-top:.8em;color:var(--dorado);font-weight:800;font-style:normal;font-size:1.7em;line-height:1.1;letter-spacing:-.01em;}
+.plato{margin:0;justify-self:end;width:100%;max-width:430px;color:var(--dorado);}
+.plato-svg{display:block;width:100%;height:auto;}
+@media (max-width:860px){
+  .apertura-grid{grid-template-columns:1fr;}
+  .plato{justify-self:center;max-width:280px;}
+}
 
 /* ---------- Sobre Mónica ---------- */
 .retrato-section{padding:var(--sec) 0 0;background:var(--fondo);}
@@ -360,11 +367,8 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
 .foot-contact a:hover{color:var(--dorado);}
 .foot-contact a[href^="mailto"]{flex-basis:100%;font-family:var(--display);font-size:clamp(1.15rem,2.4vw,1.6rem);}
 .foot-contact svg{width:18px;height:18px;color:var(--dorado);flex-shrink:0;}
-.contact-alt{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(230,189,58,.16);}
-.contact-alt p{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;opacity:.65;margin-bottom:.7em;}
-.contact-alt-links{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;}
-.contact-alt-links a{font-size:.95rem;color:var(--crema);border-bottom:1px solid var(--filete);padding-bottom:.1em;transition:color .2s,border-color .2s;}
-.contact-alt-links a:hover{color:var(--dorado);border-color:var(--dorado);}
+.contact-asunto{align-self:flex-start;font-size:.8rem;letter-spacing:.05em;color:var(--dorado);border:1px solid var(--filete);padding:.4em .85em;}
+.contact-asunto[hidden]{display:none;}
 .foot-bottom{margin-top:clamp(3rem,7vh,4.5rem);text-align:center;font-size:.8rem;opacity:.6;letter-spacing:.03em;}
 
 @media (prefers-reduced-motion:reduce){
@@ -539,13 +543,16 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
 </section>
 
 <section class="apertura">
-  <div class="wrap">
-    <p class="mark">&ldquo;</p>
-    <blockquote>
-      El atleta de luces debe rendir al extremo. Para ello necesita precisión, fuerza y templanza en cada milésima de segundo, expresando su arte con el compás y la elegancia que exige la tradición.
-      Está presente en cuerpo y alma para templar la embestida, convirtiendo el peligro en una obra de arte.
-      <span class="fuerte">Su valor merece ciencia.</span>
-    </blockquote>
+  <div class="wrap apertura-grid">
+    <div class="apertura-texto">
+      <p class="mark">&ldquo;</p>
+      <blockquote>
+        <span class="frase">El atleta de luces debe rendir al extremo. Para ello necesita precisión, fuerza y templanza en cada milésima de segundo, expresando su arte con el compás y la elegancia que exige la tradición.</span>
+        <span class="frase">Está presente en cuerpo y alma para templar la embestida, convirtiendo el peligro en una obra de arte.</span>
+        <span class="fuerte">Su valor merece ciencia.</span>
+      </blockquote>
+    </div>
+    <figure class="plato"><svg class="plato-svg" viewBox="0 0 480 480" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Un plato dibujado en oro como si fuera el ruedo, con una granada abierta, una rodaja de naranja, una rama de olivo y almendras"><style>.plato-svg .pt{fill:currentColor;stroke:none}</style><circle cx="240" cy="240" r="233" stroke-width="1.6"/><circle cx="240" cy="240" r="222" stroke-width=".9" opacity=".75"/><circle cx="240" cy="240" r="184" stroke-width=".8" opacity=".4"/><g><circle cx="186" cy="204" r="84" stroke-width="1.9"/><circle cx="186" cy="204" r="77" stroke-width=".9" opacity=".7"/><path d="M128.7 142.6 L116 134 L131.9 130.8 L131.9 117.5 L144 123.3 L153.8 110.4 L155.9 125.6" stroke-width="1.5"/><ellipse cx="203" cy="204" rx="7.8" ry="5.8" transform="rotate(0 203 204)" stroke-width="1.05"/><circle cx="200.7" cy="205.9" r=".9" class="pt"/><ellipse cx="191.3" cy="220.2" rx="7.8" ry="5.8" transform="rotate(72 191.3 220.2)" stroke-width="1.05"/><circle cx="188.7" cy="218.6" r=".9" class="pt"/><ellipse cx="172.2" cy="214" rx="7.8" ry="5.8" transform="rotate(144 172.2 214)" stroke-width="1.05"/><circle cx="173" cy="211.1" r=".9" class="pt"/><ellipse cx="172.2" cy="194" rx="7.8" ry="5.8" transform="rotate(216 172.2 194)" stroke-width="1.05"/><circle cx="175.2" cy="193.8" r=".9" class="pt"/><ellipse cx="191.3" cy="187.8" rx="7.8" ry="5.8" transform="rotate(288 191.3 187.8)" stroke-width="1.05"/><circle cx="192.4" cy="190.6" r=".9" class="pt"/><ellipse cx="220.2" cy="215.1" rx="8.4" ry="6.2" transform="rotate(18 220.2 215.1)" stroke-width="1.05"/><circle cx="217.5" cy="216.2" r=".9" class="pt"/><ellipse cx="207.2" cy="233.1" rx="8.4" ry="6.2" transform="rotate(54 207.2 233.1)" stroke-width="1.05"/><circle cx="204.2" cy="232.4" r=".9" class="pt"/><ellipse cx="186" cy="240" rx="8.4" ry="6.2" transform="rotate(90 186 240)" stroke-width="1.05"/><circle cx="184.1" cy="237.7" r=".9" class="pt"/><ellipse cx="164.8" cy="233.1" rx="8.4" ry="6.2" transform="rotate(126 164.8 233.1)" stroke-width="1.05"/><circle cx="164.6" cy="230.1" r=".9" class="pt"/><ellipse cx="151.8" cy="215.1" rx="8.4" ry="6.2" transform="rotate(162 151.8 215.1)" stroke-width="1.05"/><circle cx="153.4" cy="212.6" r=".9" class="pt"/><ellipse cx="151.8" cy="192.9" rx="8.4" ry="6.2" transform="rotate(198 151.8 192.9)" stroke-width="1.05"/><circle cx="154.5" cy="191.8" r=".9" class="pt"/><ellipse cx="164.8" cy="174.9" rx="8.4" ry="6.2" transform="rotate(234 164.8 174.9)" stroke-width="1.05"/><circle cx="167.8" cy="175.6" r=".9" class="pt"/><ellipse cx="186" cy="168" rx="8.4" ry="6.2" transform="rotate(270 186 168)" stroke-width="1.05"/><circle cx="187.9" cy="170.3" r=".9" class="pt"/><ellipse cx="207.2" cy="174.9" rx="8.4" ry="6.2" transform="rotate(306 207.2 174.9)" stroke-width="1.05"/><circle cx="207.4" cy="177.9" r=".9" class="pt"/><ellipse cx="220.2" cy="192.9" rx="8.4" ry="6.2" transform="rotate(342 220.2 192.9)" stroke-width="1.05"/><circle cx="218.6" cy="195.4" r=".9" class="pt"/><ellipse cx="242.7" cy="210" rx="8.6" ry="6.4" transform="rotate(6 242.7 210)" stroke-width="1.05"/><circle cx="240.2" cy="211.6" r=".9" class="pt"/><ellipse cx="236.1" cy="231.2" rx="8.6" ry="6.4" transform="rotate(28.5 236.1 231.2)" stroke-width="1.05"/><circle cx="233.2" cy="231.8" r=".9" class="pt"/><ellipse cx="221.9" cy="248.3" rx="8.6" ry="6.4" transform="rotate(51 221.9 248.3)" stroke-width="1.05"/><circle cx="218.9" cy="247.7" r=".9" class="pt"/><ellipse cx="202.2" cy="258.7" rx="8.6" ry="6.4" transform="rotate(73.5 202.2 258.7)" stroke-width="1.05"/><circle cx="199.7" cy="257" r=".9" class="pt"/><ellipse cx="180" cy="260.7" rx="8.6" ry="6.4" transform="rotate(96 180 260.7)" stroke-width="1.05"/><circle cx="178.4" cy="258.2" r=".9" class="pt"/><ellipse cx="158.8" cy="254.1" rx="8.6" ry="6.4" transform="rotate(118.5 158.8 254.1)" stroke-width="1.05"/><circle cx="158.2" cy="251.2" r=".9" class="pt"/><ellipse cx="141.7" cy="239.9" rx="8.6" ry="6.4" transform="rotate(141 141.7 239.9)" stroke-width="1.05"/><circle cx="142.3" cy="236.9" r=".9" class="pt"/><ellipse cx="131.3" cy="220.2" rx="8.6" ry="6.4" transform="rotate(163.5 131.3 220.2)" stroke-width="1.05"/><circle cx="133" cy="217.7" r=".9" class="pt"/><ellipse cx="129.3" cy="198" rx="8.6" ry="6.4" transform="rotate(186 129.3 198)" stroke-width="1.05"/><circle cx="131.8" cy="196.4" r=".9" class="pt"/><ellipse cx="135.9" cy="176.8" rx="8.6" ry="6.4" transform="rotate(208.5 135.9 176.8)" stroke-width="1.05"/><circle cx="138.8" cy="176.2" r=".9" class="pt"/><ellipse cx="150.1" cy="159.7" rx="8.6" ry="6.4" transform="rotate(231 150.1 159.7)" stroke-width="1.05"/><circle cx="153.1" cy="160.3" r=".9" class="pt"/><ellipse cx="169.8" cy="149.3" rx="8.6" ry="6.4" transform="rotate(253.5 169.8 149.3)" stroke-width="1.05"/><circle cx="172.3" cy="151" r=".9" class="pt"/><ellipse cx="192" cy="147.3" rx="8.6" ry="6.4" transform="rotate(276 192 147.3)" stroke-width="1.05"/><circle cx="193.6" cy="149.8" r=".9" class="pt"/><ellipse cx="213.2" cy="153.9" rx="8.6" ry="6.4" transform="rotate(298.5 213.2 153.9)" stroke-width="1.05"/><circle cx="213.8" cy="156.8" r=".9" class="pt"/><ellipse cx="230.3" cy="168.1" rx="8.6" ry="6.4" transform="rotate(321 230.3 168.1)" stroke-width="1.05"/><circle cx="229.7" cy="171.1" r=".9" class="pt"/><ellipse cx="240.7" cy="187.8" rx="8.6" ry="6.4" transform="rotate(343.5 240.7 187.8)" stroke-width="1.05"/><circle cx="239" cy="190.3" r=".9" class="pt"/></g><g><circle cx="330" cy="304" r="62" stroke-width="1.7"/><circle cx="330" cy="304" r="55" stroke-width=".9" opacity=".7"/><path d="M332.7 296.5 L333.5 254.1 A50 50 0 0 1 359.4 263.5 Z" stroke-width="1.1"/><path d="M336.9 300 L364.7 268 A50 50 0 0 1 378.5 291.9 Z" stroke-width="1.1"/><path d="M337.9 305.4 L379.7 298.8 A50 50 0 0 1 374.9 325.9 Z" stroke-width="1.1"/><path d="M335.1 310.1 L371.5 332 A50 50 0 0 1 350.3 349.7 Z" stroke-width="1.1"/><path d="M330 312 L343.8 352.1 A50 50 0 0 1 316.2 352.1 Z" stroke-width="1.1"/><path d="M324.9 310.1 L309.7 349.7 A50 50 0 0 1 288.5 332 Z" stroke-width="1.1"/><path d="M322.1 305.4 L285.1 325.9 A50 50 0 0 1 280.3 298.8 Z" stroke-width="1.1"/><path d="M323.1 300 L281.5 291.9 A50 50 0 0 1 295.3 268 Z" stroke-width="1.1"/><path d="M327.3 296.5 L300.6 263.5 A50 50 0 0 1 326.5 254.1 Z" stroke-width="1.1"/></g><g><path d="M250 100 C322 84 388 128 408 214" stroke-width="1.7"/><path d="M260.7 98 Q282 88.7 291.5 63.9 Q267.8 76 260.7 98 Z" stroke-width="1.25"/><path d="M260.7 98 L285.4 70.7" stroke-width=".7" opacity=".55"/><path d="M292.2 97.5 Q300 119.3 324.1 130.6 Q313.7 106.1 292.2 97.5 Z" stroke-width="1.25"/><path d="M292.2 97.5 L317.7 124" stroke-width=".7" opacity=".55"/><path d="M323.6 105.2 Q346.6 107.6 367.2 90.8 Q340.7 89.5 323.6 105.2 Z" stroke-width="1.25"/><path d="M323.6 105.2 L358.5 93.7" stroke-width=".7" opacity=".55"/><path d="M351.8 121.2 Q347.3 143.9 362.1 166 Q365.8 139.7 351.8 121.2 Z" stroke-width="1.25"/><path d="M351.8 121.2 L360.1 157.1" stroke-width=".7" opacity=".55"/><path d="M376 144.9 Q394.8 158.5 421 154.2 Q398.6 139.9 376 144.9 Z" stroke-width="1.25"/><path d="M376 144.9 L412 152.4" stroke-width=".7" opacity=".55"/><path d="M395 176 Q381.1 191.3 384.7 214.7 Q399.5 196.2 395 176 Z" stroke-width="1.25"/><path d="M395 176 L386.8 206.9" stroke-width=".7" opacity=".55"/><path d="M408 214 Q405.5 234.3 421.1 251.8 Q422.5 228.4 408 214 Z" stroke-width="1.25"/><path d="M408 214 L418.5 244.2" stroke-width=".7" opacity=".55"/><path d="M306.2 99.8 L307.3 90.9" stroke-width=".95"/><ellipse cx="308.7" cy="79" rx="8" ry="11.5" transform="rotate(-173.1 308.7 79)" stroke-width="1.35"/><circle cx="304.6" cy="80.7" r="1" class="pt"/><path d="M363 130.6 L368.4 123.5" stroke-width=".95"/><ellipse cx="375.8" cy="114" rx="8" ry="11.5" transform="rotate(-142.4 375.8 114)" stroke-width="1.35"/><circle cx="371.3" cy="113.4" r="1" class="pt"/></g><g><g transform="translate(146 322) rotate(-30) scale(1.32)"><path d="M0 -17 C11.5 -9 11 10 0 16 C-11 10 -11.5 -9 0 -17 Z" stroke-width="1.05"/><path d="M0 -11 Q2.8 1 0 10.5" stroke-width=".6" opacity=".6"/><circle cx="-4.4" cy="-2" r=".6" class="pt"/><circle cx="4.6" cy="3" r=".6" class="pt"/><circle cx="-3.6" cy="6.5" r=".6" class="pt"/><circle cx="3.8" cy="-6" r=".6" class="pt"/></g><g transform="translate(190 360) rotate(22) scale(1.32)"><path d="M0 -17 C11.5 -9 11 10 0 16 C-11 10 -11.5 -9 0 -17 Z" stroke-width="1.05"/><path d="M0 -11 Q2.8 1 0 10.5" stroke-width=".6" opacity=".6"/><circle cx="-4.4" cy="-2" r=".6" class="pt"/><circle cx="4.6" cy="3" r=".6" class="pt"/><circle cx="-3.6" cy="6.5" r=".6" class="pt"/><circle cx="3.8" cy="-6" r=".6" class="pt"/></g><g transform="translate(140 372) rotate(72) scale(1.32)"><path d="M0 -17 C11.5 -9 11 10 0 16 C-11 10 -11.5 -9 0 -17 Z" stroke-width="1.05"/><path d="M0 -11 Q2.8 1 0 10.5" stroke-width=".6" opacity=".6"/><circle cx="-4.4" cy="-2" r=".6" class="pt"/><circle cx="4.6" cy="3" r=".6" class="pt"/><circle cx="-3.6" cy="6.5" r=".6" class="pt"/><circle cx="3.8" cy="-6" r=".6" class="pt"/></g></g></svg></figure>
   </div>
 </section>
 
@@ -730,7 +737,7 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
       </ul>
     </div>
     <div class="escuelas-cta">
-      <a class="cta-big alt" href="mailto:templecoachingnutricional@gmail.com">Solicitar propuesta para su escuela</a>
+      <a class="cta-big alt" href="#contacto" data-asunto="Escuelas de tauromaquia">Solicitar propuesta para su escuela</a>
     </div>
   </div>
 </section>
@@ -755,7 +762,7 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
             <li>Planes por temporadas</li>
             <li>Bono solo fiestas (5 fiestas)</li>
           </ul>
-          <a class="cta-big alt svc-cta" href="mailto:templecoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Profesional%20individual">Solicitar presupuesto a medida</a>
+          <a class="cta-big alt svc-cta" href="#contacto" data-asunto="Profesional individual">Solicitar presupuesto a medida</a>
         </div>
       </details>
       <details class="svc-tile" name="servicio">
@@ -768,7 +775,7 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
             <li><b>Talleres grupales</b>Online o presencial, antes de iniciar la temporada, para coordinar las pautas de alimentación de todo el equipo.</li>
             <li><b>Planes individuales para subalternos</b>Estrategias antifatiga, el botiquín de hidratación en el callejón, menús de furgoneta y ruta.</li>
           </ul>
-          <a class="cta-big alt svc-cta" href="mailto:templecoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Cuadrilla">Solicitar presupuesto para mi cuadrilla</a>
+          <a class="cta-big alt svc-cta" href="#contacto" data-asunto="Cuadrillas">Solicitar presupuesto para mi cuadrilla</a>
         </div>
       </details>
       <details class="svc-tile" name="servicio">
@@ -781,7 +788,7 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
             <li><b>Talleres grupales</b>Charlas y talleres de nutrición deportiva para toda la escuela.</li>
             <li><b>Planes individuales</b>Seguimiento personalizado para los alumnos que quieran ir más allá.</li>
           </ul>
-          <a class="cta-big alt svc-cta" href="mailto:templecoachingnutricional@gmail.com?subject=Solicitud%20de%20presupuesto%20-%20Escuela">Solicitar presupuesto a medida</a>
+          <a class="cta-big alt svc-cta" href="#contacto" data-asunto="Escuelas">Solicitar presupuesto a medida</a>
         </div>
       </details>
     </div>
@@ -875,6 +882,7 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
         </div>
         <div class="ticket-cta">
           <form class="contact-form" id="contactForm">
+            <p class="contact-asunto" id="contactAsunto" hidden></p>
             <input type="text" id="cfNombre" name="nombre" placeholder="Su nombre" aria-label="Su nombre" autocomplete="name" required>
             <input type="email" id="cfEmail" name="email" placeholder="Su email" aria-label="Su email" autocomplete="email" required>
             <textarea id="cfMensaje" name="mensaje" rows="4" placeholder="Cuénteme brevemente su situación" aria-label="Cuénteme brevemente su situación" required></textarea>
@@ -909,14 +917,6 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A5.98 5.98 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
-      </div>
-      <div class="contact-alt">
-        <p>¿Prefiere escribir directamente?</p>
-        <div class="contact-alt-links">
-          <a href="mailto:templecoachingnutricional@gmail.com">Correo electrónico</a>
-          <a href="https://www.instagram.com/templecoachingnutricional/" target="_blank" rel="noopener">Mensaje privado en Instagram</a>
-          <a href="https://www.facebook.com/profile.php?id=61594261478376&locale=es_ES" target="_blank" rel="noopener">Mensaje privado en Facebook</a>
-        </div>
       </div>
     </div>
     <p class="foot-bottom">TEMPLE · Mónica Rosa Terra — Coaching Nutricional de Alto&nbsp;Rendimiento para Atletas de Luces</p>
@@ -1220,8 +1220,9 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
       var nombre = contactForm.nombre.value.trim();
       var email = contactForm.email.value.trim();
       var mensaje = contactForm.mensaje.value.trim();
-      var body = "Nombre: " + nombre + "\nEmail: " + email + "\n\n" + mensaje;
-      var mailto = "mailto:templecoachingnutricional@gmail.com?subject=" + encodeURIComponent("Contacto desde la web — " + nombre) + "&body=" + encodeURIComponent(body);
+      var asunto = contactForm.getAttribute("data-asunto") || "";
+      var body = (asunto ? "Consulta sobre: " + asunto + "\n" : "") + "Nombre: " + nombre + "\nEmail: " + email + "\n\n" + mensaje;
+      var mailto = "mailto:templecoachingnutricional@gmail.com?subject=" + encodeURIComponent("Contacto desde la web — " + (asunto ? asunto + " — " : "") + nombre) + "&body=" + encodeURIComponent(body);
       window.location.href = mailto;
       document.getElementById('contactSent').classList.add('show');
     });
@@ -1304,6 +1305,19 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
       if (sec) spy.observe(sec);
     });
   }
+
+  // Un solo camino de contacto: los botones «Solicitar…» llevan al formulario y anotan el asunto
+  var cform = document.getElementById('contactForm');
+  var chip = document.getElementById('contactAsunto');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-asunto]');
+    if (!a || !cform || !chip) return;
+    var asunto = a.getAttribute('data-asunto');
+    cform.setAttribute('data-asunto', asunto);
+    chip.textContent = 'Su consulta: ' + asunto;
+    chip.hidden = false;
+    setTimeout(function(){ var n = document.getElementById('cfNombre'); if (n) n.focus({preventScroll:true}); }, reduced ? 0 : 800);
+  });
 
   // Frases: se duplica la tira para que el bucle no tenga corte
   document.querySelectorAll('.mk-marquee-track').forEach(function(track){
