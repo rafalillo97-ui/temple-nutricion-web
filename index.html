@@ -191,7 +191,6 @@ section[id],footer[id]{scroll-margin-top:calc(var(--header-h) - 1px);}
 .tray-nav{display:flex;gap:.6rem;flex-shrink:0;}
 .tray-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--tinta);background:transparent;color:var(--tinta);font-size:1.35rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding-bottom:3px;transition:background .2s,color .2s,opacity .2s;}
 .tray-nav button:hover:not(:disabled){background:var(--tinta);color:var(--crema);}
-.tray-nav button:disabled{opacity:.28;cursor:default;}
 .tray-track{display:flex;gap:1rem;overflow-x:auto;padding:0 max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))) .4rem;scrollbar-width:none;}
 .tray-track::-webkit-scrollbar{display:none;}
 .rb-card{position:relative;flex:0 0 clamp(200px,23vw,290px);aspect-ratio:4/5;overflow:hidden;background:var(--tinta);}
@@ -1316,45 +1315,59 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
     });
   });
 
-  // Trayectoria: se recorre con las flechas, el dedo o el ratón; mientras nadie la toca, avanza despacio
+  // Trayectoria: cinta sin fin que corre de derecha a izquierda; las flechas y el dedo la adelantan o atrasan y sigue sola
   var track = document.getElementById('trayTrack');
   var prev = document.getElementById('trayPrev');
   var next = document.getElementById('trayNext');
   if (track && prev && next){
-    var stopped = reduced, hover = false, visible = false, dir = 1, pos = 0;
-    var maxScroll = function(){ return track.scrollWidth - track.clientWidth; };
-    var stepSize = function(){
-      var card = track.querySelector('.rb-card');
-      return card ? (card.getBoundingClientRect().width + 16) * 2 : 400;
+    var originals = Array.prototype.slice.call(track.children);
+    originals.forEach(function(card){
+      var copy = card.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      track.appendChild(copy);
+    });
+    var firstCopy = track.children[originals.length];
+    var VELOCIDAD = 60; // píxeles por segundo
+    var pos = 0, last = 0, visible = true, holdUntil = 0, touching = false;
+    var loop = function(){ return firstCopy.offsetLeft - originals[0].offsetLeft; };
+    var stepSize = function(){ return (originals[0].getBoundingClientRect().width + 16) * 2; };
+    var hold = function(ms){ holdUntil = performance.now() + ms; };
+    var wrap = function(){
+      var w = loop();
+      if (w <= 0) return;
+      if (track.scrollLeft >= w) track.scrollLeft -= w;
     };
-    var sync = function(){
-      prev.disabled = track.scrollLeft <= 2;
-      next.disabled = track.scrollLeft >= maxScroll() - 2;
-    };
-    var stop = function(){ stopped = true; };
-    prev.addEventListener('click', function(){ stop(); track.scrollBy({left:-stepSize(), behavior: reduced ? 'auto' : 'smooth'}); });
-    next.addEventListener('click', function(){ stop(); track.scrollBy({left: stepSize(), behavior: reduced ? 'auto' : 'smooth'}); });
-    ['pointerdown','wheel','touchstart','keydown'].forEach(function(ev){ track.addEventListener(ev, stop, {passive:true}); });
-    track.addEventListener('mouseenter', function(){ hover = true; });
-    track.addEventListener('mouseleave', function(){ hover = false; pos = track.scrollLeft; });
-    track.addEventListener('scroll', sync, {passive:true});
-    addEventListener('resize', sync);
-    sync();
+    prev.addEventListener('click', function(){
+      var w = loop(), step = stepSize();
+      if (track.scrollLeft < step) track.scrollLeft += w;
+      hold(900);
+      track.scrollBy({left:-step, behavior: reduced ? 'auto' : 'smooth'});
+    });
+    next.addEventListener('click', function(){
+      wrap();
+      hold(900);
+      track.scrollBy({left: stepSize(), behavior: reduced ? 'auto' : 'smooth'});
+    });
+    track.addEventListener('touchstart', function(){ touching = true; }, {passive:true});
+    ['touchend','touchcancel'].forEach(function(ev){ track.addEventListener(ev, function(){ touching = false; hold(1200); }, {passive:true}); });
+    ['wheel','keydown','pointerdown'].forEach(function(ev){ track.addEventListener(ev, function(){ hold(1200); }, {passive:true}); });
     if ('IntersectionObserver' in window){
-      new IntersectionObserver(function(entries){ visible = entries[0].isIntersecting; pos = track.scrollLeft; }, {threshold:.2}).observe(track);
+      new IntersectionObserver(function(entries){ visible = entries[0].isIntersecting; }, {rootMargin:'200px 0px'}).observe(track);
     }
-    var drift = function(){
-      if (!stopped){
-        if (visible && !hover){
-          pos += dir * 0.4;
-          if (pos >= maxScroll()){ pos = maxScroll(); dir = -1; }
-          if (pos <= 0){ pos = 0; dir = 1; }
-          track.scrollLeft = pos;
-        }
-        requestAnimationFrame(drift);
+    var run = function(now){
+      var dt = Math.min(now - (last || now), 100); last = now;
+      if (touching || now < holdUntil){
+        pos = track.scrollLeft;
+      } else if (visible){
+        if (Math.abs(track.scrollLeft - pos) > 2) pos = track.scrollLeft;
+        pos += VELOCIDAD * dt / 1000;
+        var w = loop();
+        if (w > 0 && pos >= w) pos -= w;
+        track.scrollLeft = pos;
       }
+      requestAnimationFrame(run);
     };
-    if (!stopped) requestAnimationFrame(drift);
+    if (!reduced) requestAnimationFrame(run);
   }
 })();
 </script>
