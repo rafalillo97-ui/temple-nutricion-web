@@ -1349,8 +1349,7 @@ footer{background:var(--sombra);padding:var(--sec) 0 2.4rem;color:var(--crema);}
       track.scrollBy({left: stepSize(), behavior: reduced ? 'auto' : 'smooth'});
     });
     track.addEventListener('touchstart', function(){ touching = true; }, {passive:true});
-    ['touchend','touchcancel'].forEach(function(ev){ track.addEventListener(ev, function(){ touching = false; hold(1200); }, {passive:true}); });
-    ['wheel','keydown','pointerdown'].forEach(function(ev){ track.addEventListener(ev, function(){ hold(1200); }, {passive:true}); });
+    ['touchend','touchcancel'].forEach(function(ev){ track.addEventListener(ev, function(){ touching = false; hold(600); }, {passive:true}); });
     if ('IntersectionObserver' in window){
       new IntersectionObserver(function(entries){ visible = entries[0].isIntersecting; }, {rootMargin:'200px 0px'}).observe(track);
     }
